@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ce849455-96e4-443f-8e26-77baf8394b6b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://scottslaptop.hyperion.local/ServicesHost/applicationService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="applicationService.xsd" MetadataType="Schema" ID="90674a71-9de7-461b-a17c-0e22f6475b35" SourceId="1" SourceUrl="http://scottslaptop.hyperion.local/ServicesHost/applicationService.svc?xsd=xsd4" />
+    <MetadataFile FileName="applicationService1.xsd" MetadataType="Schema" ID="23e236f4-3a46-469b-94b3-7644ca666960" SourceId="1" SourceUrl="http://scottslaptop.hyperion.local/ServicesHost/applicationService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ApplicationService.wsdl" MetadataType="Wsdl" ID="b29c0005-3ce5-4ccf-92f8-0f881f75c8e5" SourceId="1" SourceUrl="http://scottslaptop.hyperion.local/ServicesHost/applicationService.svc?wsdl" />
+    <MetadataFile FileName="applicationService.disco" MetadataType="Disco" ID="5737ba7a-8a76-4ac1-9d6c-31cf043b3365" SourceId="1" SourceUrl="http://scottslaptop.hyperion.local/ServicesHost/applicationService.svc?disco" />
+    <MetadataFile FileName="applicationService2.xsd" MetadataType="Schema" ID="994d13aa-250b-46d5-9464-6322b13fe36b" SourceId="1" SourceUrl="http://scottslaptop.hyperion.local/ServicesHost/applicationService.svc?xsd=xsd5" />
+    <MetadataFile FileName="applicationService3.xsd" MetadataType="Schema" ID="8a071224-69c5-41e2-ab32-254aea43ad01" SourceId="1" SourceUrl="http://scottslaptop.hyperion.local/ServicesHost/applicationService.svc?xsd=xsd2" />
+    <MetadataFile FileName="applicationService4.xsd" MetadataType="Schema" ID="ca2046e5-7634-4e91-9333-597301440bb2" SourceId="1" SourceUrl="http://scottslaptop.hyperion.local/ServicesHost/applicationService.svc?xsd=xsd3" />
+    <MetadataFile FileName="applicationService5.xsd" MetadataType="Schema" ID="77705666-f5cb-45ee-9494-9ccdecb0db1b" SourceId="1" SourceUrl="http://scottslaptop.hyperion.local/ServicesHost/applicationService.svc?xsd=xsd6" />
+    <MetadataFile FileName="applicationService6.xsd" MetadataType="Schema" ID="9299059b-e221-4265-b109-147849b09ba7" SourceId="1" SourceUrl="http://scottslaptop.hyperion.local/ServicesHost/applicationService.svc?xsd=xsd7" />
+    <MetadataFile FileName="applicationService7.xsd" MetadataType="Schema" ID="43494a8b-5e2c-459e-af3a-62084fd02641" SourceId="1" SourceUrl="http://scottslaptop.hyperion.local/ServicesHost/applicationService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

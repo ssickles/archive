@@ -1,0 +1,13 @@
+﻿<Window x:Class="AutoCompleteCombo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="300" Width="300">
+    <Grid>
+        <ComboBox IsEditable="True">
+            <ComboBoxItem>Alpha</ComboBoxItem>
+            <ComboBoxItem>Abbacus</ComboBoxItem>
+            <ComboBoxItem>Anteater</ComboBoxItem>
+            <ComboBoxItem>Beta</ComboBoxItem>
+        </ComboBox>
+    </Grid>
+</Window>

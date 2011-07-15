@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>MegaMatcher</comment>
+	<entry key="FingersExtractor">SingleComputerLicense:VFExtractor</entry>
+	<entry key="FacesExtractor"></entry>
+	<entry key="IrisesExtractor"></entry>
+	<entry key="PalmsExtractor"></entry>
+	<entry key="FingersMatcher">SingleComputerLicense:VFMatcher</entry>
+	<entry key="FacesMatcher"></entry>
+	<entry key="IrisesMatcher"></entry>
+	<entry key="PalmsMatcher"></entry>
+	<entry key="FingersBss">SingleComputerLicense:VFBSS</entry>
+	<entry key="FacesBss"></entry>
+	<entry key="IrisesBss"></entry>
+	<entry key="PalmsBss"></entry>
+	<entry key="LicenseServer">/local</entry>
+	<entry key="LicensePort">5000</entry>
+</properties>

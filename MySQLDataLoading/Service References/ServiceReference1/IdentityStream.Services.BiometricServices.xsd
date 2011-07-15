@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/IdentityStream.Services.BiometricServices" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/IdentityStream.Services.BiometricServices" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="SortDirection">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ascending" />
+      <xs:enumeration value="Descending" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SortDirection" nillable="true" type="tns:SortDirection" />
+  <xs:complexType name="ArrayOfIdentityData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IdentityData" nillable="true" type="tns:IdentityData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIdentityData" nillable="true" type="tns:ArrayOfIdentityData" />
+  <xs:complexType name="IdentityData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IdentityData" nillable="true" type="tns:IdentityData" />
+</xs:schema>

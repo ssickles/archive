@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/IdentityStream.Data" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/IdentityStream.Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="QueryObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Filters" nillable="true" type="tns:QueryExpression" />
+      <xs:element minOccurs="0" name="Offset" type="xs:int" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="Sorts" nillable="true" type="tns:ArrayOfSortObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryObject" nillable="true" type="tns:QueryObject" />
+  <xs:complexType name="QueryExpression">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Negated" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryExpression" nillable="true" type="tns:QueryExpression" />
+  <xs:complexType name="NumericQueryExpression">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicQueryExpression">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NumericQueryExpression" nillable="true" type="tns:NumericQueryExpression" />
+  <xs:complexType name="BasicQueryExpression">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryExpression">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Operator" type="tns:Operator" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BasicQueryExpression" nillable="true" type="tns:BasicQueryExpression" />
+  <xs:simpleType name="Operator">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Equals" />
+      <xs:enumeration value="NotEqual" />
+      <xs:enumeration value="LessThan" />
+      <xs:enumeration value="LessThanOrEqual" />
+      <xs:enumeration value="GreaterThan" />
+      <xs:enumeration value="GreaterThanOrEqual" />
+      <xs:enumeration value="Contains" />
+      <xs:enumeration value="EndsWith" />
+      <xs:enumeration value="BeginsWith" />
+      <xs:enumeration value="In" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Operator" nillable="true" type="tns:Operator" />
+  <xs:complexType name="StringQueryExpression">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicQueryExpression">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StringQueryExpression" nillable="true" type="tns:StringQueryExpression" />
+  <xs:complexType name="NullQueryExpression">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryExpression">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NullQueryExpression" nillable="true" type="tns:NullQueryExpression" />
+  <xs:complexType name="ComplexQueryExpression">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryExpression">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LeftExpression" nillable="true" type="tns:QueryExpression" />
+          <xs:element minOccurs="0" name="Operand" type="tns:QueryOperand" />
+          <xs:element minOccurs="0" name="RightExpression" nillable="true" type="tns:QueryExpression" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ComplexQueryExpression" nillable="true" type="tns:ComplexQueryExpression" />
+  <xs:simpleType name="QueryOperand">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AND" />
+      <xs:enumeration value="OR" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QueryOperand" nillable="true" type="tns:QueryOperand" />
+  <xs:complexType name="ArrayOfSortObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SortObject" nillable="true" type="tns:SortObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSortObject" nillable="true" type="tns:ArrayOfSortObject" />
+  <xs:complexType name="SortObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Direction" type="tns:SortDirection" />
+      <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SortObject" nillable="true" type="tns:SortObject" />
+  <xs:simpleType name="SortDirection">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ascending" />
+      <xs:enumeration value="Descending" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SortDirection" nillable="true" type="tns:SortDirection" />
+</xs:schema>

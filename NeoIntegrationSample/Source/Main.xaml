@@ -1,0 +1,25 @@
+﻿<Window x:Class="NeoIntegrationSample.Main"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="T24 Biometrics" Height="250" Width="500" Icon="Resources\IDS04.ico">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Image VerticalAlignment="Top" Source="Resources\T24_400x95.jpg"/>
+        <TextBlock Grid.Column="1" TextWrapping="Wrap">
+            This sample application provides a way to test out integration
+            with T24 Biometrics without any scanners, drivers, etc. 
+            The application resides in the system tray
+            and hosts a web service. Bind your web service client proxy to the
+            service (http://localhost:5555/BiometricsService) and call VerifyCustomer. You should see a Cutomer Verification
+            window popup. To simulate a success or failure, just click the buttons
+            provided. This should return the result back through the service method
+            and to your calling application.
+        </TextBlock>
+    </Grid>
+</Window>

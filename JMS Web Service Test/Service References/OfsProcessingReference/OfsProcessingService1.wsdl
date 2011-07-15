@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="IdentityStream.T24WebServices" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="OfsProcessingService" targetNamespace="IdentityStream.T24WebServices" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types />
+  <message name="OfsProcessing_TransactionRequestResponse">
+    <part name="result" type="xsd:boolean" />
+  </message>
+  <message name="OfsProcessing_TransactionRequest">
+    <part name="String_1" type="xsd:string" />
+    <part name="String_2" type="xsd:string" />
+    <part name="String_3" type="xsd:string" />
+    <part name="String_4" type="xsd:string" />
+  </message>
+  <portType name="OfsProcessing">
+    <operation name="TransactionRequest" parameterOrder="String_1 String_2 String_3 String_4">
+      <input message="tns:OfsProcessing_TransactionRequest" />
+      <output message="tns:OfsProcessing_TransactionRequestResponse" />
+    </operation>
+  </portType>
+  <binding name="OfsProcessingBinding" type="tns:OfsProcessing">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <operation name="TransactionRequest">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" namespace="IdentityStream.T24WebServices" />
+      </input>
+      <output>
+        <soap:body use="literal" namespace="IdentityStream.T24WebServices" />
+      </output>
+    </operation>
+  </binding>
+  <service name="OfsProcessingService">
+    <port name="OfsProcessingPort" binding="tns:OfsProcessingBinding">
+      <soap:address location="http://127.0.0.1:8080/BrowserWeb/OfsProcessing" />
+    </port>
+  </service>
+</definitions>

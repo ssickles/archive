@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ApplicationService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://scottslaptop.hyperion.local/ServicesHost/applicationService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://scottslaptop.hyperion.local/ServicesHost/applicationService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" />
+      <xsd:import schemaLocation="http://scottslaptop.hyperion.local/ServicesHost/applicationService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://scottslaptop.hyperion.local/ServicesHost/applicationService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/IdentityStream.Services.Contracts" />
+      <xsd:import schemaLocation="http://scottslaptop.hyperion.local/ServicesHost/applicationService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" />
+      <xsd:import schemaLocation="http://scottslaptop.hyperion.local/ServicesHost/applicationService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/IdentityStream.Data" />
+      <xsd:import schemaLocation="http://scottslaptop.hyperion.local/ServicesHost/applicationService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/IdentityStream.Model" />
+      <xsd:import schemaLocation="http://scottslaptop.hyperion.local/ServicesHost/applicationService.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IApplicationService_GetLanguages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLanguages" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetLanguages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLanguagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetLanguages_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q1:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetApplications_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplications" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetApplications_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetApplications_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q2:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetApplicationTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationTypes" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetApplicationTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetApplicationTypes_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q3:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetNumberOfActiveIdentitiesWithAccessToTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNumberOfActiveIdentitiesWithAccessToTransaction" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetNumberOfActiveIdentitiesWithAccessToTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNumberOfActiveIdentitiesWithAccessToTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetNumberOfActiveIdentitiesWithAccessToTransaction_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q4:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetIdentityByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdentityByName" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetIdentityByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdentityByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetIdentityByName_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q5:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetIdentityByUid_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdentityByUid" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetIdentityByUid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdentityByUidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetIdentityByUid_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q6:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetIdentityByT24Id_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdentityByT24Id" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetIdentityByT24Id_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdentityByT24IdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetIdentityByT24Id_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q7:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_SetLanguage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetLanguage" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_SetLanguage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetLanguageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_SetLanguage_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q8:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetIdentitiesByAccountId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdentitiesByAccountId" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetIdentitiesByAccountId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdentitiesByAccountIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetIdentitiesByAccountId_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q9:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetIdentityBySourceId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdentityBySourceId" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetIdentityBySourceId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdentityBySourceIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetIdentityBySourceId_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q10:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetLoginsForEmployeeApplication_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoginsForEmployeeApplication" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetLoginsForEmployeeApplication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoginsForEmployeeApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetLoginsForEmployeeApplication_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q11:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetAuthenticationTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthenticationTypes" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetAuthenticationTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthenticationTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetAuthenticationTypes_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q12:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetAuthenticationUnits_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthenticationUnits" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetAuthenticationUnits_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthenticationUnitsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetAuthenticationUnits_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q13:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetEnrolledAuthenticationTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnrolledAuthenticationTypes" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetEnrolledAuthenticationTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnrolledAuthenticationTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetEnrolledAuthenticationTypes_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q14:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetEnrollments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnrollments" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetEnrollments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnrollmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetEnrollments_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q15:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetAuthenticationTemplates_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthenticationTemplates" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetAuthenticationTemplates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthenticationTemplatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetAuthenticationTemplates_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q16:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSettings" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetSettings_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q17:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_VerifyIdentity_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyIdentity" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_VerifyIdentity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyIdentityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_VerifyIdentity_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q18:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_IdentifyEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:IdentifyEmployee" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_IdentifyEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IdentifyEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_IdentifyEmployee_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q19:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_Login_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q20:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetTransactions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransactions" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetTransactions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetTransactions_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q21:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_CheckTransactionAccess_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckTransactionAccess" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_CheckTransactionAccess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckTransactionAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_CheckTransactionAccess_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q22:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetValidApplications_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetValidApplications" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetValidApplications_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetValidApplicationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetValidApplications_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q23:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetAuthenticationUnitsForTransactionGroupIdentity_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthenticationUnitsForTransactionGroupIdentity" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetAuthenticationUnitsForTransactionGroupIdentity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthenticationUnitsForTransactionGroupIdentityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetAuthenticationUnitsForTransactionGroupIdentity_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q24:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetIdentityImageAsJpeg_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdentityImageAsJpeg" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetIdentityImageAsJpeg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdentityImageAsJpegResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetIdentityImageAsJpeg_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q25:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:portType name="IApplicationService">
+    <wsdl:operation name="GetLanguages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationService/GetLanguages" message="tns:IApplicationService_GetLanguages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationService/GetLanguagesResponse" message="tns:IApplicationService_GetLanguages_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApplicationService/GetLanguagesErrorDetailsFault" name="ErrorDetailsFault" message="tns:IApplicationService_GetLanguages_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplications">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationService/GetApplications" message="tns:IApplicationService_GetApplications_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationService/GetApplicationsResponse" message="tns:IApplicationService_GetApplications_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApplicationService/GetApplicationsErrorDetailsFault" name="ErrorDetailsFault" message="tns:IApplicationService_GetApplications_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationService/GetApplicationTypes" message="tns:IApplicationService_GetApplicationTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationService/GetApplicationTypesResponse" message="tns:IApplicationService_GetApplicationTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApplicationService/GetApplicationTypesErrorDetailsFault" name="ErrorDetailsFault" message="tns:IApplicationService_GetApplicationTypes_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberOfActiveIdentitiesWithAccessToTransaction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationService/GetNumberOfActiveIdentitiesWithAccessToTransaction" message="tns:IApplicationService_GetNumberOfActiveIdentitiesWithAccessToTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationService/GetNumberOfActiveIdentitiesWithAccessToTransactionResponse" message="tns:IApplicationService_GetNumberOfActiveIdentitiesWithAccessToTransaction_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApplicationService/GetNumberOfActiveIdentitiesWithAccessToTransactionErrorDetailsFault" name="ErrorDetailsFault" message="tns:IApplicationService_GetNumberOfActiveIdentitiesWithAccessToTransaction_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIdentityByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationService/GetIdentityByName" message="tns:IApplicationService_GetIdentityByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationService/GetIdentityByNameResponse" message="tns:IApplicationService_GetIdentityByName_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApplicationService/GetIdentityByNameErrorDetailsFault" name="ErrorDetailsFault" message="tns:IApplicationService_GetIdentityByName_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIdentityByUid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationService/GetIdentityByUid" message="tns:IApplicationService_GetIdentityByUid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationService/GetIdentityByUidResponse" message="tns:IApplicationService_GetIdentityByUid_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApplicationService/GetIdentityByUidErrorDetailsFault" name="ErrorDetailsFault" message="tns:IApplicationService_GetIdentityByUid_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIdentityByT24Id">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationService/GetIdentityByT24Id" message="tns:IApplicationService_GetIdentityByT24Id_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationService/GetIdentityByT24IdResponse" message="tns:IApplicationService_GetIdentityByT24Id_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApplicationService/GetIdentityByT24IdErrorDetailsFault" name="ErrorDetailsFault" message="tns:IApplicationService_GetIdentityByT24Id_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetLanguage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationService/SetLanguage" message="tns:IApplicationService_SetLanguage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationService/SetLanguageResponse" message="tns:IApplicationService_SetLanguage_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApplicationService/SetLanguageErrorDetailsFault" name="ErrorDetailsFault" message="tns:IApplicationService_SetLanguage_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIdentitiesByAccountId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationService/GetIdentitiesByAccountId" message="tns:IApplicationService_GetIdentitiesByAccountId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationService/GetIdentitiesByAccountIdResponse" message="tns:IApplicationService_GetIdentitiesByAccountId_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApplicationService/GetIdentitiesByAccountIdErrorDetailsFault" name="ErrorDetailsFault" message="tns:IApplicationService_GetIdentitiesByAccountId_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIdentityBySourceId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationService/GetIdentityBySourceId" message="tns:IApplicationService_GetIdentityBySourceId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationService/GetIdentityBySourceIdResponse" message="tns:IApplicationService_GetIdentityBySourceId_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApplicationService/GetIdentityBySourceIdErrorDetailsFault" name="ErrorDetailsFault" message="tns:IApplicationService_GetIdentityBySourceId_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoginsForEmployeeApplication">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationService/GetLoginsForEmployeeApplication" message="tns:IApplicationService_GetLoginsForEmployeeApplication_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationService/GetLoginsForEmployeeApplicationResponse" message="tns:IApplicationService_GetLoginsForEmployeeApplication_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApplicationService/GetLoginsForEmployeeApplicationErrorDetailsFault" name="ErrorDetailsFault" message="tns:IApplicationService_GetLoginsForEmployeeApplication_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthenticationTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationService/GetAuthenticationTypes" message="tns:IApplicationService_GetAuthenticationTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationService/GetAuthenticationTypesResponse" message="tns:IApplicationService_GetAuthenticationTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApplicationService/GetAuthenticationTypesErrorDetailsFault" name="ErrorDetailsFault" message="tns:IApplicationService_GetAuthenticationTypes_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthenticationUnits">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationService/GetAuthenticationUnits" message="tns:IApplicationService_GetAuthenticationUnits_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationService/GetAuthenticationUnitsResponse" message="tns:IApplicationService_GetAuthenticationUnits_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApplicationService/GetAuthenticationUnitsErrorDetailsFault" name="ErrorDetailsFault" message="tns:IApplicationService_GetAuthenticationUnits_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrolledAuthenticationTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationService/GetEnrolledAuthenticationTypes" message="tns:IApplicationService_GetEnrolledAuthenticationTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationService/GetEnrolledAuthenticationTypesResponse" message="tns:IApplicationService_GetEnrolledAuthenticationTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApplicationService/GetEnrolledAuthenticationTypesErrorDetailsFault" name="ErrorDetailsFault" message="tns:IApplicationService_GetEnrolledAuthenticationTypes_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationService/GetEnrollments" message="tns:IApplicationService_GetEnrollments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationService/GetEnrollmentsResponse" message="tns:IApplicationService_GetEnrollments_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApplicationService/GetEnrollmentsErrorDetailsFault" name="ErrorDetailsFault" message="tns:IApplicationService_GetEnrollments_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthenticationTemplates">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationService/GetAuthenticationTemplates" message="tns:IApplicationService_GetAuthenticationTemplates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationService/GetAuthenticationTemplatesResponse" message="tns:IApplicationService_GetAuthenticationTemplates_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApplicationService/GetAuthenticationTemplatesErrorDetailsFault" name="ErrorDetailsFault" message="tns:IApplicationService_GetAuthenticationTemplates_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSettings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationService/GetSettings" message="tns:IApplicationService_GetSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationService/GetSettingsResponse" message="tns:IApplicationService_GetSettings_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApplicationService/GetSettingsErrorDetailsFault" name="ErrorDetailsFault" message="tns:IApplicationService_GetSettings_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyIdentity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationService/VerifyIdentity" message="tns:IApplicationService_VerifyIdentity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationService/VerifyIdentityResponse" message="tns:IApplicationService_VerifyIdentity_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApplicationService/VerifyIdentityErrorDetailsFault" name="ErrorDetailsFault" message="tns:IApplicationService_VerifyIdentity_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IdentifyEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationService/IdentifyEmployee" message="tns:IApplicationService_IdentifyEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationService/IdentifyEmployeeResponse" message="tns:IApplicationService_IdentifyEmployee_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApplicationService/IdentifyEmployeeErrorDetailsFault" name="ErrorDetailsFault" message="tns:IApplicationService_IdentifyEmployee_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationService/Login" message="tns:IApplicationService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationService/LoginResponse" message="tns:IApplicationService_Login_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApplicationService/LoginErrorDetailsFault" name="ErrorDetailsFault" message="tns:IApplicationService_Login_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationService/GetTransactions" message="tns:IApplicationService_GetTransactions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationService/GetTransactionsResponse" message="tns:IApplicationService_GetTransactions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApplicationService/GetTransactionsErrorDetailsFault" name="ErrorDetailsFault" message="tns:IApplicationService_GetTransactions_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckTransactionAccess">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationService/CheckTransactionAccess" message="tns:IApplicationService_CheckTransactionAccess_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationService/CheckTransactionAccessResponse" message="tns:IApplicationService_CheckTransactionAccess_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApplicationService/CheckTransactionAccessErrorDetailsFault" name="ErrorDetailsFault" message="tns:IApplicationService_CheckTransactionAccess_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetValidApplications">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationService/GetValidApplications" message="tns:IApplicationService_GetValidApplications_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationService/GetValidApplicationsResponse" message="tns:IApplicationService_GetValidApplications_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApplicationService/GetValidApplicationsErrorDetailsFault" name="ErrorDetailsFault" message="tns:IApplicationService_GetValidApplications_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthenticationUnitsForTransactionGroupIdentity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationService/GetAuthenticationUnitsForTransactionGroupIdentity" message="tns:IApplicationService_GetAuthenticationUnitsForTransactionGroupIdentity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationService/GetAuthenticationUnitsForTransactionGroupIdentityResponse" message="tns:IApplicationService_GetAuthenticationUnitsForTransactionGroupIdentity_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApplicationService/GetAuthenticationUnitsForTransactionGroupIdentityErrorDetailsFault" name="ErrorDetailsFault" message="tns:IApplicationService_GetAuthenticationUnitsForTransactionGroupIdentity_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIdentityImageAsJpeg">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationService/GetIdentityImageAsJpeg" message="tns:IApplicationService_GetIdentityImageAsJpeg_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationService/GetIdentityImageAsJpegResponse" message="tns:IApplicationService_GetIdentityImageAsJpeg_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApplicationService/GetIdentityImageAsJpegErrorDetailsFault" name="ErrorDetailsFault" message="tns:IApplicationService_GetIdentityImageAsJpeg_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IApplicationService" type="tns:IApplicationService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetLanguages">
+      <soap:operation soapAction="http://tempuri.org/IApplicationService/GetLanguages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplications">
+      <soap:operation soapAction="http://tempuri.org/IApplicationService/GetApplications" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationTypes">
+      <soap:operation soapAction="http://tempuri.org/IApplicationService/GetApplicationTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberOfActiveIdentitiesWithAccessToTransaction">
+      <soap:operation soapAction="http://tempuri.org/IApplicationService/GetNumberOfActiveIdentitiesWithAccessToTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetIdentityByName">
+      <soap:operation soapAction="http://tempuri.org/IApplicationService/GetIdentityByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetIdentityByUid">
+      <soap:operation soapAction="http://tempuri.org/IApplicationService/GetIdentityByUid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetIdentityByT24Id">
+      <soap:operation soapAction="http://tempuri.org/IApplicationService/GetIdentityByT24Id" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetLanguage">
+      <soap:operation soapAction="http://tempuri.org/IApplicationService/SetLanguage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetIdentitiesByAccountId">
+      <soap:operation soapAction="http://tempuri.org/IApplicationService/GetIdentitiesByAccountId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetIdentityBySourceId">
+      <soap:operation soapAction="http://tempuri.org/IApplicationService/GetIdentityBySourceId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoginsForEmployeeApplication">
+      <soap:operation soapAction="http://tempuri.org/IApplicationService/GetLoginsForEmployeeApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthenticationTypes">
+      <soap:operation soapAction="http://tempuri.org/IApplicationService/GetAuthenticationTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthenticationUnits">
+      <soap:operation soapAction="http://tempuri.org/IApplicationService/GetAuthenticationUnits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrolledAuthenticationTypes">
+      <soap:operation soapAction="http://tempuri.org/IApplicationService/GetEnrolledAuthenticationTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollments">
+      <soap:operation soapAction="http://tempuri.org/IApplicationService/GetEnrollments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthenticationTemplates">
+      <soap:operation soapAction="http://tempuri.org/IApplicationService/GetAuthenticationTemplates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSettings">
+      <soap:operation soapAction="http://tempuri.org/IApplicationService/GetSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyIdentity">
+      <soap:operation soapAction="http://tempuri.org/IApplicationService/VerifyIdentity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="IdentifyEmployee">
+      <soap:operation soapAction="http://tempuri.org/IApplicationService/IdentifyEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IApplicationService/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactions">
+      <soap:operation soapAction="http://tempuri.org/IApplicationService/GetTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTransactionAccess">
+      <soap:operation soapAction="http://tempuri.org/IApplicationService/CheckTransactionAccess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetValidApplications">
+      <soap:operation soapAction="http://tempuri.org/IApplicationService/GetValidApplications" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthenticationUnitsForTransactionGroupIdentity">
+      <soap:operation soapAction="http://tempuri.org/IApplicationService/GetAuthenticationUnitsForTransactionGroupIdentity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetIdentityImageAsJpeg">
+      <soap:operation soapAction="http://tempuri.org/IApplicationService/GetIdentityImageAsJpeg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ApplicationService">
+    <wsdl:port name="BasicHttpBinding_IApplicationService" binding="tns:BasicHttpBinding_IApplicationService">
+      <soap:address location="http://scottslaptop.hyperion.local/ServicesHost/applicationService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

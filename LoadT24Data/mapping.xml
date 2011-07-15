@@ -1,0 +1,57 @@
+﻿<t24Mapping>
+  <t24Users>
+    <field sourceName="User Id" name="User Id"/>
+    <field sourceName="User Name" name="Username"/>
+    <field sourceName="SignOn Name" name="Signon"/>
+    <field sourceName="Classification" name="Classification"/>
+    <field sourceName="Language" name="Language"/>
+    <field sourceName="Company" name="Company"/>
+    <field sourceName="Department" name="Department"/>
+  </t24Users>
+  <t24Customers>
+    <field sourceName="Cust Id" name="Customer Id"/>
+    <field sourceName="Mnemonic" name="Mnemonic"/>
+    <field sourceName="Short Name" name="Short Name"/>
+    <field sourceName="Name" name="Name"/>
+    <field sourceName="Street" name="Street"/>
+    <field sourceName="Town" name="Town"/>
+    <field sourceName="Post.Code" name="Post Code"/>
+    <field sourceName="Country" name="Country"/>
+    <field sourceName="Sector" name="Sector"/>
+    <field sourceName="Acct.Off" name="Account Officer"/>
+    <field sourceName="Industry" name="Industry"/>
+    <field sourceName="Nationality" name="Nationality"/>
+    <field sourceName="Cust.Status" name="Customer Status"/>
+    <field sourceName="Residence" name="Residence"/>
+    <field sourceName="Given Name" name="Given Name"/>
+    <field sourceName="Family Name" name="Family Name"/>
+  </t24Customers>
+  <t24Companies>
+    <field sourceName="Company Id" name="Company Id"/>
+    <field sourceName="Company Name" name="Company Name"/>
+    <field sourceName="Address" name="Address"/>
+    <field sourceName="Mnemonic" name="Mnemonic"/>
+    <field sourceName="Language Code" name="Language"/>
+    <field sourceName="Location Country" name="Country"/>
+    <field sourceName="Location Region" name="Region"/>
+    <field sourceName="Sub Div Code" name="Sub Division"/>
+    <field sourceName="Company Group" name="Group"/>
+  </t24Companies>
+  <t24AccountOfficers>
+    <field sourceName="DAO Id" name="Officer Id"/>
+    <field sourceName="Mnemonic" name="Mnemonic"/>
+    <field sourceName="Area" name="Area"/>
+    <field sourceName="Name" name="Name"/>
+    <field sourceName="Delivery Point" name="Delivery Point"/>
+    <field sourceName="Dept Level" name="Department Level"/>
+    <field sourceName="Dept Parent" name="Parent Department"/>
+    <field sourceName="Alt Dept Level" name="Alternate Department Level"/>
+    <field sourceName="Alt Dept Parent" name="Alternate Parent Department"/>
+    <field sourceName="Department" name="Department"/>
+  </t24AccountOfficers>
+  <t24Languages>
+    <field sourceName="Lang Id" name="Langauge Id"/>
+    <field sourceName="Mnemonic" name="Mnemonic"/>
+    <field sourceName="Language Description" name="Description"/>
+  </t24Languages>
+</t24Mapping>

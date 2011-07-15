@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatService", "ChatService.csproj", "{1A8AC45C-1D94-4C58-8296-7A685FD2D4AF}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ChatServiceInstall", "..\ChatServiceInstall\ChatServiceInstall.vdproj", "{3CE075B0-F4EB-48D0-AD3D-9AD3772072E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A8AC45C-1D94-4C58-8296-7A685FD2D4AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A8AC45C-1D94-4C58-8296-7A685FD2D4AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A8AC45C-1D94-4C58-8296-7A685FD2D4AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A8AC45C-1D94-4C58-8296-7A685FD2D4AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CE075B0-F4EB-48D0-AD3D-9AD3772072E5}.Debug|Any CPU.ActiveCfg = Debug
+		{3CE075B0-F4EB-48D0-AD3D-9AD3772072E5}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

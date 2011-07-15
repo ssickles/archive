@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7834d093-33f8-4269-8732-8d9dea02cc28" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8731/Design_Time_Addresses/IdentityService/Service1/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="b274270a-24c4-494d-84b2-f8035e40d43d" SourceId="1" SourceUrl="http://localhost:8731/Design_Time_Addresses/IdentityService/Service1/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="619bead7-58ab-441d-b044-8da8fb53f1da" SourceId="1" SourceUrl="http://localhost:8731/Design_Time_Addresses/IdentityService/Service1/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="7aace531-c57f-47d4-89b0-6ebdd34eff37" SourceId="1" SourceUrl="http://localhost:8731/Design_Time_Addresses/IdentityService/Service1/mex" />
+    <MetadataFile FileName="IdentityStream.DataModels.xsd" MetadataType="Schema" ID="a0f47994-7aac-4a75-84af-f64ff395ef39" SourceId="1" SourceUrl="http://localhost:8731/Design_Time_Addresses/IdentityService/Service1/mex" />
+    <MetadataFile FileName="IdentityStream.Data.xsd" MetadataType="Schema" ID="8a56bf79-db55-4be0-897b-d4f649a1cf90" SourceId="1" SourceUrl="http://localhost:8731/Design_Time_Addresses/IdentityService/Service1/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

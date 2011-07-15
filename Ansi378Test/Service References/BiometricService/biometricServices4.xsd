@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/IdentityStream.Logging" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/IdentityStream.Logging" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="Audit.EventTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="AddLogin" />
+      <xs:enumeration value="RemoveLogin" />
+      <xs:enumeration value="UpdateLogin" />
+      <xs:enumeration value="DeleteLogin" />
+      <xs:enumeration value="AddIdentity" />
+      <xs:enumeration value="UpdateIdentity" />
+      <xs:enumeration value="DeleteIdentity" />
+      <xs:enumeration value="AddEnrollment" />
+      <xs:enumeration value="AddIdentityGroup" />
+      <xs:enumeration value="UpdateIdentityGroup" />
+      <xs:enumeration value="RemoveIdentityGroup" />
+      <xs:enumeration value="RemoveIdentitiesFromIdentityGroup" />
+      <xs:enumeration value="AddIdentitiesToIdentityGroup" />
+      <xs:enumeration value="AddIdentityGroupTransaction" />
+      <xs:enumeration value="RemoveIdentityGroupTransaction" />
+      <xs:enumeration value="ImportT24Users" />
+      <xs:enumeration value="ImportT24Customers" />
+      <xs:enumeration value="ImportT24Companies" />
+      <xs:enumeration value="ImportT24AccountOfficers" />
+      <xs:enumeration value="ImportT24Languages" />
+      <xs:enumeration value="ProcessImportsComplete" />
+      <xs:enumeration value="UpdateTransaction" />
+      <xs:enumeration value="AddAuthenticationEnrollment" />
+      <xs:enumeration value="UpdateAuthenticationEnrollment" />
+      <xs:enumeration value="AddAuthenticationTemplate" />
+      <xs:enumeration value="AddAuthenticationTemplateScores" />
+      <xs:enumeration value="AddAuthenticationLevel" />
+      <xs:enumeration value="UpdateAuthenticationLevel" />
+      <xs:enumeration value="RemoveAuthenticationLevel" />
+      <xs:enumeration value="AddAuthenticationLevelUnit" />
+      <xs:enumeration value="RemoveAuthenticationLevelUnit" />
+      <xs:enumeration value="PasswordFailure" />
+      <xs:enumeration value="TemplateMatchFailure" />
+      <xs:enumeration value="RunIdentityCheck" />
+      <xs:enumeration value="RunCustomerCheck" />
+      <xs:enumeration value="RunCustomerEnrollment" />
+      <xs:enumeration value="WebTransactionCheck" />
+      <xs:enumeration value="DesktopTransactionCheck" />
+      <xs:enumeration value="TransactionCheckFailure" />
+      <xs:enumeration value="PasswordWasReset" />
+      <xs:enumeration value="PasswordResetFailure" />
+      <xs:enumeration value="TemplateFraud" />
+      <xs:enumeration value="EnrollmentDuplicateFound" />
+      <xs:enumeration value="ImportLDAPUsers" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Audit.EventTypes" nillable="true" type="tns:Audit.EventTypes" />
+</xs:schema>

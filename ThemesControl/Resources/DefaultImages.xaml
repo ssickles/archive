@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ImageSource x:Key="MinimizeImage">minimize.png</ImageSource>
+    <ImageSource x:Key="MinimizeHoverImage">minimize-hover.png</ImageSource>
+    <ImageSource x:Key="MaximizeImage">maximize.png</ImageSource>
+    <ImageSource x:Key="MaximizeHoverImage">maximize-hover.png</ImageSource>
+    <ImageSource x:Key="RestoreImage">restore.png</ImageSource>
+    <ImageSource x:Key="RestoreHoverImage">restore-hover.png</ImageSource>
+    <ImageSource x:Key="CloseImage">close.png</ImageSource>
+    <ImageSource x:Key="CloseHoverImage">close-hover.png</ImageSource>
+
+</ResourceDictionary>

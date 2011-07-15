@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model dslVersion="1.1.0.0" name="Ids" targetNamespace="MySQLDataLoading" databaseProvider="MySql5" connectionString="Server=localhost;User ID=root;Password=pa$$w0rd;Persist Security Info=True;Database=identitystream" pluralizedInDatabase="false" xmlns="http://namespaces.mindscape.co.nz/lightspeed">
+  <entities>
+    <entity name="Identity" identityType="Int32" cacheExpiry="0" tableName="identities">
+      <entityProperties>
+        <entityProperty name="FirstName" columnName="first_name">
+          <validations>
+            <presenceValidation />
+            <lengthValidation minimumLength="0" maximumLength="50" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="LastName" columnName="last_name">
+          <validations>
+            <presenceValidation />
+            <lengthValidation minimumLength="0" maximumLength="50" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="CountryCode" isNullable="true" columnName="country_code">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="2" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="Active" dataType="Byte" />
+        <entityProperty name="BioEnabled" dataType="Byte" columnName="bio_enabled" />
+        <entityProperty name="IdentityCode" columnName="identity_code">
+          <validations>
+            <presenceValidation />
+            <lengthValidation minimumLength="0" maximumLength="5" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="T24Id" isNullable="true" columnName="t24_id">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="64" />
+          </validations>
+        </entityProperty>
+      </entityProperties>
+    </entity>
+    <entity name="Login" identityType="Int32" cacheExpiry="0" tableName="logins">
+      <entityProperties>
+        <entityProperty name="Login">
+          <validations>
+            <presenceValidation />
+            <lengthValidation minimumLength="0" maximumLength="45" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="Password" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="128" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="ApplicationCode" columnName="application_code">
+          <validations>
+            <presenceValidation />
+            <lengthValidation minimumLength="0" maximumLength="3" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="IdentityId" dataType="UInt32" columnName="identity_id" />
+        <entityProperty name="SystemloginId" isNullable="true" columnName="systemlogin_id">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="45" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="SystemloginPassword" isNullable="true" columnName="systemlogin_password">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="128" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="RoleCode" columnName="role_code">
+          <validations>
+            <presenceValidation />
+            <lengthValidation minimumLength="0" maximumLength="8" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="UseGeneratedPass" dataType="UInt32" columnName="use_generated_pass" />
+        <entityProperty name="OrigPassword" isNullable="true" columnName="orig_password">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="128" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="FirstLogon" dataType="UInt32" columnName="first_logon" />
+      </entityProperties>
+    </entity>
+  </entities>
+</model>

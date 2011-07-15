@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyncRepositoryService", "SyncRepositoryService.csproj", "{876C396F-DE48-4F45-B24A-9C8FBB8FF958}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyncRepositoryDomainModel", "..\SyncRepositoryDomainModel\SyncRepositoryDomainModel.csproj", "{51FD7939-86C9-4472-B423-590E23F58C55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyncRepositorySynchronization", "..\SyncRepositorySynchronization\SyncRepositorySynchronization.csproj", "{D7C88847-6496-4B03-A186-F9C32175DEDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WickedSick.Data", "..\Data\WickedSick.Data.csproj", "{253D7DBF-53BF-441A-A92C-83A2298A9A36}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{876C396F-DE48-4F45-B24A-9C8FBB8FF958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{876C396F-DE48-4F45-B24A-9C8FBB8FF958}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{876C396F-DE48-4F45-B24A-9C8FBB8FF958}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{876C396F-DE48-4F45-B24A-9C8FBB8FF958}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51FD7939-86C9-4472-B423-590E23F58C55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51FD7939-86C9-4472-B423-590E23F58C55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51FD7939-86C9-4472-B423-590E23F58C55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51FD7939-86C9-4472-B423-590E23F58C55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7C88847-6496-4B03-A186-F9C32175DEDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7C88847-6496-4B03-A186-F9C32175DEDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7C88847-6496-4B03-A186-F9C32175DEDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7C88847-6496-4B03-A186-F9C32175DEDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{253D7DBF-53BF-441A-A92C-83A2298A9A36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{253D7DBF-53BF-441A-A92C-83A2298A9A36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{253D7DBF-53BF-441A-A92C-83A2298A9A36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{253D7DBF-53BF-441A-A92C-83A2298A9A36}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

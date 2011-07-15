@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<minimalLanguageDiagram dslVersion="1.1.0.0" absoluteBounds="0, 0, 11, 8.5" name="Ids">
+  <modelMoniker name="/Ids" />
+  <nestedChildShapes>
+    <entityShape Id="76cb4b9f-83ad-432f-86cf-ac2e3277ccf8" absoluteBounds="0.75, 0.75, 1.5, 1.6604313151041668">
+      <entityMoniker name="/Ids/Identity" />
+      <nestedChildShapes>
+        <elementListCompartment Id="361b48a0-ec8d-4e11-9909-107ff7ee4f55" absoluteBounds="0.76500000000000012, 1.1600000000000001, 1.4700000000000002, 1.1504313151041665" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+    <entityShape Id="68a06d2f-eaea-49dd-acf4-92de2689d2ea" absoluteBounds="3.75, 0.75, 1.5, 2.1534733072916667">
+      <entityMoniker name="/Ids/Login" />
+      <nestedChildShapes>
+        <elementListCompartment Id="88fc5ec6-a812-43ae-bfb1-72a58cbbb9e7" absoluteBounds="3.7649999999999997, 1.1600000000000001, 1.4700000000000002, 1.6434733072916665" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+  </nestedChildShapes>
+</minimalLanguageDiagram>

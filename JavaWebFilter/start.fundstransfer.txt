@@ -1,0 +1,51 @@
+WS_parent - 
+compTargets - menu_menu000195541701|
+clientStyleSheet - 
+windowName - AUTHORISER_FUNDS_TRANSFER_MB_AI_AC_F3_1243365830594
+clientExpansion - true
+ofsFunction - F3
+expandMultiString - 
+command - globusCommand
+ofsOperation - 
+company - R8 MODEL BANK
+previousEnqs - 
+lockDateTime - 
+name - 
+today - 09-JAN-2008
+unlock - 
+routineName - OS.NEW.DEAL
+deleteMultiString - 
+staticId - 
+expandSubString - 
+compScreen - COMPOSITE.SCREEN_AUTHORISER_000195541702
+skin - default
+enqname - 
+language - GB
+allowcontext - 
+WS_multiPane - false
+release - R08.000
+popupDropDown - true
+pwprocessid - 
+user - AUTHORISER
+languageUndefined - 
+WS_dropfield - 
+allowResize - YES
+WS_doResize - 
+ofsMessage - 
+companyId - GB0010001
+operation - 
+application - FUNDS.TRANSFER
+allowdropdowns - 
+languages - GB,FR,DE,ES
+timing - 1218-31-1187-0-0
+requestType - UTILITY.ROUTINE
+dropfield - 
+apiArgument - 
+routineArgs - FUNDS.TRANSFER,MB.AI.AC F3
+transactionId - 
+allowcalendar - 
+version - ,MB.AI.AC
+WS_parentWindow - 
+nextStage - 
+savechanges - YES
+enqaction - 

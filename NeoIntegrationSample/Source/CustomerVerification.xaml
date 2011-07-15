@@ -1,0 +1,38 @@
+﻿<Window x:Class="NeoIntegrationSample.CustomerVerification"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Customer Verification" Height="200" Width="500" Icon="Resources\IDS04.ico">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="Resources\T24_400x95.jpg"/>
+        <TextBlock Grid.Column="1" VerticalAlignment="Center">Performing Biometric Verification for: </TextBlock>
+        <GroupBox Grid.Row="1" Grid.Column="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Margin="4" HorizontalAlignment="Right">Id:</TextBlock>
+                <TextBlock Margin="4" Grid.Row="1" HorizontalAlignment="Right">Name:</TextBlock>
+                <TextBlock Margin="4" Grid.Column="1" Name="txbId"></TextBlock>
+                <TextBlock Margin="4" Grid.Row="1" Grid.Column="1" Name="txbName"></TextBlock>
+            </Grid>
+        </GroupBox>
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+            <Button Name="butSuccess" Margin="6" Width="100" Click="butSuccess_Click">Success</Button>
+            <Button Name="butFailure" Margin="6" Width="100" Click="butFailure_Click">Failure</Button>
+        </StackPanel>
+    </Grid>
+</Window>

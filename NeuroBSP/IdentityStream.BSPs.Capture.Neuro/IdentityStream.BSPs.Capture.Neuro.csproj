@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EB1FF63C-DBA0-4CB9-B8B8-BFF00D50254E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IdentityStream.BSPs.Capture.Neuro</RootNamespace>
+    <AssemblyName>IdentityStream.BSPs.Capture.Neuro</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Neurotec, Version=3.0.0.0, Culture=neutral, PublicKeyToken=ea4ecf06177ea613, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Development\Mainline\ThirdParty\Neurotechnology\6.1\x86\Neurotec.dll</HintPath>
+    </Reference>
+    <Reference Include="Neurotec.Biometrics.Extractors, Version=3.0.0.0, Culture=neutral, PublicKeyToken=ea4ecf06177ea613, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Development\Mainline\ThirdParty\Neurotechnology\6.1\x86\Neurotec.Biometrics.Extractors.dll</HintPath>
+    </Reference>
+    <Reference Include="Neurotec.Biometrics.Templates, Version=3.0.0.0, Culture=neutral, PublicKeyToken=ea4ecf06177ea613, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Development\Mainline\ThirdParty\Neurotechnology\6.1\x86\Neurotec.Biometrics.Templates.dll</HintPath>
+    </Reference>
+    <Reference Include="Neurotec.DeviceManager, Version=3.0.0.0, Culture=neutral, PublicKeyToken=ea4ecf06177ea613, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Development\Mainline\ThirdParty\Neurotechnology\6.1\x86\Neurotec.DeviceManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Neurotec.Images, Version=2.5.0.0, Culture=neutral, PublicKeyToken=ea4ecf06177ea613, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Development\Mainline\ThirdParty\Neurotechnology\6.1\x86\Neurotec.Images.dll</HintPath>
+    </Reference>
+    <Reference Include="Neurotec.Licensing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=ea4ecf06177ea613, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Development\Mainline\ThirdParty\Neurotechnology\6.1\x86\Neurotec.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NeuroCapture.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IdentityStream.BioAPI\IdentityStream.BioAPI.csproj">
+      <Project>{411590EE-4432-4487-8DAF-6BDD591793A9}</Project>
+      <Name>IdentityStream.BioAPI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>xcopy Neurotec.Biometrics.Extractors.dll ..\..\..\BioAPIConsole\bin\$(ConfigurationName) /y
+xcopy Neurotec.Biometrics.Templates.dll ..\..\..\BioAPIConsole\bin\$(ConfigurationName) /y
+xcopy Neurotec.DeviceManager.dll ..\..\..\BioAPIConsole\bin\$(ConfigurationName) /y
+xcopy Neurotec.dll ..\..\..\BioAPIConsole\bin\$(ConfigurationName) /y
+xcopy Neurotec.Images.dll ..\..\..\BioAPIConsole\bin\$(ConfigurationName) /y
+xcopy Neurotec.Licensing.dll ..\..\..\BioAPIConsole\bin\$(ConfigurationName) /y
+xcopy IdentityStream.BSPs.Capture.Neuro.dll ..\..\..\BioAPIConsole\bin\$(ConfigurationName) /y
+xcopy IdentityStream.BSPs.Capture.Neuro.pdb ..\..\..\BioAPIConsole\bin\$(ConfigurationName) /y
+
+xcopy Neurotec.Biometrics.Extractors.dll ..\..\..\BioAPIWPF\bin\$(ConfigurationName) /y
+xcopy Neurotec.Biometrics.Templates.dll ..\..\..\BioAPIWPF\bin\$(ConfigurationName) /y
+xcopy Neurotec.DeviceManager.dll ..\..\..\BioAPIWPF\bin\$(ConfigurationName) /y
+xcopy Neurotec.dll ..\..\..\BioAPIWPF\bin\$(ConfigurationName) /y
+xcopy Neurotec.Images.dll ..\..\..\BioAPIWPF\bin\$(ConfigurationName) /y
+xcopy Neurotec.Licensing.dll ..\..\..\BioAPIWPF\bin\$(ConfigurationName) /y
+xcopy IdentityStream.BSPs.Capture.Neuro.dll ..\..\..\BioAPIWPF\bin\$(ConfigurationName) /y
+xcopy IdentityStream.BSPs.Capture.Neuro.pdb ..\..\..\BioAPIWPF\bin\$(ConfigurationName) /y</PostBuildEvent>
+  </PropertyGroup>
+</Project>

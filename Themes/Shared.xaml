@@ -1,0 +1,101 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="DarkBlue">#1D384C</Color>
+    <Color x:Key="MediumBlue">#DADADA</Color>
+    <Color x:Key="LightGray">#F0F0F0</Color>
+    <Color x:Key="LightMediumGray">#D4D4D4</Color>
+    <Color x:Key="MediumGray">#A2A2A2</Color>
+    <Color x:Key="DarkGray">#47484C</Color>
+    <Color x:Key="MediumCobalt">#AFBCCD</Color>
+    <Color x:Key="LightCobalt">#DCE1EA</Color>
+    <Color x:Key="CobaltText">#576C8B</Color>
+
+    <SolidColorBrush x:Key="DarkBlueBrush" Color="{StaticResource DarkBlue}"/>
+    <SolidColorBrush x:Key="MediumBlueBrush" Color="{StaticResource MediumBlue}"/>
+    <SolidColorBrush x:Key="LightGrayBrush" Color="{StaticResource LightGray}"/>
+    <SolidColorBrush x:Key="LightMediumGrayBrush" Color="{StaticResource LightMediumGray}"/>
+    <SolidColorBrush x:Key="MediumGrayBrush" Color="{StaticResource MediumGray}"/>
+    <SolidColorBrush x:Key="DarkGrayBrush" Color="{StaticResource DarkGray}"/>
+    <SolidColorBrush x:Key="MediumCobaltBrush" Color="{StaticResource MediumCobalt}"/>
+    <SolidColorBrush x:Key="LightCobaltBrush" Color="{StaticResource LightCobalt}"/>
+    <SolidColorBrush x:Key="CobaltTextBrush" Color="{StaticResource CobaltText}"/>
+
+    <LinearGradientBrush x:Key="DarkBlueGradient" StartPoint=".5, 0" EndPoint=".5, 1">
+        <GradientStop Color="#4C6B83" Offset="0"/>
+        <GradientStop Color="#152D3F" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="CobaltGradient" StartPoint=".5, 0" EndPoint=".5, 1">
+        <GradientStop Color="{StaticResource LightCobalt}" Offset="0"/>
+        <GradientStop Color="{StaticResource MediumCobalt}" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="WhiteGradient" StartPoint=".5, 0" EndPoint=".5, 1">
+        <GradientStop Color="#FFFFFF" Offset="0"/>
+        <GradientStop Color="#20FFFFFF" Offset=".4"/>
+        <GradientStop Color="Transparent" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="GreenGradient" StartPoint=".5, 0" EndPoint=".5, 1">
+        <GradientStop Color="Green" Offset="0"/>
+        <GradientStop Color="DarkGreen" Offset="1"/>
+    </LinearGradientBrush>
+
+    <ImageSource x:Key="IdsIconImage">Images/Regular/IDS.ico</ImageSource>
+    <ImageSource x:Key="IdsAppLauncherIconImage">Images/Regular/IDS04.ico</ImageSource>
+    <ImageSource x:Key="IdsMCIconImage">Images/Regular/IDS_MC01.ico</ImageSource>
+
+    <ImageSource x:Key="IdsLogo">Images/Regular/idslogo.png</ImageSource>
+    
+    <ImageSource x:Key="MinimizeImage">Images/Regular/minimize.png</ImageSource>
+    <ImageSource x:Key="MinimizeHoverImage">Images/Regular/minimize-hover.png</ImageSource>
+    <ImageSource x:Key="MaximizeImage">Images/Regular/maximize.png</ImageSource>
+    <ImageSource x:Key="MaximizeHoverImage">Images/Regular/maximize-hover.png</ImageSource>
+    <ImageSource x:Key="RestoreImage">Images/Regular/restore.png</ImageSource>
+    <ImageSource x:Key="RestoreHoverImage">Images/Regular/restore-hover.png</ImageSource>
+    <ImageSource x:Key="CloseImage">Images/Regular/close.png</ImageSource>
+    <ImageSource x:Key="CloseHoverImage">Images/Regular/close-hover.png</ImageSource>
+
+    <ImageSource x:Key="InformationImage">Images/Regular/information.png</ImageSource>
+    <ImageSource x:Key="InformationImageLarge">Images/Regular/information24x24.png</ImageSource>
+   
+    <ImageSource x:Key="GrayXImage">Images/Regular/grayx.png</ImageSource>
+
+    <ImageSource x:Key="BlankUserImage">Images/Regular/blankuser.png</ImageSource>
+    
+    <ImageSource x:Key="RightHandImage">Images/Regular/righthand.png</ImageSource>
+    <ImageSource x:Key="LeftHandImage">Images/Regular/lefthand.png</ImageSource>
+    <ImageSource x:Key="FingerprintImage">Images/Regular/fingerprint.png</ImageSource>
+    <ImageSource x:Key="FingerprintGreenImage">Images/Regular/fingerprintgreen.png</ImageSource>
+    <ImageSource x:Key="CheckMarkSmallImage">Images/Regular/checkmarksmall.png</ImageSource>
+    <ImageSource x:Key="XMarkSmallImage">Images/Regular/xmarksmall.png</ImageSource>
+
+    <ImageSource x:Key="SymbolAddImage">Images/Regular/Symbol Add.png</ImageSource>
+    <ImageSource x:Key="SymbolDeleteImage">Images/Regular/Symbol Delete.png</ImageSource>
+    <ImageSource x:Key="NavGreenRightImage">Images/Regular/Navigation Green Right.png</ImageSource>
+    <ImageSource x:Key="SettingsImage">Images/Regular/Configuration.png</ImageSource>
+    <ImageSource x:Key="GroupBusImage">Images/Regular/Group Business 1.png</ImageSource>
+    <ImageSource x:Key="GroupBusSecImage">Images/Regular/Group Business 1 Secured.png</ImageSource>
+    <ImageSource x:Key="GroupDivImage">Images/Regular/Group Diversity 4.png</ImageSource>
+    <ImageSource x:Key="SymbolSecImage">Images/Regular/Symbol Secured.png</ImageSource>
+    <ImageSource x:Key="Document2ConfigImage">Images/Regular/Document 2 Configuration.png</ImageSource>
+    <ImageSource x:Key="ReportImage">Images/Regular/Report.png</ImageSource>
+    <ImageSource x:Key="SymbolConfigImage">Images/Regular/Symbol Configuration.png</ImageSource>
+    <ImageSource x:Key="UpArrowImage">Images/Regular/uparrow.png</ImageSource>
+    <ImageSource x:Key="DownArrowImage">Images/Regular/downarrow.png</ImageSource>
+    <ImageSource x:Key="SymbolSearchImage">Images/Regular/Symbol Search.png</ImageSource>
+    <ImageSource x:Key="SymbolSearchAppliedImage">Images/Regular/Symbol Search Applied.png</ImageSource>
+    <ImageSource x:Key="Reports">Images/Regular/Chart Pie 2.png</ImageSource>
+    <ImageSource x:Key="AuditReport">Images/Regular/Clipboard Secured.png</ImageSource>
+    <ImageSource x:Key="EditLoginImage">Images/Regular/Document 1 Edit.png</ImageSource>
+    <ImageSource x:Key="ClipboardCheckImage">Images/Regular/Clipboard Check.png</ImageSource>
+    
+    <ImageSource x:Key="UserBusinessImage">Images/Regular/User Business Male 4.png</ImageSource>
+    <ImageSource x:Key="UserHomeImage">Images/Regular/User Home Male 1.png</ImageSource>
+    <ImageSource x:Key="UserBusinessEditImage">Images/Regular/User Business Male 4 Edit.png</ImageSource>
+    <ImageSource x:Key="UserHomeEditImage">Images/Regular/User Home Male 1 Edit.png</ImageSource>
+    
+    <ImageSource x:Key="WindowConfiguration">Images/Regular/Window Configuration.png</ImageSource>
+    <ImageSource x:Key="WindowCascade">Images/Regular/Window Cascade.png</ImageSource>
+    <ImageSource x:Key="DocumentConfiguration">Images/Regular/Document 2 Configuration.png</ImageSource>
+
+</ResourceDictionary>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/IdentityStream.Server.DataAccess.Repositories.MySql" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/IdentityStream.Server.DataAccess.Repositories.MySql" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://scottslaptop.hyperion.local/ServicesHost/biometricServices.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="MySqlQueryData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Filters" nillable="true" type="tns:ExpressionData" />
+      <xs:element minOccurs="0" name="Offset" type="xs:int" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="Sorts" nillable="true" type="tns:ArrayOfSortData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MySqlQueryData" nillable="true" type="tns:MySqlQueryData" />
+  <xs:complexType name="ExpressionData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstSubExpression" nillable="true" type="tns:ExpressionData" />
+      <xs:element minOccurs="0" name="IsGroupExpression" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Negated" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Operation" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SubExpressions" nillable="true" type="q1:ArrayOfKeyValueOfExpressionDataQueryOperandUn8AYFgJ" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValueType" type="tns:FieldType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExpressionData" nillable="true" type="tns:ExpressionData" />
+  <xs:simpleType name="QueryOperand">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AND" />
+      <xs:enumeration value="OR" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QueryOperand" nillable="true" type="tns:QueryOperand" />
+  <xs:simpleType name="FieldType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="String" />
+      <xs:enumeration value="Numeric" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FieldType" nillable="true" type="tns:FieldType" />
+  <xs:complexType name="ArrayOfSortData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SortData" nillable="true" type="tns:SortData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSortData" nillable="true" type="tns:ArrayOfSortData" />
+  <xs:complexType name="SortData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Direction" type="tns:SortDirection" />
+      <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SortData" nillable="true" type="tns:SortData" />
+  <xs:simpleType name="SortDirection">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ASC" />
+      <xs:enumeration value="DESC" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SortDirection" nillable="true" type="tns:SortDirection" />
+</xs:schema>

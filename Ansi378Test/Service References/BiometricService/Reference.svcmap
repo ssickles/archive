@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6f130a22-297f-4f2c-8a50-451eead5513c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/ServicesHost/biometricServices.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="biometricServices.xsd" MetadataType="Schema" ID="7c36ecac-2423-4308-9654-0482f7bd7549" SourceId="1" SourceUrl="http://scottslaptop.hyperion.local/ServicesHost/biometricServices.svc?xsd=xsd6" />
+    <MetadataFile FileName="biometricServices.disco" MetadataType="Disco" ID="5db884a7-5e0d-400f-98d2-d2c86e4c98d7" SourceId="1" SourceUrl="http://scottslaptop.hyperion.local/ServicesHost/biometricServices.svc?disco" />
+    <MetadataFile FileName="biometricServices1.xsd" MetadataType="Schema" ID="62e1b87a-0055-49a5-858f-0e3d714866bb" SourceId="1" SourceUrl="http://scottslaptop.hyperion.local/ServicesHost/biometricServices.svc?xsd=xsd5" />
+    <MetadataFile FileName="biometricServices2.xsd" MetadataType="Schema" ID="8967f773-92a5-45b4-89b7-980c4523ae1b" SourceId="1" SourceUrl="http://scottslaptop.hyperion.local/ServicesHost/biometricServices.svc?xsd=xsd8" />
+    <MetadataFile FileName="biometricServices3.xsd" MetadataType="Schema" ID="dde23451-3231-4ecc-85b7-a4916787eae4" SourceId="1" SourceUrl="http://scottslaptop.hyperion.local/ServicesHost/biometricServices.svc?xsd=xsd0" />
+    <MetadataFile FileName="biometricServices4.xsd" MetadataType="Schema" ID="ecbf0f83-acaf-452e-bb23-ff3cc01aef44" SourceId="1" SourceUrl="http://scottslaptop.hyperion.local/ServicesHost/biometricServices.svc?xsd=xsd7" />
+    <MetadataFile FileName="biometricServices5.xsd" MetadataType="Schema" ID="485b5f7c-d061-4b95-b831-034ca77f0155" SourceId="1" SourceUrl="http://scottslaptop.hyperion.local/ServicesHost/biometricServices.svc?xsd=xsd2" />
+    <MetadataFile FileName="biometricServices6.xsd" MetadataType="Schema" ID="6d79fa11-9876-4f54-ac18-0d1df855eacc" SourceId="1" SourceUrl="http://scottslaptop.hyperion.local/ServicesHost/biometricServices.svc?xsd=xsd1" />
+    <MetadataFile FileName="biometricServices7.xsd" MetadataType="Schema" ID="ab5b3e4f-56b4-4167-9fa6-127c0e3c7b2c" SourceId="1" SourceUrl="http://scottslaptop.hyperion.local/ServicesHost/biometricServices.svc?xsd=xsd4" />
+    <MetadataFile FileName="BiometricRepository.wsdl" MetadataType="Wsdl" ID="3b791653-df2e-4a55-86a1-1a09cf5b3e33" SourceId="1" SourceUrl="http://scottslaptop.hyperion.local/ServicesHost/biometricServices.svc?wsdl" />
+    <MetadataFile FileName="biometricServices8.xsd" MetadataType="Schema" ID="2f545157-1724-43ad-a45f-b6d238d5e9d6" SourceId="1" SourceUrl="http://scottslaptop.hyperion.local/ServicesHost/biometricServices.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

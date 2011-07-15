@@ -1,0 +1,81 @@
+application - FUNDS.TRANSFER
+fieldName:DEBIT.ACCT.NO - 15288
+skin - default
+fieldName:CREDIT.VALUE.DATE - 
+dropfield - 
+SaveChangesText - Changes Not Saved
+clientStyleSheet - 
+overridesApproved - 
+editVersion - 
+enqaction - 
+savechanges - YES
+ofsFunction - I
+GTSControl - 
+WS_parent - 
+allowcalendar - 
+allowcontext - 
+product - FT
+fieldName:CREDIT.ACCT.NO - 15318
+WS_multiPane - false
+WS_parentWindow - 
+screenMode - I
+unlock - 
+ofsMessage - 
+version - ,MB.AI.AC
+lockDateTime - 090526152513
+pwprocessid - 
+windowName - AUTHORISER_FUNDS_TRANSFER_MB_AI_AC_F3_1243365915054
+fieldName:CREDIT.CURRENCY - USD
+changedFields - fieldName:DEBIT.ACCT.NO fieldName:CREDIT.ACCT.NO fieldName:CREDIT.AMOUNT
+expandMultiString - Expand Multi Value
+compScreen - COMPOSITE.SCREEN_AUTHORISER_000195541702
+enqname - 
+user - AUTHORISER
+popupDropDown - true
+release - R08.000
+nextStage - 
+timing - 141-16-125-0-16
+previewVersion - 
+company - R8 MODEL BANK
+windowUnqRef - 
+staticId - 
+today - 09-JAN-2008
+command - globusCommand
+ofsOperation - PROCESS
+transactionId - FT08009X1HF1
+language - GB
+toggle - 
+languages - GB,FR,DE,ES
+expandSubString - Expand Sub Value
+name - 
+companyId - GB0010001
+clientExpansion - true
+expansionHistory - 
+fieldName:CREDIT.AMOUNT - 10
+decrypt - 
+previousEnqs - 
+RecordRead - 1
+deleteMultiString - Delete Value
+fieldName:CURRENCY.MKT.DR - 1
+lockArgs - 
+allowdropdowns - 
+requestType - OFS.APPLICATION
+allowResize - YES
+newCommands - 
+routineName - 
+activeTab - tab1
+windowSizes - 156:239:885:500
+routineArgs - 
+WS_doResize - no
+confirmVersion - 
+fieldName:PAYMENT.DETAILS:1 - 
+ContractStatus - 
+compTargets - menu_menu000195541701|
+overridesAccepted - 
+languageUndefined - Language Code Not Defined
+fieldName:CURRENCY.MKT.CR - 1
+WS_dropfield - 
+toolbarTarget - 
+operation - 
+focus - fieldName:DEBIT.ACCT.NO
+fieldName:TRANSACTION.TYPE - ACIB

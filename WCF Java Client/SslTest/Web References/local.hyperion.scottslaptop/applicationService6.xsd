@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/IdentityStream.Services.Contracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/IdentityStream.Services.Contracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://scottslaptop.hyperion.local/ServicesHost/applicationService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="RequestData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdentityUid" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequestData" nillable="true" type="tns:RequestData" />
+</xs:schema>

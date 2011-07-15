@@ -1,0 +1,112 @@
+fieldName:TOT.REC.COMM.LCL - 0
+overrideText:A/C BALANCE STILL LESS THAN MINIMUM BAL:value - YES
+application - FUNDS.TRANSFER
+fieldName:DEBIT.ACCT.NO - 15288
+skin - default
+fieldName:CREDIT.VALUE.DATE - 09 JAN 2008
+fieldName:DEBIT.CURRENCY - USD
+dropfield - 
+SaveChangesText - Changes Not Saved
+fieldName:DR.ADVICE.REQD.Y.N - N
+fieldName:TOT.REC.CHG - 0
+clientStyleSheet - 
+overridesApproved - NO
+editVersion - 
+enqaction - 
+savechanges - YES
+fieldName:FED.FUNDS - NO
+ofsFunction - I
+GTSControl - 
+WS_parent - 
+fieldName:CREDIT.CUSTOMER - 100358
+allowcalendar - 
+allowcontext - 
+product - FT
+fieldName:CREDIT.ACCT.NO - 15318
+WS_multiPane - false
+fieldName:CREDIT.COMP.CODE - GB0010001
+WS_parentWindow - 
+screenMode - I
+fieldName:AMOUNT.CREDITED - USD10.00
+unlock - 
+ofsMessage - 
+fieldName:AMOUNT.DEBITED - USD10.00
+fieldName:CHARGE.CODE - DEBIT PLUS CHARGES
+fieldName:DEBIT.VALUE.DATE - 20080109
+fieldName:LOC.AMT.DEBITED - 10.00
+version - ,MB.AI.AC
+lockDateTime - 
+fieldName:POSITION.TYPE - TR
+pwprocessid - 
+windowName - AUTHORISER_FUNDS_TRANSFER_MB_AI_AC_F3_1243365915054
+fieldName:CHARGE.COM.DISPLAY - NO
+fieldName:CREDIT.CURRENCY - USD
+fieldName:RETURN.TO.DEPT - NO
+changedFields - 
+expandMultiString - Expand Multi Value
+fieldName:PROFIT.CENTRE.CUST - 100369
+compScreen - COMPOSITE.SCREEN_AUTHORISER_000195541702
+enqname - 
+fieldName:TOT.REC.CHG.LCL - 0
+popupDropDown - true
+release - R08.000
+user - AUTHORISER
+nextStage - 
+timing - 328-16-312-0-16
+company - R8 MODEL BANK
+previewVersion - 
+fieldName:CHARGED.CUSTOMER - 100358
+fieldName:LOC.AMT.CREDITED - 10.00
+windowUnqRef - 
+fieldName:DEBIT.COMP.CODE - GB0010001
+staticId - 
+today - 09-JAN-2008
+command - globusCommand
+ofsOperation - PROCESS
+transactionId - FT08009X1HF1
+overridesPresent - YES
+language - GB
+toggle - 
+languages - GB,FR,DE,ES
+expandSubString - Expand Sub Value
+name - 
+fieldName:TOT.REC.COMM - 0
+companyId - GB0010001
+clientExpansion - true
+expansionHistory - 
+fieldName:CREDIT.AMOUNT - 10.00
+decrypt - 
+previousEnqs - 
+deleteMultiString - Delete Value
+RecordRead - 1
+fieldName:TOT.REC.CHG.CRCCY - 0
+fieldName:CURRENCY.MKT.DR - 1
+lockArgs - 
+allowdropdowns - 
+requestType - OFS.APPLICATION
+allowResize - YES
+fieldName:TOT.SND.CHG.CRCCY - 0
+newCommands - 
+routineName - 
+activeTab - tab1
+windowSizes - 156:239:885:500
+WS_doResize - no
+routineArgs - FUNDS.TRANSFER:,MB.AI.AC:243:186:873:439
+fieldName:DEBIT.CUSTOMER - 100369
+confirmVersion - 
+fieldName:PAYMENT.DETAILS:1 - 
+ContractStatus - CHG
+compTargets - menu_menu000195541701|
+overridesAccepted - YES
+languageUndefined - Language Code Not Defined
+fieldName:CURRENCY.MKT.CR - 1
+WS_dropfield - 
+toolbarTarget - 
+fieldName:CUST.GROUP.LEVEL - 99
+operation - 
+fieldName:PROCESSING.DATE - 20080109
+fieldName:CR.ADVICE.REQD.Y.N - N
+focus - fieldName:DEBIT.ACCT.NO
+fieldName:RATE.FIXING - NO
+fieldName:TRANSACTION.TYPE - ACIB
+fieldName:COMMISSION.CODE - DEBIT PLUS CHARGES

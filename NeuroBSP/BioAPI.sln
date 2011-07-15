@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityStream.BioAPI", "IdentityStream.BioAPI\IdentityStream.BioAPI.csproj", "{411590EE-4432-4487-8DAF-6BDD591793A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BioAPIConsole", "BioAPIConsole\BioAPIConsole.csproj", "{6A6F223C-F562-4A49-A509-515DF433F2BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BioAPIWPF", "BioAPIWPF\BioAPIWPF.csproj", "{3BED3235-9E81-4F96-AA50-1261D31B37CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityStream.BSPs.Capture.Authentec", "IdentityStream.BSPs.Capture.Authentec\IdentityStream.BSPs.Capture.Authentec.csproj", "{F2D5339F-F7ED-443D-8DCD-3994CBEB94C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityStream.BSPs.Capture.Neuro", "IdentityStream.BSPs.Capture.Neuro\IdentityStream.BSPs.Capture.Neuro.csproj", "{EB1FF63C-DBA0-4CB9-B8B8-BFF00D50254E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityStream.BSPs.Capture.Test", "IdentityStream.BSPs.Capture.Test\IdentityStream.BSPs.Capture.Test.csproj", "{099AC430-EE4F-4D8F-BA5D-14254A40DD06}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{411590EE-4432-4487-8DAF-6BDD591793A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{411590EE-4432-4487-8DAF-6BDD591793A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{411590EE-4432-4487-8DAF-6BDD591793A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{411590EE-4432-4487-8DAF-6BDD591793A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A6F223C-F562-4A49-A509-515DF433F2BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A6F223C-F562-4A49-A509-515DF433F2BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A6F223C-F562-4A49-A509-515DF433F2BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A6F223C-F562-4A49-A509-515DF433F2BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BED3235-9E81-4F96-AA50-1261D31B37CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BED3235-9E81-4F96-AA50-1261D31B37CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BED3235-9E81-4F96-AA50-1261D31B37CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BED3235-9E81-4F96-AA50-1261D31B37CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2D5339F-F7ED-443D-8DCD-3994CBEB94C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2D5339F-F7ED-443D-8DCD-3994CBEB94C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2D5339F-F7ED-443D-8DCD-3994CBEB94C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2D5339F-F7ED-443D-8DCD-3994CBEB94C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB1FF63C-DBA0-4CB9-B8B8-BFF00D50254E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB1FF63C-DBA0-4CB9-B8B8-BFF00D50254E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB1FF63C-DBA0-4CB9-B8B8-BFF00D50254E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB1FF63C-DBA0-4CB9-B8B8-BFF00D50254E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{099AC430-EE4F-4D8F-BA5D-14254A40DD06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{099AC430-EE4F-4D8F-BA5D-14254A40DD06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{099AC430-EE4F-4D8F-BA5D-14254A40DD06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{099AC430-EE4F-4D8F-BA5D-14254A40DD06}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

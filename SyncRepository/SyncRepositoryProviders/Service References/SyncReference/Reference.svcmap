@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="36c867dc-0be8-425a-a92a-d02526aef404" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="SyncRepositoryDomainModel" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8731/Design_Time_Addresses/SyncRepositoryService/Service1/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="54b75e4b-5ee7-4cb7-b818-f46ee5607d1a" SourceId="1" SourceUrl="http://localhost:8731/Design_Time_Addresses/SyncRepositoryService/Service1/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="4b58c74e-5d6f-4d66-b89c-d9ed8d9827d1" SourceId="1" SourceUrl="http://localhost:8731/Design_Time_Addresses/SyncRepositoryService/Service1/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="5aecc0fd-2299-4657-b875-91c6812c0d3d" SourceId="1" SourceUrl="http://localhost:8731/Design_Time_Addresses/SyncRepositoryService/Service1/mex" />
+    <MetadataFile FileName="SyncRepositoryDomainModel.xsd" MetadataType="Schema" ID="41712d57-68e4-4f0f-a947-f41ed56188c2" SourceId="1" SourceUrl="http://localhost:8731/Design_Time_Addresses/SyncRepositoryService/Service1/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

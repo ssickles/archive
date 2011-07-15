@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6edc6d5e-20c3-4401-8a29-82bcb31e9f43" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/biometricServices.svc/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="127bfd8c-a21d-4e1f-95ab-dc280f90e343" SourceId="1" SourceUrl="http://localhost/biometricServices.svc/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="aa8354c1-a91b-46d4-90ea-e3bb1e140188" SourceId="1" SourceUrl="http://localhost/biometricServices.svc/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="a778163c-06d0-49bd-9931-51f9edcac1ee" SourceId="1" SourceUrl="http://localhost/biometricServices.svc/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="d23036ca-2ad7-453e-85a9-999d01e76b32" SourceId="1" SourceUrl="http://localhost/biometricServices.svc/mex" />
+    <MetadataFile FileName="System.Data.xsd" MetadataType="Schema" ID="739db938-9628-4e90-96a4-d89b0213a30b" SourceId="1" SourceUrl="http://localhost/biometricServices.svc/mex" />
+    <MetadataFile FileName="System.xsd" MetadataType="Schema" ID="7068b274-85dd-401f-93dd-5c860d06cdef" SourceId="1" SourceUrl="http://localhost/biometricServices.svc/mex" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="2b4867ae-19f5-4fdc-9164-73a8d9e23679" SourceId="1" SourceUrl="http://localhost/biometricServices.svc/mex" />
+    <MetadataFile FileName="IdentityStream.Services.BiometricServices.xsd" MetadataType="Schema" ID="b87986f9-eec3-4b1a-9e94-9216e4c60c4c" SourceId="1" SourceUrl="http://localhost/biometricServices.svc/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

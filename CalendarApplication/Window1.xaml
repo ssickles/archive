@@ -1,0 +1,9 @@
+﻿<Window x:Class="CalendarApplication.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cal="clr-namespace:CalendarControl;assembly=CalendarControl"
+    Title="Window1" Height="600" Width="800">
+    <Grid>
+        <cal:CalendarControl Margin="20"></cal:CalendarControl>
+    </Grid>
+</Window>

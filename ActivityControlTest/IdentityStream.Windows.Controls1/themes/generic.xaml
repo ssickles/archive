@@ -1,0 +1,144 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+                    xmlns:activity="clr-namespace:IdentityStream.Windows.Controls">
+    <Storyboard x:Key="ActivityHidden">
+        <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="(UIElement.Visibility)">
+            <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                <DiscreteObjectKeyFrame.Value>
+                    <Visibility>Collapsed</Visibility>
+                </DiscreteObjectKeyFrame.Value>
+            </DiscreteObjectKeyFrame>
+        </ObjectAnimationUsingKeyFrames>
+        <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(UIElement.Visibility)">
+            <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                <DiscreteObjectKeyFrame.Value>
+                    <Visibility>Collapsed</Visibility>
+                </DiscreteObjectKeyFrame.Value>
+            </DiscreteObjectKeyFrame>
+        </ObjectAnimationUsingKeyFrames>
+    </Storyboard>
+    
+    <Storyboard x:Key="ActivityDisplayDisplaying">
+        <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="(UIElement.Visibility)">
+            <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                <DiscreteObjectKeyFrame.Value>
+                    <Visibility>Visible</Visibility>
+                </DiscreteObjectKeyFrame.Value>
+            </DiscreteObjectKeyFrame>
+        </ObjectAnimationUsingKeyFrames>
+        <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(UIElement.Visibility)">
+            <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                <DiscreteObjectKeyFrame.Value>
+                    <Visibility>Visible</Visibility>
+                </DiscreteObjectKeyFrame.Value>
+            </DiscreteObjectKeyFrame>
+        </ObjectAnimationUsingKeyFrames>
+    </Storyboard>
+
+    <Storyboard x:Key="ActivityInactive">
+        <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="contentControl" Storyboard.TargetProperty="(Control.IsEnabled)">
+            <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                <DiscreteObjectKeyFrame.Value>
+                    <sys:Boolean>True</sys:Boolean>
+                </DiscreteObjectKeyFrame.Value>
+            </DiscreteObjectKeyFrame>
+        </ObjectAnimationUsingKeyFrames>
+        <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="contentControl" Storyboard.TargetProperty="(UIElement.IsHitTestVisible)">
+            <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                <DiscreteObjectKeyFrame.Value>
+                    <sys:Boolean>True</sys:Boolean>
+                </DiscreteObjectKeyFrame.Value>
+            </DiscreteObjectKeyFrame>
+        </ObjectAnimationUsingKeyFrames>
+    </Storyboard>
+
+    <Storyboard x:Key="ActivityActive">
+        <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="contentControl" Storyboard.TargetProperty="(Control.IsEnabled)">
+            <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                <DiscreteObjectKeyFrame.Value>
+                    <sys:Boolean>False</sys:Boolean>
+                </DiscreteObjectKeyFrame.Value>
+            </DiscreteObjectKeyFrame>
+        </ObjectAnimationUsingKeyFrames>
+        <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="contentControl" Storyboard.TargetProperty="(UIElement.IsHitTestVisible)">
+            <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                <DiscreteObjectKeyFrame.Value>
+                    <sys:Boolean>False</sys:Boolean>
+                </DiscreteObjectKeyFrame.Value>
+            </DiscreteObjectKeyFrame>
+        </ObjectAnimationUsingKeyFrames>
+    </Storyboard>
+
+    <Grid MinWidth="150" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+        <Border Background="#FFFFFFFF" BorderThickness="1,1,1,1" CornerRadius="2,2,2,2" MinHeight="51" Margin="0,2,0,0" VerticalAlignment="Top">
+            <Border.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                    <GradientStop Color="#FF718597" Offset="0.375"/>
+                    <GradientStop Color="#FF617584" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border CornerRadius="1.5,1.5,1.5,1.5" Margin="1,1,1,1">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFB8B8B8" Offset="0.996"/>
+                        <GradientStop Color="#FFF6F8F9" Offset="0.02"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <ContentControl HorizontalAlignment="Stretch" Margin="8,4,8,4" VerticalAlignment="Center" Content="{TemplateBinding ActiveContent}" ContentTemplate="{TemplateBinding ActiveContentTemplate}" />
+                    <ProgressBar Grid.Row="1" Style="{TemplateBinding ProgressBarStyle}" IsTabStop="False" />
+                </Grid>
+            </Border>
+        </Border>
+    </Grid>
+
+    <Style TargetType="activity:Activity">
+        <Setter Property="ActiveContent" Value="Loading..." />
+        <Setter Property="OverlayStyle">
+            <Setter.Value>
+                <Style TargetType="Rectangle">
+                    <Setter Property="Fill" Value="White" />
+                    <Setter Property="Opacity" Value=".35" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ProgressBarStyle">
+            <Setter.Value>
+                <Style TargetType="ProgressBar">
+                    <Setter Property="IsIndeterminate" Value="True" />
+                    <Setter Property="Height" Value="15" />
+                    <Setter Property="Margin" Value="8,0,8,4" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="DisplayAfter" Value="00:00:00.05" />
+        <Setter Property="MinDisplayTime" Value="00:00:00.75" />
+        <Setter Property="AutoBind" Value="False" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="activity:Activity">
+                    <Grid>
+                        <ContentControl x:Name="contentControl"
+                			VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                			HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}">
+                            <ContentPresenter x:Name="contentPresenter1" Canvas.ZIndex="0" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"/>
+                        </ContentControl>
+                        <Rectangle x:Name="rectangle" Visibility="Collapsed" Canvas.ZIndex="1" Style="{TemplateBinding OverlayStyle}" />
+                        <ContentPresenter x:Name="contentPresenter" Canvas.ZIndex="2" Visibility="Collapsed">
+                        </ContentPresenter>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

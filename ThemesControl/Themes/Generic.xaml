@@ -1,0 +1,154 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ThemesControl">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/ThemesControl;component/Resources/DefaultColors.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ThemesControl;component/Resources/DefaultImages.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="{x:Type local:EngravedTextBlock}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:EngravedTextBlock}">
+                    <Grid>
+                        <TextBlock TextWrapping="{Binding Path=TextWrapping, RelativeSource={RelativeSource TemplatedParent}}" 
+                                   Foreground="{Binding Path=BackColor, RelativeSource={RelativeSource TemplatedParent}}" 
+                                   Margin="{Binding Path=EmbossDepth, RelativeSource={RelativeSource TemplatedParent}}" 
+                                   Text="{Binding Path=Text, RelativeSource={RelativeSource TemplatedParent}}"
+                                   FontFamily="{Binding Path=FontFamily, RelativeSource={RelativeSource TemplatedParent}}"
+                                   FontSize="{Binding Path=FontSize, RelativeSource={RelativeSource TemplatedParent}}"
+                                   FontWeight="{Binding Path=FontWeight, RelativeSource={RelativeSource TemplatedParent}}"/>
+                        <TextBlock TextWrapping="{Binding Path=TextWrapping, RelativeSource={RelativeSource TemplatedParent}}" 
+                                   Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource TemplatedParent}}" 
+                                   Text="{Binding Path=Text, RelativeSource={RelativeSource TemplatedParent}}"
+                                   FontFamily="{Binding Path=FontFamily, RelativeSource={RelativeSource TemplatedParent}}"
+                                   FontSize="{Binding Path=FontSize, RelativeSource={RelativeSource TemplatedParent}}"
+                                   FontWeight="{Binding Path=FontWeight, RelativeSource={RelativeSource TemplatedParent}}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+   
+    <Style x:Key="BasicButton" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <ContentPresenter Cursor="Hand"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="BasicToggle" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <ContentPresenter Cursor="Hand"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:TransparentWindow}">
+        <Setter Property="AllowsTransparency" Value="True"/>
+        <Setter Property="WindowStyle" Value="None"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="MinHeight" Value="100"/>
+        <Setter Property="MinWidth" Value="200"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:TransparentWindow}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <!--Title Bar-->
+                        <Border Name="PART_TitleBar" CornerRadius="8, 8, 0, 0" Padding="6, 0, 0, 0" Background="{StaticResource NormalBorderBrush}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Margin="0, 3, 0, 3" Source="{TemplateBinding Icon}" MaxWidth="24" MaxHeight="24"/>
+                                <local:EngravedTextBlock Grid.Column="1" Margin="4" Foreground="{StaticResource LightColorBrush}" BackColor="{StaticResource LightBorderBrush}" FontSize="16" Text="{TemplateBinding Title}"/>
+                                <Button Name="PART_Minimize" Grid.Column="2" Visibility="Collapsed" Style="{StaticResource BasicButton}">
+                                    <Image Name="MinimizeImage" Source="{StaticResource MinimizeImage}" Margin="0, 5, 0, 5" Width="21" Height="21"></Image>
+                                </Button>
+                                <ToggleButton Name="PART_Restore" Grid.Column="3" Visibility="Collapsed" Style="{StaticResource BasicToggle}">
+                                    <StackPanel>
+                                        <Image Name="RestoreImage" Source="{StaticResource RestoreImage}" Margin="5" Width="21" Height="21"/>
+                                        <Image Name="MaximizeImage" Visibility="Collapsed" Source="{StaticResource MaximizeImage}" Margin="5" Width="21" Height="21"/>
+                                    </StackPanel>
+                                </ToggleButton>
+                                <Button Name="PART_Close" Grid.Column="4" Style="{StaticResource BasicButton}">
+                                    <Image Name="CloseImage" Source="{StaticResource CloseImage}" Margin="0, 5, 10, 5" Width="21" Height="21"/>
+                                </Button>
+                            </Grid>
+                        </Border>
+                        <!--Window Content-->
+                        <Border Grid.Row="1" Background="{StaticResource WindowBackgroundBrush}" BorderBrush="{StaticResource LightBorderBrush}" BorderThickness="1, 0, 1, 0">
+                            <AdornerDecorator>
+                                <ContentPresenter/>
+                            </AdornerDecorator>
+                        </Border>
+                        <!--Footer-->
+                        <Border Grid.Row="2" Padding="8, 4, 4, 4" Background="{StaticResource NormalBorderBrush}" CornerRadius="0, 0, 8, 8">
+                            <local:EngravedTextBlock Margin="2"  Foreground="{StaticResource LightColorBrush}" BackColor="{StaticResource LightBorderBrush}" Text="Copyright"/>
+                        </Border>
+                        <!--Resize Rectangles-->
+                        <Rectangle Name="PART_WindowResizeWE" Grid.Row="0" Grid.RowSpan="3" Cursor="SizeWE" Fill="Transparent" Width="5"
+                       VerticalAlignment="Stretch" HorizontalAlignment="Right"  Visibility="Collapsed"/>
+                        <Rectangle Name="PART_WindowResizeNS" Grid.Row="2" Cursor="SizeNS" Fill="Transparent" Height="5" 
+                       VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Visibility="Collapsed"/>
+                        <!--Resize Grip-->
+                        <ResizeGrip Name="PART_WindowResizeGrip" Grid.Row="2" Margin="0, 0, 4, 4" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="Collapsed" IsTabStop="False"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="ResizeMode" Value="CanResizeWithGrip">
+                            <Setter TargetName="PART_WindowResizeGrip" Property="Visibility" Value="Visible"></Setter>
+                            <Setter TargetName="PART_WindowResizeWE" Property="Visibility" Value="Visible"></Setter>
+                            <Setter TargetName="PART_WindowResizeNS" Property="Visibility" Value="Visible"></Setter>
+                            <Setter TargetName="PART_Minimize" Property="Visibility" Value="Visible"></Setter>
+                            <Setter TargetName="PART_Restore" Property="Visibility" Value="Visible"></Setter>
+                        </Trigger>
+                        <Trigger Property="WindowState" Value="Maximized">
+                            <Setter TargetName="RestoreImage" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="MaximizeImage" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger SourceName="MinimizeImage" Property="IsMouseOver" Value="True">
+                            <Setter TargetName="MinimizeImage" Property="Source" Value="{StaticResource MinimizeHoverImage}"/>
+                        </Trigger>
+                        <Trigger SourceName="RestoreImage" Property="IsMouseOver" Value="True">
+                            <Setter TargetName="RestoreImage" Property="Source" Value="{StaticResource RestoreHoverImage}"/>
+                        </Trigger>
+                        <Trigger SourceName="MaximizeImage" Property="IsMouseOver" Value="True">
+                            <Setter TargetName="MaximizeImage" Property="Source" Value="{StaticResource MaximizeHoverImage}"/>
+                        </Trigger>
+                        <Trigger SourceName="CloseImage" Property="IsMouseOver" Value="True">
+                            <Setter TargetName="CloseImage" Property="Source" Value="{StaticResource CloseHoverImage}"/>
+                        </Trigger>
+                        <Trigger SourceName="PART_Minimize" Property="IsPressed" Value="True">
+                            <Setter TargetName="PART_Minimize" Property="Margin" Value="1, 1, -1, -1"/>
+                        </Trigger>
+                        <Trigger SourceName="PART_Restore" Property="IsPressed" Value="True">
+                            <Setter TargetName="PART_Restore" Property="Margin" Value="1, 1, -1, -1"/>
+                        </Trigger>
+                        <Trigger SourceName="PART_Close" Property="IsPressed" Value="True">
+                            <Setter TargetName="PART_Close" Property="Margin" Value="1, 1, -1, -1"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

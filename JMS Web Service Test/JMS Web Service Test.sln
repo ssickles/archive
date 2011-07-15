@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JMS Web Service Test", "JMS Web Service Test.csproj", "{337FDD67-4CDF-4C0A-9A16-7397000F1153}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{337FDD67-4CDF-4C0A-9A16-7397000F1153}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{337FDD67-4CDF-4C0A-9A16-7397000F1153}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{337FDD67-4CDF-4C0A-9A16-7397000F1153}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{337FDD67-4CDF-4C0A-9A16-7397000F1153}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

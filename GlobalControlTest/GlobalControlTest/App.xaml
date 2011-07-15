@@ -1,0 +1,8 @@
+﻿<Application x:Class="GlobalControlTest.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Startup="Application_Startup" ShutdownMode="OnExplicitShutdown">
+    <Application.Resources>
+        <MediaElement x:Key="Media" LoadedBehavior="Manual" Source="E:\My Dropbox\Development\Training\WCF\01 - WCFServices101.wmv" />
+    </Application.Resources>
+</Application>

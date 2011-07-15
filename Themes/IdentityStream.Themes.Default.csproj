@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FA2F5FBA-A649-48E7-8662-1B15D619BBD3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IdentityStream.Themes.Default</RootNamespace>
+    <AssemblyName>IdentityStream.Themes.Default</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Basic\Button.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Basic\CheckBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Basic\ComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Basic\Expander.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Basic\Frame.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Basic\GroupBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Basic\Label.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Basic\ListBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Basic\ListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Basic\Menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Basic\NavigationWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Basic\ProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Basic\RadioButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Basic\ResizeGrip.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Basic\ScrollBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Basic\ScrollViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Basic\Separator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Basic\Shared.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Basic\Slider.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Basic\StatusBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Basic\TabControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Basic\TextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Basic\Basic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Basic\ToolBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Basic\ToolTip.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Basic\TreeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Basic\Window.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Shared.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Default.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Regular\blankuser.png" />
+    <Resource Include="Images\Regular\checkmarksmall.png" />
+    <Resource Include="Images\Regular\close-hover.png" />
+    <Resource Include="Images\Regular\close.png" />
+    <Resource Include="Images\Regular\downarrow.png" />
+    <Resource Include="Images\Regular\fingerprint.png" />
+    <Resource Include="Images\Regular\fingerprintgreen.png" />
+    <Resource Include="Images\Regular\Group Business 1.png" />
+    <Resource Include="Images\Regular\Group Diversity 4.png" />
+    <Resource Include="Images\Regular\lefthand.png" />
+    <Resource Include="Images\Regular\maximize-hover.png" />
+    <Resource Include="Images\Regular\maximize.png" />
+    <Resource Include="Images\Regular\minimize-hover.png" />
+    <Resource Include="Images\Regular\minimize.png" />
+    <Resource Include="Images\Regular\Navigation Green Right.png" />
+    <Resource Include="Images\Regular\Report.png" />
+    <Resource Include="Images\Regular\restore-hover.png" />
+    <Resource Include="Images\Regular\restore.png" />
+    <Resource Include="Images\Regular\righthand.png" />
+    <Resource Include="Images\Regular\Symbol Add.png" />
+    <Resource Include="Images\Regular\Symbol Configuration.png" />
+    <Resource Include="Images\Regular\Symbol Delete.png" />
+    <Resource Include="Images\Regular\Symbol Search.png" />
+    <Resource Include="Images\Regular\Symbol Secured.png" />
+    <Resource Include="Images\Regular\uparrow.png" />
+    <Resource Include="Images\Regular\xmarksmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Regular\idslogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Regular\grayx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Regular\Symbol Search Applied.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Regular\Document 2 Configuration.png" />
+    <Resource Include="Images\Regular\User Business Male 4.png" />
+    <Resource Include="Images\Regular\User Home Male 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Regular\User Business Male 4 Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Regular\IDS04.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Regular\IDS.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Regular\IDS_MC01.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Regular\password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Regular\Configuration.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Regular\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Regular\Chart Pie 2.png" />
+    <Resource Include="Images\Regular\Clipboard Secured.png" />
+    <Resource Include="Images\Regular\Document 1 Edit.png" />
+    <Resource Include="Images\Regular\Group Business 1 Secured.png" />
+    <Resource Include="Images\Regular\User Home Male 1 Edit.png" />
+    <Resource Include="Images\Regular\Window Cascade.png" />
+    <Resource Include="Images\Regular\Window Configuration.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Regular\Clipboard Check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Regular\information24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ThemesControl\ThemesControl.csproj">
+      <Project>{FFF35A09-A38B-44AC-AD06-DD3CC2780D7B}</Project>
+      <Name>ThemesControl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\Disabled\" />
+    <Folder Include="Images\Hot\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

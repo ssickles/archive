@@ -1,0 +1,19 @@
+﻿<Window x:Class="LoadT24Data.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Button Name="ImportUsers" Click="ImportUsers_Click">Import Users</Button>
+        <Button Grid.Row="1" Name="ImportCustomers" Click="ImportCustomers_Click">Import Customers</Button>
+        <Button Grid.Row="2" Name="ImportCompanies" Click="ImportCompanies_Click">Import Companies</Button>
+        <Button Grid.Row="3" Name="ImportDAO" Click="ImportDAO_Click">Import Department Account Officers</Button>
+        <Button Grid.Row="4" Name="ImportLanguages" Click="ImportLanguages_Click">Import Languages</Button>
+    </Grid>
+</Window>
