@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1170e12b-7bab-47bd-a812-f5726c730ea9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8732/Design_Time_Addresses/WcfRoleBasedSecurity/FantasyService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="d11f14d5-cd25-48c5-9b83-a7e27dc4a48e" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/WcfRoleBasedSecurity/FantasyService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="cfd3dd1e-fa6e-40cc-97d6-9bce158d24dd" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/WcfRoleBasedSecurity/FantasyService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="740aefba-6ee1-4e98-b6b1-e8f443adb409" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/WcfRoleBasedSecurity/FantasyService/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="3f75cf1d-fc18-44b7-8b5e-f21cea566cea" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/WcfRoleBasedSecurity/FantasyService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
