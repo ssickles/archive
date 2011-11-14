@@ -8,11 +8,18 @@ namespace WcfRoleBasedSecurity
 {
     public class IdsPrincipal: IPrincipal
     {
-        public IIdentity Identity { get; set; }
+        public IdsPrincipal(IIdentity identity, IList<string> roles)
+        {
+            Identity = identity;
+            Roles = roles;
+        }
+
+        public IIdentity Identity { get; private set; }
+        private IList<string> Roles { get; set; }
 
         public bool IsInRole(string role)
         {
-            return Identity.IsAuthenticated;
+            return Roles.Contains(role);
         }
     }
 }

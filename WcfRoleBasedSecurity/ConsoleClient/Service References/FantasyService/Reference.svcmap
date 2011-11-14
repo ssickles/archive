@@ -18,13 +18,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8732/Design_Time_Addresses/WcfRoleBasedSecurity/FantasyService/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="http://localhost/FantasyService/service.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="d11f14d5-cd25-48c5-9b83-a7e27dc4a48e" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/WcfRoleBasedSecurity/FantasyService/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="cfd3dd1e-fa6e-40cc-97d6-9bce158d24dd" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/WcfRoleBasedSecurity/FantasyService/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="740aefba-6ee1-4e98-b6b1-e8f443adb409" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/WcfRoleBasedSecurity/FantasyService/mex" />
-    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="3f75cf1d-fc18-44b7-8b5e-f21cea566cea" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/WcfRoleBasedSecurity/FantasyService/mex" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="674f137e-66cc-433b-8f3f-190054d19361" SourceId="1" SourceUrl="https://sickles/FantasyService/service.svc?xsd=xsd0" />
+    <MetadataFile FileName="service.disco" MetadataType="Disco" ID="cf8698e3-d598-4204-8a80-d348d5e753aa" SourceId="1" SourceUrl="https://sickles/FantasyService/service.svc?disco" />
+    <MetadataFile FileName="service21.xsd" MetadataType="Schema" ID="04123ab7-7620-4000-87f3-2acdbc7f8dbd" SourceId="1" SourceUrl="https://sickles/FantasyService/service.svc?xsd=xsd2" />
+    <MetadataFile FileName="FantasyService.wsdl" MetadataType="Wsdl" ID="5027e543-53db-46ba-89af-fbebd6e0db5e" SourceId="1" SourceUrl="https://sickles/FantasyService/service.svc?wsdl" />
+    <MetadataFile FileName="service22.xsd" MetadataType="Schema" ID="2893d6c6-825e-4e1a-979f-ecaadcde03ed" SourceId="1" SourceUrl="https://sickles/FantasyService/service.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -1,0 +1,4 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" name="mainclientconfig">
+  <import location="EscortService.xml" namespace="http://tempuri.org/"/>
+<import location="SecuredApplicationService.xml" namespace="http://tempuri.org/"/>
+</definitions>

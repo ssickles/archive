@@ -1,0 +1,168 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EscortService" targetNamespace="http://tempuri.org/">
+  <wsp:Policy wsu:Id="EscortServiceEndpoint_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp/>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:EndorsingSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:RequireThumbprintReference/>
+                <sp:WssX509V3Token10/>
+              </wsp:Policy>
+            </sp:X509Token>
+            <sp:SignedParts>
+              <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+            </sp:SignedParts>
+          </wsp:Policy>
+        </sp:EndorsingSupportingTokens>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportRefKeyIdentifier/>
+            <sp:MustSupportRefIssuerSerial/>
+            <sp:MustSupportRefThumbprint/>
+            <sp:MustSupportRefEncryptedKey/>
+          </wsp:Policy>
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens/>
+            <sp:RequireClientEntropy/>
+            <sp:RequireServerEntropy/>
+          </wsp:Policy>
+        </sp:Trust10>
+        <wsaw:UsingAddressing/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <xsd:element name="Escort">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="quantity" type="xsd:int"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EscortResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="EscortResult" type="xsd:boolean"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WcfServiceSandbox" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfServiceSandbox">
+      <xsd:complexType name="ErrorDetails">
+        <xsd:sequence/>
+      </xsd:complexType>
+      <xsd:element name="ErrorDetails" nillable="true" type="tns:ErrorDetails"/>
+    </xsd:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+      <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+      <xs:element name="byte" nillable="true" type="xs:byte"/>
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+      <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+      <xs:element name="double" nillable="true" type="xs:double"/>
+      <xs:element name="float" nillable="true" type="xs:float"/>
+      <xs:element name="int" nillable="true" type="xs:int"/>
+      <xs:element name="long" nillable="true" type="xs:long"/>
+      <xs:element name="QName" nillable="true" type="xs:QName"/>
+      <xs:element name="short" nillable="true" type="xs:short"/>
+      <xs:element name="string" nillable="true" type="xs:string"/>
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+      <xs:element name="char" nillable="true" type="tns:char"/>
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int"/>
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration"/>
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid"/>
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName"/>
+      <xs:attribute name="Id" type="xs:ID"/>
+      <xs:attribute name="Ref" type="xs:IDREF"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IEscortService_Escort_InputMessage">
+    <wsdl:part element="tns:Escort" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IEscortService_Escort_OutputMessage">
+    <wsdl:part element="tns:EscortResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IEscortService_Escort_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/WcfServiceSandbox" element="q1:ErrorDetails" name="detail"/>
+  </wsdl:message>
+  <wsdl:portType name="IEscortService">
+    <wsdl:operation name="Escort">
+      <wsdl:input message="tns:IEscortService_Escort_InputMessage" wsaw:Action="http://tempuri.org/IEscortService/Escort"/>
+      <wsdl:output message="tns:IEscortService_Escort_OutputMessage" wsaw:Action="http://tempuri.org/IEscortService/EscortResponse"/>
+      <wsdl:fault message="tns:IEscortService_Escort_ErrorDetailsFault_FaultMessage" name="ErrorDetailsFault" wsaw:Action="http://tempuri.org/IEscortService/EscortErrorDetailsFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EscortServiceEndpoint" type="tns:IEscortService">
+    <wsp:PolicyReference URI="#Client_BindingPolicy" xmlns:wsp="http://www.w3.org/ns/ws-policy"/>
+    <wsp:PolicyReference URI="#EscortServiceEndpoint_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Escort">
+      <soap12:operation soapAction="http://tempuri.org/IEscortService/Escort" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault name="ErrorDetailsFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EscortService">
+    <wsdl:port binding="tns:EscortServiceEndpoint" name="EscortServiceEndpoint">
+      <soap12:address location="https://sickles/EscortService/escort.svc"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://sickles/EscortService/escort.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+  <wsp:Policy wsu:Id="Client_BindingPolicy" xmlns:wsp="http://www.w3.org/ns/ws-policy">
+    <wsp:ExactlyOne>
+      <wsp:All/>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+</wsdl:definitions>

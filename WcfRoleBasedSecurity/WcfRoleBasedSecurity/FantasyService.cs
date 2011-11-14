@@ -13,7 +13,7 @@ namespace WcfRoleBasedSecurity
             return new List<string> { "This League Is Real", "St. Louis H2H" };
         }
 
-        [PrincipalPermission(SecurityAction.Demand, Role = "administrators")]
+        //[PrincipalPermission(SecurityAction.Demand, Role = "administrators")]
         public int GetTeamWins(int teamId)
         {
             IPrincipal i = Thread.CurrentPrincipal;

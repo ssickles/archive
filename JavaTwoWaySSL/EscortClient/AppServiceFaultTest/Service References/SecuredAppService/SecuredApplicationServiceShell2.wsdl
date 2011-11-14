@@ -1,0 +1,1473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SecuredApplicationServiceShell2" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="SecuredApplicationServiceShell2Endpoint_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:EndorsingSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:RequireThumbprintReference />
+                <sp:WssX509V3Token10 />
+              </wsp:Policy>
+            </sp:X509Token>
+            <sp:SignedParts>
+              <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+            </sp:SignedParts>
+          </wsp:Policy>
+        </sp:EndorsingSupportingTokens>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportRefKeyIdentifier />
+            <sp:MustSupportRefIssuerSerial />
+            <sp:MustSupportRefThumbprint />
+            <sp:MustSupportRefEncryptedKey />
+          </wsp:Policy>
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens />
+            <sp:RequireClientEntropy />
+            <sp:RequireServerEntropy />
+          </wsp:Policy>
+        </sp:Trust10>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://sickles/ServicesHost/securedApplicationService2.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://sickles/ServicesHost/securedApplicationService2.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" />
+      <xsd:import schemaLocation="https://sickles/ServicesHost/securedApplicationService2.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://sickles/ServicesHost/securedApplicationService2.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/IdentityStream.Models" />
+      <xsd:import schemaLocation="https://sickles/ServicesHost/securedApplicationService2.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" />
+      <xsd:import schemaLocation="https://sickles/ServicesHost/securedApplicationService2.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://sickles/ServicesHost/securedApplicationService2.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/IdentityStream.Data" />
+      <xsd:import schemaLocation="https://sickles/ServicesHost/securedApplicationService2.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/IdentityStream.Auditing" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISecuredApplicationService_CommitEnrollmentDuplicate_InputMessage">
+    <wsdl:part name="parameters" element="tns:CommitEnrollmentDuplicate" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_CommitEnrollmentDuplicate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CommitEnrollmentDuplicateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_CommitEnrollmentDuplicate_OperationMakesApplicationInaccessibleFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q1:OperationMakesApplicationInaccessibleFault" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_CommitEnrollmentDuplicate_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q2:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_FindIdentityFromTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindIdentityFromTemplate" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_FindIdentityFromTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindIdentityFromTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_FindIdentityFromTemplate_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q3:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_FindIdentityFromIdentityIDs_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindIdentityFromIdentityIDs" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_FindIdentityFromIdentityIDs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindIdentityFromIdentityIDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_FindIdentityFromIdentityIDs_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q4:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetAnsi378Template_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnsi378Template" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetAnsi378Template_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnsi378TemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetAnsi378Template_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q5:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTransaction" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateTransaction_OperationMakesApplicationInaccessibleFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q6:OperationMakesApplicationInaccessibleFault" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateTransaction_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q7:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetIdentityGroupTransactions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdentityGroupTransactions" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetIdentityGroupTransactions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdentityGroupTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetIdentityGroupTransactions_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q8:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetIdentityTransactions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdentityTransactions" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetIdentityTransactions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdentityTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetIdentityTransactions_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q9:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_AddTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTransaction" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_AddTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_AddTransaction_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q10:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_DeleteTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTransaction" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_DeleteTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_DeleteTransaction_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q11:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetReports_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReports" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetReports_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetReports_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q12:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetAudits_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAudits" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetAudits_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuditsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetAudits_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q13:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_AuditEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuditEvent" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_AuditEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuditEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_AuditEvent_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q14:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSettings" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateSettings_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q15:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_CheckApplicationAccess_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckApplicationAccess" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_CheckApplicationAccess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckApplicationAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_CheckApplicationAccess_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q16:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetTransactionSecurityDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransactionSecurityDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetTransactionSecurityDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransactionSecurityDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetTransactionSecurityDetails_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q17:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_CheckForDuplicateTemplates_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckForDuplicateTemplates" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_CheckForDuplicateTemplates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckForDuplicateTemplatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_CheckForDuplicateTemplates_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q18:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetCountries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountries" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetCountries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetCountries_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q19:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetCustomerEnrollmentsByGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerEnrollmentsByGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetCustomerEnrollmentsByGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerEnrollmentsByGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetCustomerEnrollmentsByGroup_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q20:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoles" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetRoles_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q21:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetIdentities_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdentities" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetIdentities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdentitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetIdentities_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q22:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetCustomerGroupMembers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerGroupMembers" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetCustomerGroupMembers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerGroupMembersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetCustomerGroupMembers_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q23:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetCustomersNotInGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomersNotInGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetCustomersNotInGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomersNotInGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetCustomersNotInGroup_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q24:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetCustomersInGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomersInGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetCustomersInGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomersInGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetCustomersInGroup_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q25:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetEmployees_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployees" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetEmployees_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetEmployees_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q26:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_AddIdentity_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddIdentity" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_AddIdentity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddIdentityResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_AddIdentity_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q27:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateIdentity_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateIdentity" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateIdentity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateIdentityResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateIdentity_OperationMakesApplicationInaccessibleFaultFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q28:OperationMakesApplicationInaccessibleFault" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateIdentity_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q29:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_RemoveCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCustomer" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_RemoveCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_RemoveCustomer_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q30:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_RemoveEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveEmployee" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_RemoveEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_RemoveEmployee_OperationMakesApplicationInaccessibleFaultFault_FaultMessage">
+    <wsdl:part xmlns:q31="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q31:OperationMakesApplicationInaccessibleFault" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_RemoveEmployee_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q32="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q32:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetLoginsForIdentity_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoginsForIdentity" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetLoginsForIdentity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoginsForIdentityResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetLoginsForIdentity_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q33="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q33:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLogin" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateLogin_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q34="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q34:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_RemoveLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveLogin" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_RemoveLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_RemoveLogin_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q35="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q35:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetCustomerGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerGroups" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetCustomerGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetCustomerGroups_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q36="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q36:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetCustomerGroupById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerGroupById" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetCustomerGroupById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerGroupByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetCustomerGroupById_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q37="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q37:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetCustomerGroupsByNameOrMember_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerGroupsByNameOrMember" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetCustomerGroupsByNameOrMember_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerGroupsByNameOrMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetCustomerGroupsByNameOrMember_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q38="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q38:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_AddCustomerGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCustomerGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_AddCustomerGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCustomerGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_AddCustomerGroup_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q39="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q39:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateCustomerGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateCustomerGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateCustomerGroup_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q40="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q40:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_RemoveCustomerGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCustomerGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_RemoveCustomerGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCustomerGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_RemoveCustomerGroup_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q41="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q41:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_AssignCustomersToGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssignCustomersToGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_AssignCustomersToGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssignCustomersToGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_AssignCustomersToGroup_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q42="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q42:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_RemoveCustomersFromGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCustomersFromGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_RemoveCustomersFromGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCustomersFromGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_RemoveCustomersFromGroup_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q43="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q43:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetCustomerGroupMemberCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerGroupMemberCount" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetCustomerGroupMemberCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerGroupMemberCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetCustomerGroupMemberCount_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q44="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q44:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_IdentifyCustomerInGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:IdentifyCustomerInGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_IdentifyCustomerInGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IdentifyCustomerInGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_IdentifyCustomerInGroup_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q45="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q45:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_AddEmployeeGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddEmployeeGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_AddEmployeeGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddEmployeeGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_AddEmployeeGroup_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q46="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q46:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateEmployeeGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmployeeGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateEmployeeGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmployeeGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateEmployeeGroup_OperationMakesApplicationInaccessibleFaultFault_FaultMessage">
+    <wsdl:part xmlns:q47="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q47:OperationMakesApplicationInaccessibleFault" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateEmployeeGroup_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q48="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q48:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_RemoveEmployeeGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveEmployeeGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_RemoveEmployeeGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveEmployeeGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_RemoveEmployeeGroup_OperationMakesApplicationInaccessibleFaultFault_FaultMessage">
+    <wsdl:part xmlns:q49="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q49:OperationMakesApplicationInaccessibleFault" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_RemoveEmployeeGroup_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q50="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q50:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateEmployeeGroupForIdentities_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmployeeGroupForIdentities" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateEmployeeGroupForIdentities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmployeeGroupForIdentitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateEmployeeGroupForIdentities_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q51="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q51:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateEmployeeGroupForIdentities_OperationMakesApplicationInaccessibleFaultFault_FaultMessage">
+    <wsdl:part xmlns:q52="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q52:OperationMakesApplicationInaccessibleFault" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetAuthenticationLevels_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthenticationLevels" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetAuthenticationLevels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthenticationLevelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetAuthenticationLevels_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q53="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q53:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetAuthenticationLevelUnits_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthenticationLevelUnits" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetAuthenticationLevelUnits_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthenticationLevelUnitsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_GetAuthenticationLevelUnits_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q54="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q54:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_AddAuthenticationLevel_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAuthenticationLevel" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_AddAuthenticationLevel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAuthenticationLevelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_AddAuthenticationLevel_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q55="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q55:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_RemoveAuthenticationLevel_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAuthenticationLevel" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_RemoveAuthenticationLevel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAuthenticationLevelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_RemoveAuthenticationLevel_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q56="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q56:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateAuthenticationLevel_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAuthenticationLevel" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateAuthenticationLevel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAuthenticationLevelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateAuthenticationLevel_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q57="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q57:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_UpdateAuthenticationLevel_OperationMakesApplicationInaccessibleFaultFault_FaultMessage">
+    <wsdl:part xmlns:q58="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q58:OperationMakesApplicationInaccessibleFault" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_AddEnrollment_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddEnrollment" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_AddEnrollment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddEnrollmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_AddEnrollment_ErrorDetailsFault_FaultMessage">
+    <wsdl:part xmlns:q59="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q59:ErrorDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISecuredApplicationService_AddEnrollment_OperationMakesApplicationInaccessibleFaultFault_FaultMessage">
+    <wsdl:part xmlns:q60="http://schemas.datacontract.org/2004/07/IdentityStream.Common.Exceptions" name="detail" element="q60:OperationMakesApplicationInaccessibleFault" />
+  </wsdl:message>
+  <wsdl:portType name="ISecuredApplicationService">
+    <wsdl:operation name="CommitEnrollmentDuplicate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/CommitEnrollmentDuplicate" message="tns:ISecuredApplicationService_CommitEnrollmentDuplicate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/CommitEnrollmentDuplicateResponse" message="tns:ISecuredApplicationService_CommitEnrollmentDuplicate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/CommitEnrollmentDuplicateOperationMakesApplicationInaccessibleFaultFault" name="OperationMakesApplicationInaccessibleFaultFault" message="tns:ISecuredApplicationService_CommitEnrollmentDuplicate_OperationMakesApplicationInaccessibleFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/CommitEnrollmentDuplicateErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_CommitEnrollmentDuplicate_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindIdentityFromTemplate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/FindIdentityFromTemplate" message="tns:ISecuredApplicationService_FindIdentityFromTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/FindIdentityFromTemplateResponse" message="tns:ISecuredApplicationService_FindIdentityFromTemplate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/FindIdentityFromTemplateErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_FindIdentityFromTemplate_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindIdentityFromIdentityIDs">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/FindIdentityFromIdentityIDs" message="tns:ISecuredApplicationService_FindIdentityFromIdentityIDs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/FindIdentityFromIdentityIDsResponse" message="tns:ISecuredApplicationService_FindIdentityFromIdentityIDs_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/FindIdentityFromIdentityIDsErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_FindIdentityFromIdentityIDs_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnsi378Template">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetAnsi378Template" message="tns:ISecuredApplicationService_GetAnsi378Template_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetAnsi378TemplateResponse" message="tns:ISecuredApplicationService_GetAnsi378Template_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetAnsi378TemplateErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_GetAnsi378Template_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTransaction">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateTransaction" message="tns:ISecuredApplicationService_UpdateTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateTransactionResponse" message="tns:ISecuredApplicationService_UpdateTransaction_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateTransactionOperationMakesApplicationInaccessibleFaultFault" name="OperationMakesApplicationInaccessibleFaultFault" message="tns:ISecuredApplicationService_UpdateTransaction_OperationMakesApplicationInaccessibleFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateTransactionErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_UpdateTransaction_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIdentityGroupTransactions">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetIdentityGroupTransactions" message="tns:ISecuredApplicationService_GetIdentityGroupTransactions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetIdentityGroupTransactionsResponse" message="tns:ISecuredApplicationService_GetIdentityGroupTransactions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetIdentityGroupTransactionsErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_GetIdentityGroupTransactions_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIdentityTransactions">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetIdentityTransactions" message="tns:ISecuredApplicationService_GetIdentityTransactions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetIdentityTransactionsResponse" message="tns:ISecuredApplicationService_GetIdentityTransactions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetIdentityTransactionsErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_GetIdentityTransactions_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTransaction">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/AddTransaction" message="tns:ISecuredApplicationService_AddTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/AddTransactionResponse" message="tns:ISecuredApplicationService_AddTransaction_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/AddTransactionErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_AddTransaction_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTransaction">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/DeleteTransaction" message="tns:ISecuredApplicationService_DeleteTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/DeleteTransactionResponse" message="tns:ISecuredApplicationService_DeleteTransaction_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/DeleteTransactionErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_DeleteTransaction_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReports">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetReports" message="tns:ISecuredApplicationService_GetReports_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetReportsResponse" message="tns:ISecuredApplicationService_GetReports_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetReportsErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_GetReports_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAudits">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetAudits" message="tns:ISecuredApplicationService_GetAudits_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetAuditsResponse" message="tns:ISecuredApplicationService_GetAudits_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetAuditsErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_GetAudits_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuditEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/AuditEvent" message="tns:ISecuredApplicationService_AuditEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/AuditEventResponse" message="tns:ISecuredApplicationService_AuditEvent_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/AuditEventErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_AuditEvent_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSettings">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateSettings" message="tns:ISecuredApplicationService_UpdateSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateSettingsResponse" message="tns:ISecuredApplicationService_UpdateSettings_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateSettingsErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_UpdateSettings_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckApplicationAccess">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/CheckApplicationAccess" message="tns:ISecuredApplicationService_CheckApplicationAccess_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/CheckApplicationAccessResponse" message="tns:ISecuredApplicationService_CheckApplicationAccess_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/CheckApplicationAccessErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_CheckApplicationAccess_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionSecurityDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetTransactionSecurityDetails" message="tns:ISecuredApplicationService_GetTransactionSecurityDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetTransactionSecurityDetailsResponse" message="tns:ISecuredApplicationService_GetTransactionSecurityDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetTransactionSecurityDetailsErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_GetTransactionSecurityDetails_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckForDuplicateTemplates">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/CheckForDuplicateTemplates" message="tns:ISecuredApplicationService_CheckForDuplicateTemplates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/CheckForDuplicateTemplatesResponse" message="tns:ISecuredApplicationService_CheckForDuplicateTemplates_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/CheckForDuplicateTemplatesErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_CheckForDuplicateTemplates_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetCountries" message="tns:ISecuredApplicationService_GetCountries_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetCountriesResponse" message="tns:ISecuredApplicationService_GetCountries_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetCountriesErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_GetCountries_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerEnrollmentsByGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetCustomerEnrollmentsByGroup" message="tns:ISecuredApplicationService_GetCustomerEnrollmentsByGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetCustomerEnrollmentsByGroupResponse" message="tns:ISecuredApplicationService_GetCustomerEnrollmentsByGroup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetCustomerEnrollmentsByGroupErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_GetCustomerEnrollmentsByGroup_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetRoles" message="tns:ISecuredApplicationService_GetRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetRolesResponse" message="tns:ISecuredApplicationService_GetRoles_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetRolesErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_GetRoles_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIdentities">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetIdentities" message="tns:ISecuredApplicationService_GetIdentities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetIdentitiesResponse" message="tns:ISecuredApplicationService_GetIdentities_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetIdentitiesErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_GetIdentities_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerGroupMembers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetCustomerGroupMembers" message="tns:ISecuredApplicationService_GetCustomerGroupMembers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetCustomerGroupMembersResponse" message="tns:ISecuredApplicationService_GetCustomerGroupMembers_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetCustomerGroupMembersErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_GetCustomerGroupMembers_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomersNotInGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetCustomersNotInGroup" message="tns:ISecuredApplicationService_GetCustomersNotInGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetCustomersNotInGroupResponse" message="tns:ISecuredApplicationService_GetCustomersNotInGroup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetCustomersNotInGroupErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_GetCustomersNotInGroup_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomersInGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetCustomersInGroup" message="tns:ISecuredApplicationService_GetCustomersInGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetCustomersInGroupResponse" message="tns:ISecuredApplicationService_GetCustomersInGroup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetCustomersInGroupErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_GetCustomersInGroup_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployees">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetEmployees" message="tns:ISecuredApplicationService_GetEmployees_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetEmployeesResponse" message="tns:ISecuredApplicationService_GetEmployees_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetEmployeesErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_GetEmployees_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddIdentity">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/AddIdentity" message="tns:ISecuredApplicationService_AddIdentity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/AddIdentityResponse" message="tns:ISecuredApplicationService_AddIdentity_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/AddIdentityErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_AddIdentity_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIdentity">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateIdentity" message="tns:ISecuredApplicationService_UpdateIdentity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateIdentityResponse" message="tns:ISecuredApplicationService_UpdateIdentity_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateIdentityOperationMakesApplicationInaccessibleFaultFault" name="OperationMakesApplicationInaccessibleFaultFault" message="tns:ISecuredApplicationService_UpdateIdentity_OperationMakesApplicationInaccessibleFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateIdentityErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_UpdateIdentity_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/RemoveCustomer" message="tns:ISecuredApplicationService_RemoveCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/RemoveCustomerResponse" message="tns:ISecuredApplicationService_RemoveCustomer_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/RemoveCustomerErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_RemoveCustomer_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/RemoveEmployee" message="tns:ISecuredApplicationService_RemoveEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/RemoveEmployeeResponse" message="tns:ISecuredApplicationService_RemoveEmployee_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/RemoveEmployeeOperationMakesApplicationInaccessibleFaultFault" name="OperationMakesApplicationInaccessibleFaultFault" message="tns:ISecuredApplicationService_RemoveEmployee_OperationMakesApplicationInaccessibleFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/RemoveEmployeeErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_RemoveEmployee_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoginsForIdentity">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetLoginsForIdentity" message="tns:ISecuredApplicationService_GetLoginsForIdentity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetLoginsForIdentityResponse" message="tns:ISecuredApplicationService_GetLoginsForIdentity_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetLoginsForIdentityErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_GetLoginsForIdentity_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateLogin" message="tns:ISecuredApplicationService_UpdateLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateLoginResponse" message="tns:ISecuredApplicationService_UpdateLogin_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateLoginErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_UpdateLogin_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/RemoveLogin" message="tns:ISecuredApplicationService_RemoveLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/RemoveLoginResponse" message="tns:ISecuredApplicationService_RemoveLogin_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/RemoveLoginErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_RemoveLogin_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerGroups">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetCustomerGroups" message="tns:ISecuredApplicationService_GetCustomerGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetCustomerGroupsResponse" message="tns:ISecuredApplicationService_GetCustomerGroups_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetCustomerGroupsErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_GetCustomerGroups_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerGroupById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetCustomerGroupById" message="tns:ISecuredApplicationService_GetCustomerGroupById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetCustomerGroupByIdResponse" message="tns:ISecuredApplicationService_GetCustomerGroupById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetCustomerGroupByIdErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_GetCustomerGroupById_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerGroupsByNameOrMember">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetCustomerGroupsByNameOrMember" message="tns:ISecuredApplicationService_GetCustomerGroupsByNameOrMember_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetCustomerGroupsByNameOrMemberResponse" message="tns:ISecuredApplicationService_GetCustomerGroupsByNameOrMember_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetCustomerGroupsByNameOrMemberErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_GetCustomerGroupsByNameOrMember_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomerGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/AddCustomerGroup" message="tns:ISecuredApplicationService_AddCustomerGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/AddCustomerGroupResponse" message="tns:ISecuredApplicationService_AddCustomerGroup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/AddCustomerGroupErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_AddCustomerGroup_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateCustomerGroup" message="tns:ISecuredApplicationService_UpdateCustomerGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateCustomerGroupResponse" message="tns:ISecuredApplicationService_UpdateCustomerGroup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateCustomerGroupErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_UpdateCustomerGroup_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCustomerGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/RemoveCustomerGroup" message="tns:ISecuredApplicationService_RemoveCustomerGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/RemoveCustomerGroupResponse" message="tns:ISecuredApplicationService_RemoveCustomerGroup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/RemoveCustomerGroupErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_RemoveCustomerGroup_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssignCustomersToGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/AssignCustomersToGroup" message="tns:ISecuredApplicationService_AssignCustomersToGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/AssignCustomersToGroupResponse" message="tns:ISecuredApplicationService_AssignCustomersToGroup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/AssignCustomersToGroupErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_AssignCustomersToGroup_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCustomersFromGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/RemoveCustomersFromGroup" message="tns:ISecuredApplicationService_RemoveCustomersFromGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/RemoveCustomersFromGroupResponse" message="tns:ISecuredApplicationService_RemoveCustomersFromGroup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/RemoveCustomersFromGroupErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_RemoveCustomersFromGroup_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerGroupMemberCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetCustomerGroupMemberCount" message="tns:ISecuredApplicationService_GetCustomerGroupMemberCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetCustomerGroupMemberCountResponse" message="tns:ISecuredApplicationService_GetCustomerGroupMemberCount_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetCustomerGroupMemberCountErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_GetCustomerGroupMemberCount_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IdentifyCustomerInGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/IdentifyCustomerInGroup" message="tns:ISecuredApplicationService_IdentifyCustomerInGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/IdentifyCustomerInGroupResponse" message="tns:ISecuredApplicationService_IdentifyCustomerInGroup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/IdentifyCustomerInGroupErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_IdentifyCustomerInGroup_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployeeGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/AddEmployeeGroup" message="tns:ISecuredApplicationService_AddEmployeeGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/AddEmployeeGroupResponse" message="tns:ISecuredApplicationService_AddEmployeeGroup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/AddEmployeeGroupErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_AddEmployeeGroup_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployeeGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateEmployeeGroup" message="tns:ISecuredApplicationService_UpdateEmployeeGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateEmployeeGroupResponse" message="tns:ISecuredApplicationService_UpdateEmployeeGroup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateEmployeeGroupOperationMakesApplicationInaccessibleFaultFault" name="OperationMakesApplicationInaccessibleFaultFault" message="tns:ISecuredApplicationService_UpdateEmployeeGroup_OperationMakesApplicationInaccessibleFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateEmployeeGroupErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_UpdateEmployeeGroup_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEmployeeGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/RemoveEmployeeGroup" message="tns:ISecuredApplicationService_RemoveEmployeeGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/RemoveEmployeeGroupResponse" message="tns:ISecuredApplicationService_RemoveEmployeeGroup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/RemoveEmployeeGroupOperationMakesApplicationInaccessibleFaultFault" name="OperationMakesApplicationInaccessibleFaultFault" message="tns:ISecuredApplicationService_RemoveEmployeeGroup_OperationMakesApplicationInaccessibleFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/RemoveEmployeeGroupErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_RemoveEmployeeGroup_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployeeGroupForIdentities">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateEmployeeGroupForIdentities" message="tns:ISecuredApplicationService_UpdateEmployeeGroupForIdentities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateEmployeeGroupForIdentitiesResponse" message="tns:ISecuredApplicationService_UpdateEmployeeGroupForIdentities_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateEmployeeGroupForIdentitiesErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_UpdateEmployeeGroupForIdentities_ErrorDetailsFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateEmployeeGroupForIdentitiesOperationMakesApplicationInaccessibleFaultFault" name="OperationMakesApplicationInaccessibleFaultFault" message="tns:ISecuredApplicationService_UpdateEmployeeGroupForIdentities_OperationMakesApplicationInaccessibleFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthenticationLevels">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetAuthenticationLevels" message="tns:ISecuredApplicationService_GetAuthenticationLevels_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetAuthenticationLevelsResponse" message="tns:ISecuredApplicationService_GetAuthenticationLevels_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetAuthenticationLevelsErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_GetAuthenticationLevels_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthenticationLevelUnits">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetAuthenticationLevelUnits" message="tns:ISecuredApplicationService_GetAuthenticationLevelUnits_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetAuthenticationLevelUnitsResponse" message="tns:ISecuredApplicationService_GetAuthenticationLevelUnits_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/GetAuthenticationLevelUnitsErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_GetAuthenticationLevelUnits_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAuthenticationLevel">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/AddAuthenticationLevel" message="tns:ISecuredApplicationService_AddAuthenticationLevel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/AddAuthenticationLevelResponse" message="tns:ISecuredApplicationService_AddAuthenticationLevel_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/AddAuthenticationLevelErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_AddAuthenticationLevel_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAuthenticationLevel">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/RemoveAuthenticationLevel" message="tns:ISecuredApplicationService_RemoveAuthenticationLevel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/RemoveAuthenticationLevelResponse" message="tns:ISecuredApplicationService_RemoveAuthenticationLevel_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/RemoveAuthenticationLevelErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_RemoveAuthenticationLevel_ErrorDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAuthenticationLevel">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateAuthenticationLevel" message="tns:ISecuredApplicationService_UpdateAuthenticationLevel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateAuthenticationLevelResponse" message="tns:ISecuredApplicationService_UpdateAuthenticationLevel_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateAuthenticationLevelErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_UpdateAuthenticationLevel_ErrorDetailsFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/UpdateAuthenticationLevelOperationMakesApplicationInaccessibleFaultFault" name="OperationMakesApplicationInaccessibleFaultFault" message="tns:ISecuredApplicationService_UpdateAuthenticationLevel_OperationMakesApplicationInaccessibleFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddEnrollment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecuredApplicationService/AddEnrollment" message="tns:ISecuredApplicationService_AddEnrollment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecuredApplicationService/AddEnrollmentResponse" message="tns:ISecuredApplicationService_AddEnrollment_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/AddEnrollmentErrorDetailsFault" name="ErrorDetailsFault" message="tns:ISecuredApplicationService_AddEnrollment_ErrorDetailsFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISecuredApplicationService/AddEnrollmentOperationMakesApplicationInaccessibleFaultFault" name="OperationMakesApplicationInaccessibleFaultFault" message="tns:ISecuredApplicationService_AddEnrollment_OperationMakesApplicationInaccessibleFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SecuredApplicationServiceShell2Endpoint" type="tns:ISecuredApplicationService">
+    <wsp:PolicyReference URI="#SecuredApplicationServiceShell2Endpoint_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CommitEnrollmentDuplicate">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/CommitEnrollmentDuplicate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OperationMakesApplicationInaccessibleFaultFault">
+        <soap12:fault use="literal" name="OperationMakesApplicationInaccessibleFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindIdentityFromTemplate">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/FindIdentityFromTemplate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindIdentityFromIdentityIDs">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/FindIdentityFromIdentityIDs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnsi378Template">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/GetAnsi378Template" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTransaction">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/UpdateTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OperationMakesApplicationInaccessibleFaultFault">
+        <soap12:fault use="literal" name="OperationMakesApplicationInaccessibleFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetIdentityGroupTransactions">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/GetIdentityGroupTransactions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetIdentityTransactions">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/GetIdentityTransactions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddTransaction">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/AddTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTransaction">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/DeleteTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetReports">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/GetReports" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAudits">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/GetAudits" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AuditEvent">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/AuditEvent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSettings">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/UpdateSettings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckApplicationAccess">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/CheckApplicationAccess" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionSecurityDetails">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/GetTransactionSecurityDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckForDuplicateTemplates">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/CheckForDuplicateTemplates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/GetCountries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerEnrollmentsByGroup">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/GetCustomerEnrollmentsByGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoles">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/GetRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetIdentities">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/GetIdentities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerGroupMembers">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/GetCustomerGroupMembers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomersNotInGroup">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/GetCustomersNotInGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomersInGroup">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/GetCustomersInGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployees">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/GetEmployees" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddIdentity">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/AddIdentity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIdentity">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/UpdateIdentity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OperationMakesApplicationInaccessibleFaultFault">
+        <soap12:fault use="literal" name="OperationMakesApplicationInaccessibleFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCustomer">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/RemoveCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEmployee">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/RemoveEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OperationMakesApplicationInaccessibleFaultFault">
+        <soap12:fault use="literal" name="OperationMakesApplicationInaccessibleFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoginsForIdentity">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/GetLoginsForIdentity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLogin">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/UpdateLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLogin">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/RemoveLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerGroups">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/GetCustomerGroups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerGroupById">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/GetCustomerGroupById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerGroupsByNameOrMember">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/GetCustomerGroupsByNameOrMember" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomerGroup">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/AddCustomerGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerGroup">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/UpdateCustomerGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCustomerGroup">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/RemoveCustomerGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AssignCustomersToGroup">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/AssignCustomersToGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCustomersFromGroup">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/RemoveCustomersFromGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerGroupMemberCount">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/GetCustomerGroupMemberCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="IdentifyCustomerInGroup">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/IdentifyCustomerInGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployeeGroup">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/AddEmployeeGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployeeGroup">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/UpdateEmployeeGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OperationMakesApplicationInaccessibleFaultFault">
+        <soap12:fault use="literal" name="OperationMakesApplicationInaccessibleFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEmployeeGroup">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/RemoveEmployeeGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OperationMakesApplicationInaccessibleFaultFault">
+        <soap12:fault use="literal" name="OperationMakesApplicationInaccessibleFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployeeGroupForIdentities">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/UpdateEmployeeGroupForIdentities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OperationMakesApplicationInaccessibleFaultFault">
+        <soap12:fault use="literal" name="OperationMakesApplicationInaccessibleFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthenticationLevels">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/GetAuthenticationLevels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthenticationLevelUnits">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/GetAuthenticationLevelUnits" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddAuthenticationLevel">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/AddAuthenticationLevel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAuthenticationLevel">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/RemoveAuthenticationLevel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAuthenticationLevel">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/UpdateAuthenticationLevel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OperationMakesApplicationInaccessibleFaultFault">
+        <soap12:fault use="literal" name="OperationMakesApplicationInaccessibleFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddEnrollment">
+      <soap12:operation soapAction="http://tempuri.org/ISecuredApplicationService/AddEnrollment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailsFault">
+        <soap12:fault use="literal" name="ErrorDetailsFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OperationMakesApplicationInaccessibleFaultFault">
+        <soap12:fault use="literal" name="OperationMakesApplicationInaccessibleFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SecuredApplicationServiceShell2">
+    <wsdl:port name="SecuredApplicationServiceShell2Endpoint" binding="tns:SecuredApplicationServiceShell2Endpoint">
+      <soap12:address location="https://sickles/ServicesHost/securedApplicationService2.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://sickles/ServicesHost/securedApplicationService2.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

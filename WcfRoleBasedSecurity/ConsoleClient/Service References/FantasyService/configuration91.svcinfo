@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="JMzNTBWnuuL37af7exDX0S7GqDU=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="8dNCyt4YmoBC+uY/uEi6IOUrJ1w=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IFantasyService">
       <properties>
@@ -82,13 +82,13 @@
           <serializedValue>System.ServiceModel.Configuration.WSHttpSecurityElement</serializedValue>
         </property>
         <property path="/security/mode" isComplexType="false" isExplicitlyDefined="true" clrType="System.ServiceModel.SecurityMode, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>Message</serializedValue>
+          <serializedValue>TransportWithMessageCredential</serializedValue>
         </property>
         <property path="/security/transport" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.WSHttpTransportSecurityElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.WSHttpTransportSecurityElement</serializedValue>
         </property>
         <property path="/security/transport/clientCredentialType" isComplexType="false" isExplicitlyDefined="true" clrType="System.ServiceModel.HttpClientCredentialType, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>Windows</serializedValue>
+          <serializedValue>None</serializedValue>
         </property>
         <property path="/security/transport/proxyCredentialType" isComplexType="false" isExplicitlyDefined="true" clrType="System.ServiceModel.HttpProxyCredentialType, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>None</serializedValue>
@@ -112,7 +112,7 @@
           <serializedValue>System.ServiceModel.Configuration.NonDualMessageSecurityOverHttpElement</serializedValue>
         </property>
         <property path="/security/message/clientCredentialType" isComplexType="false" isExplicitlyDefined="true" clrType="System.ServiceModel.MessageCredentialType, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>Windows</serializedValue>
+          <serializedValue>Certificate</serializedValue>
         </property>
         <property path="/security/message/negotiateServiceCredential" isComplexType="false" isExplicitlyDefined="true" clrType="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>True</serializedValue>
@@ -120,17 +120,17 @@
         <property path="/security/message/algorithmSuite" isComplexType="false" isExplicitlyDefined="true" clrType="System.ServiceModel.Security.SecurityAlgorithmSuite, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>Default</serializedValue>
         </property>
-        <property path="/security/message/establishSecurityContext" isComplexType="false" isExplicitlyDefined="false" clrType="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>True</serializedValue>
+        <property path="/security/message/establishSecurityContext" isComplexType="false" isExplicitlyDefined="true" clrType="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>False</serializedValue>
         </property>
       </properties>
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="WSHttpBinding_IFantasyService" contract="FantasyService.IFantasyService" bindingType="wsHttpBinding" address="http://localhost:8732/Design_Time_Addresses/WcfRoleBasedSecurity/FantasyService/" bindingConfiguration="WSHttpBinding_IFantasyService">
+    <endpoint name="WSHttpBinding_IFantasyService" contract="FantasyService.IFantasyService" bindingType="wsHttpBinding" address="https://sickles/FantasyService/service.svc" bindingConfiguration="WSHttpBinding_IFantasyService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8732/Design_Time_Addresses/WcfRoleBasedSecurity/FantasyService/</serializedValue>
+          <serializedValue>https://sickles/FantasyService/service.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -168,8 +168,8 @@
         <property path="/identity/dns" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.DnsElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.DnsElement</serializedValue>
         </property>
-        <property path="/identity/dns/value" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>localhost</serializedValue>
+        <property path="/identity/dns/value" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue />
         </property>
         <property path="/identity/rsa" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.RsaElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.RsaElement</serializedValue>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="aec4bbee-6bc7-4abc-a84e-af79bdfa0da9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://localhost/ServicesHost/securedApplicationService2.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="securedApplicationService2.xsd" MetadataType="Schema" ID="2db88569-52b9-475e-a417-114b2da9cb5c" SourceId="1" SourceUrl="https://sickles/ServicesHost/securedApplicationService2.svc?xsd=xsd0" />
+    <MetadataFile FileName="SecuredApplicationServiceShell2.wsdl" MetadataType="Wsdl" ID="0f9874e9-13e6-43d3-b5c9-40fdbe609dd9" SourceId="1" SourceUrl="https://sickles/ServicesHost/securedApplicationService2.svc?wsdl" />
+    <MetadataFile FileName="securedApplicationService2.disco" MetadataType="Disco" ID="e0fdcb23-bdf3-4824-a127-5d734ee14610" SourceId="1" SourceUrl="https://sickles/ServicesHost/securedApplicationService2.svc?disco" />
+    <MetadataFile FileName="securedApplicationService21.xsd" MetadataType="Schema" ID="217d512f-a4b0-4a1a-b0a6-02cd14e735e3" SourceId="1" SourceUrl="https://sickles/ServicesHost/securedApplicationService2.svc?xsd=xsd5" />
+    <MetadataFile FileName="securedApplicationService22.xsd" MetadataType="Schema" ID="3e1916e7-c899-4d1e-b3c7-ef9325749660" SourceId="1" SourceUrl="https://sickles/ServicesHost/securedApplicationService2.svc?xsd=xsd3" />
+    <MetadataFile FileName="securedApplicationService23.xsd" MetadataType="Schema" ID="baf1f96b-2d57-48b5-861a-a8a6c4808d40" SourceId="1" SourceUrl="https://sickles/ServicesHost/securedApplicationService2.svc?xsd=xsd6" />
+    <MetadataFile FileName="securedApplicationService24.xsd" MetadataType="Schema" ID="e1e8464b-4c32-4486-a1df-2127729b650b" SourceId="1" SourceUrl="https://sickles/ServicesHost/securedApplicationService2.svc?xsd=xsd7" />
+    <MetadataFile FileName="securedApplicationService25.xsd" MetadataType="Schema" ID="f4afefbf-f2bc-4fdc-9794-bf90e9a4b3c8" SourceId="1" SourceUrl="https://sickles/ServicesHost/securedApplicationService2.svc?xsd=xsd1" />
+    <MetadataFile FileName="securedApplicationService26.xsd" MetadataType="Schema" ID="0550eaf3-0353-4aa4-b9fd-54952e8c0c61" SourceId="1" SourceUrl="https://sickles/ServicesHost/securedApplicationService2.svc?xsd=xsd4" />
+    <MetadataFile FileName="securedApplicationService27.xsd" MetadataType="Schema" ID="185b60b6-c08a-44e3-ba54-b58ef499ee6c" SourceId="1" SourceUrl="https://sickles/ServicesHost/securedApplicationService2.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

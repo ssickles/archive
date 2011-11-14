@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://sickles/ServicesHost/securedApplicationService2.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="IdentityData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Synchronizable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AuthenticationLevelUid" nillable="true" type="ser:guid" />
+          <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmployeeGroupUid" nillable="true" type="ser:guid" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsActiveCustomer" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsActiveEmployee" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsCustomer" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsEmployee" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LanguageCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Manager" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SourceId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdentityData" nillable="true" type="tns:IdentityData" />
+  <xs:complexType name="Synchronizable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Uid" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Synchronizable" nillable="true" type="tns:Synchronizable" />
+  <xs:complexType name="IdentityTransactionData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Synchronizable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IdentityUid" type="ser:guid" />
+          <xs:element minOccurs="0" name="TransactionCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdentityTransactionData" nillable="true" type="tns:IdentityTransactionData" />
+  <xs:complexType name="EmployeeGroupData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Synchronizable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AuthenticationLevelUid" nillable="true" type="ser:guid" />
+          <xs:element minOccurs="0" name="BioControlsPassword" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsDefaultGroup" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmployeeGroupData" nillable="true" type="tns:EmployeeGroupData" />
+  <xs:complexType name="EnrollmentData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Synchronizable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Active" type="xs:int" />
+          <xs:element minOccurs="0" name="AdministratorUid" nillable="true" type="ser:guid" />
+          <xs:element minOccurs="0" name="AuthenticationTypeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EnrollmentDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IdentityUid" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EnrollmentData" nillable="true" type="tns:EnrollmentData" />
+  <xs:complexType name="LoginData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Synchronizable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ApplicationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirstTime" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IdentityUid" type="ser:guid" />
+          <xs:element minOccurs="0" name="LoginName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RoleCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoginData" nillable="true" type="tns:LoginData" />
+  <xs:complexType name="LoginMappingData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Synchronizable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ApplicationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoginMappingData" nillable="true" type="tns:LoginMappingData" />
+  <xs:complexType name="SettingsData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Synchronizable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EnableRealTimeCustomerDupCheck" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ExtendLevel" type="xs:boolean" />
+          <xs:element minOccurs="0" name="FingersNfmMaximalRotation" type="xs:int" />
+          <xs:element minOccurs="0" name="MatchingThreshold" type="xs:int" />
+          <xs:element minOccurs="0" name="PersistFingerprintImages" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TemplatesPerEnrollment" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SettingsData" nillable="true" type="tns:SettingsData" />
+  <xs:complexType name="TransactionData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Synchronizable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ApplicationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AuthenticationLevelUid" type="ser:guid" />
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TransactionTypeCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TransactionData" nillable="true" type="tns:TransactionData" />
+  <xs:complexType name="EmployeeGroupTransactionData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Synchronizable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EmployeeGroupUid" type="ser:guid" />
+          <xs:element minOccurs="0" name="TransactionCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmployeeGroupTransactionData" nillable="true" type="tns:EmployeeGroupTransactionData" />
+  <xs:complexType name="AuthenticationLevelData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Synchronizable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AuthenticationLevelData" nillable="true" type="tns:AuthenticationLevelData" />
+  <xs:complexType name="AuthenticationLevelUnitData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Synchronizable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AuthenticationLevelUid" type="ser:guid" />
+          <xs:element minOccurs="0" name="AuthenticationUnitCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AuthenticationLevelUnitData" nillable="true" type="tns:AuthenticationLevelUnitData" />
+  <xs:complexType name="AuthenticationTemplateData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Synchronizable">
+        <xs:sequence>
+          <xs:element name="AuthenticationUnitCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EnrollmentUid" type="ser:guid" />
+          <xs:element minOccurs="0" name="NonEnrollmentCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NonEnrollmentDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Score" type="xs:int" />
+          <xs:element name="Template" nillable="true" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AuthenticationTemplateData" nillable="true" type="tns:AuthenticationTemplateData" />
+  <xs:complexType name="AuthenticationTemplateImageData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Synchronizable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AuthenticationTemplateUid" type="ser:guid" />
+          <xs:element minOccurs="0" name="Image" nillable="true" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AuthenticationTemplateImageData" nillable="true" type="tns:AuthenticationTemplateImageData" />
+  <xs:complexType name="CustomerGroupData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Synchronizable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SourceId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerGroupData" nillable="true" type="tns:CustomerGroupData" />
+  <xs:complexType name="CustomerGroupMemberData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Synchronizable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CustomerGroupUid" type="ser:guid" />
+          <xs:element minOccurs="0" name="IdentityUid" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerGroupMemberData" nillable="true" type="tns:CustomerGroupMemberData" />
+  <xs:complexType name="ArrayOfTransactionData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TransactionData" nillable="true" type="tns:TransactionData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTransactionData" nillable="true" type="tns:ArrayOfTransactionData" />
+  <xs:complexType name="ArrayOfReportData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReportData" nillable="true" type="tns:ReportData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReportData" nillable="true" type="tns:ArrayOfReportData" />
+  <xs:complexType name="ReportData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Enabled" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="URL" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReportData" nillable="true" type="tns:ReportData" />
+  <xs:complexType name="ArrayOfAuditData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AuditData" nillable="true" type="tns:AuditData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAuditData" nillable="true" type="tns:ArrayOfAuditData" />
+  <xs:complexType name="AuditData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdentityUid" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuditData" nillable="true" type="tns:AuditData" />
+  <xs:complexType name="ArrayOfTransactionSecurityData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TransactionSecurityData" nillable="true" type="tns:TransactionSecurityData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTransactionSecurityData" nillable="true" type="tns:ArrayOfTransactionSecurityData" />
+  <xs:complexType name="TransactionSecurityData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AuthenticatonLevel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefiningLevelOfTransaction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Transaction" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TransactionSecurityData" nillable="true" type="tns:TransactionSecurityData" />
+  <xs:complexType name="ArrayOfAuthenticationTemplateData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AuthenticationTemplateData" nillable="true" type="tns:AuthenticationTemplateData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAuthenticationTemplateData" nillable="true" type="tns:ArrayOfAuthenticationTemplateData" />
+  <xs:complexType name="ArrayOfCountryData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CountryData" nillable="true" type="tns:CountryData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCountryData" nillable="true" type="tns:ArrayOfCountryData" />
+  <xs:complexType name="CountryData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Enabled" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CountryData" nillable="true" type="tns:CountryData" />
+  <xs:complexType name="ArrayOfIdentityEnrollmentData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IdentityEnrollmentData" nillable="true" type="tns:IdentityEnrollmentData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIdentityEnrollmentData" nillable="true" type="tns:ArrayOfIdentityEnrollmentData" />
+  <xs:complexType name="IdentityEnrollmentData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FingerprintsEnrolled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Uid" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IdentityEnrollmentData" nillable="true" type="tns:IdentityEnrollmentData" />
+  <xs:complexType name="ArrayOfRoleData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RoleData" nillable="true" type="tns:RoleData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRoleData" nillable="true" type="tns:ArrayOfRoleData" />
+  <xs:complexType name="RoleData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RoleData" nillable="true" type="tns:RoleData" />
+  <xs:complexType name="ArrayOfIdentityData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IdentityData" nillable="true" type="tns:IdentityData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIdentityData" nillable="true" type="tns:ArrayOfIdentityData" />
+  <xs:complexType name="ArrayOfLoginData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LoginData" nillable="true" type="tns:LoginData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLoginData" nillable="true" type="tns:ArrayOfLoginData" />
+  <xs:complexType name="ArrayOfCustomerGroupData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomerGroupData" nillable="true" type="tns:CustomerGroupData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomerGroupData" nillable="true" type="tns:ArrayOfCustomerGroupData" />
+  <xs:complexType name="ArrayOfAuthenticationLevelData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AuthenticationLevelData" nillable="true" type="tns:AuthenticationLevelData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAuthenticationLevelData" nillable="true" type="tns:ArrayOfAuthenticationLevelData" />
+  <xs:complexType name="ArrayOfAuthenticationUnitData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AuthenticationUnitData" nillable="true" type="tns:AuthenticationUnitData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAuthenticationUnitData" nillable="true" type="tns:ArrayOfAuthenticationUnitData" />
+  <xs:complexType name="AuthenticationUnitData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AuthenticationTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Required" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Sequence" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuthenticationUnitData" nillable="true" type="tns:AuthenticationUnitData" />
+</xs:schema>

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EscortClient", "EscortClient.csproj", "{3F2FDACE-832A-4030-8603-FBAED558DCEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppServiceFaultTest", "..\AppServiceFaultTest\AppServiceFaultTest.csproj", "{D7CDD1E4-6D7D-46CC-B0D3-55137A637396}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F2FDACE-832A-4030-8603-FBAED558DCEF}.Debug|x86.ActiveCfg = Debug|x86
+		{3F2FDACE-832A-4030-8603-FBAED558DCEF}.Debug|x86.Build.0 = Debug|x86
+		{3F2FDACE-832A-4030-8603-FBAED558DCEF}.Release|x86.ActiveCfg = Release|x86
+		{3F2FDACE-832A-4030-8603-FBAED558DCEF}.Release|x86.Build.0 = Release|x86
+		{D7CDD1E4-6D7D-46CC-B0D3-55137A637396}.Debug|x86.ActiveCfg = Debug|x86
+		{D7CDD1E4-6D7D-46CC-B0D3-55137A637396}.Debug|x86.Build.0 = Debug|x86
+		{D7CDD1E4-6D7D-46CC-B0D3-55137A637396}.Release|x86.ActiveCfg = Release|x86
+		{D7CDD1E4-6D7D-46CC-B0D3-55137A637396}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,1 @@
+<%@ServiceHost language="C#" Debug="true" Service="WcfRoleBasedSecurity.FantasyService"%>

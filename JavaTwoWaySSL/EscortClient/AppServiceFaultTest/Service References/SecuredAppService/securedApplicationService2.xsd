@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://sickles/ServicesHost/securedApplicationService2.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/IdentityStream.Models" />
+  <xs:import schemaLocation="https://sickles/ServicesHost/securedApplicationService2.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://sickles/ServicesHost/securedApplicationService2.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" />
+  <xs:import schemaLocation="https://sickles/ServicesHost/securedApplicationService2.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://sickles/ServicesHost/securedApplicationService2.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/IdentityStream.Data" />
+  <xs:import schemaLocation="https://sickles/ServicesHost/securedApplicationService2.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/IdentityStream.Auditing" />
+  <xs:element name="CommitEnrollmentDuplicate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q1:RequestData" />
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="enrollmentDuplicateId" type="q2:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CommitEnrollmentDuplicateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindIdentityFromTemplate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q3:RequestData" />
+        <xs:element minOccurs="0" name="template" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="authenticationUnitCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindIdentityFromTemplateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="FindIdentityFromTemplateResult" nillable="true" type="q4:IdentityData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindIdentityFromIdentityIDs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q5:RequestData" />
+        <xs:element minOccurs="0" name="template" nillable="true" type="xs:base64Binary" />
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="IdentityIDs" nillable="true" type="q6:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindIdentityFromIdentityIDsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="FindIdentityFromIdentityIDsResult" nillable="true" type="q7:IdentityData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAnsi378Template">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q8:RequestData" />
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="identityUid" type="q9:guid" />
+        <xs:element minOccurs="0" name="authenticationUnitCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAnsi378TemplateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAnsi378TemplateResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTransaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q10:RequestData" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="transactionData" nillable="true" type="q11:TransactionData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTransactionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIdentityGroupTransactions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q12:RequestData" />
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="groupUid" type="q13:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIdentityGroupTransactionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="GetIdentityGroupTransactionsResult" nillable="true" type="q14:ArrayOfTransactionData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIdentityTransactions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q15:RequestData" />
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="identityUid" type="q16:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIdentityTransactionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="GetIdentityTransactionsResult" nillable="true" type="q17:ArrayOfTransactionData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddTransaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q18:RequestData" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="transactionData" nillable="true" type="q19:TransactionData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddTransactionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="AddTransactionResult" type="q20:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTransaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q21:RequestData" />
+        <xs:element minOccurs="0" name="transactionCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTransactionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReports">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q22:RequestData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="GetReportsResult" nillable="true" type="q23:ArrayOfReportData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAudits">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q24:RequestData" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/IdentityStream.Data" minOccurs="0" name="query" nillable="true" type="q25:QueryObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuditsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="GetAuditsResult" nillable="true" type="q26:ArrayOfAuditData" />
+        <xs:element minOccurs="0" name="totalRecords" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AuditEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q27:RequestData" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/IdentityStream.Auditing" minOccurs="0" name="type" type="q28:AuditEvents" />
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AuditEventResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSettings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q29:RequestData" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="settingsData" nillable="true" type="q30:SettingsData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSettingsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckApplicationAccess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q31:RequestData" />
+        <xs:element xmlns:q32="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="identityUid" type="q32:guid" />
+        <xs:element minOccurs="0" name="applicationCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckApplicationAccessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckApplicationAccessResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransactionSecurityDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q33:RequestData" />
+        <xs:element xmlns:q34="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="identityUid" type="q34:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransactionSecurityDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="GetTransactionSecurityDetailsResult" nillable="true" type="q35:ArrayOfTransactionSecurityData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckForDuplicateTemplates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="currentTemplate" nillable="true" type="q36:AuthenticationTemplateData" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="otherTemplates" nillable="true" type="q37:ArrayOfAuthenticationTemplateData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckForDuplicateTemplatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="CheckForDuplicateTemplatesResult" nillable="true" type="q38:AuthenticationTemplateData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountries">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q39:RequestData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="GetCountriesResult" nillable="true" type="q40:ArrayOfCountryData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerEnrollmentsByGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q41:RequestData" />
+        <xs:element xmlns:q42="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="customerGroupUid" type="q42:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerEnrollmentsByGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="GetCustomerEnrollmentsByGroupResult" nillable="true" type="q43:ArrayOfIdentityEnrollmentData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q44:RequestData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRolesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="GetRolesResult" nillable="true" type="q45:ArrayOfRoleData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIdentities">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q46:RequestData" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/IdentityStream.Data" minOccurs="0" name="query" nillable="true" type="q47:QueryObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIdentitiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="GetIdentitiesResult" nillable="true" type="q48:ArrayOfIdentityData" />
+        <xs:element minOccurs="0" name="totalRecords" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerGroupMembers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q49:RequestData" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/IdentityStream.Data" minOccurs="0" name="query" nillable="true" type="q50:QueryObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerGroupMembersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="GetCustomerGroupMembersResult" nillable="true" type="q51:ArrayOfIdentityData" />
+        <xs:element minOccurs="0" name="totalRecords" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomersNotInGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q52:RequestData" />
+        <xs:element xmlns:q53="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="groupUid" type="q53:guid" />
+        <xs:element minOccurs="0" name="lastNameSearch" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="pageOffset" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomersNotInGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="GetCustomersNotInGroupResult" nillable="true" type="q54:ArrayOfIdentityData" />
+        <xs:element minOccurs="0" name="totalRecords" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomersInGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q55:RequestData" />
+        <xs:element xmlns:q56="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="groupUid" type="q56:guid" />
+        <xs:element minOccurs="0" name="lastNameSearch" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="pageOffset" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomersInGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="GetCustomersInGroupResult" nillable="true" type="q57:ArrayOfIdentityData" />
+        <xs:element minOccurs="0" name="totalRecords" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEmployees">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q58:RequestData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEmployeesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="GetEmployeesResult" nillable="true" type="q59:ArrayOfIdentityData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddIdentity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q60:RequestData" />
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="identityData" nillable="true" type="q61:IdentityData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddIdentityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="AddIdentityResult" type="q62:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateIdentity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q63:RequestData" />
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="identityData" nillable="true" type="q64:IdentityData" />
+        <xs:element minOccurs="0" name="transCodes" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateIdentityResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q65:RequestData" />
+        <xs:element xmlns:q66="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="identityUid" type="q66:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemoveCustomerResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveEmployee">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q67:RequestData" />
+        <xs:element xmlns:q68="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="identityUid" type="q68:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveEmployeeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemoveEmployeeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoginsForIdentity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q69:RequestData" />
+        <xs:element xmlns:q70="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="identityUid" type="q70:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoginsForIdentityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="GetLoginsForIdentityResult" nillable="true" type="q71:ArrayOfLoginData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLogin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q72:RequestData" />
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="loginData" nillable="true" type="q73:LoginData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLoginResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveLogin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q74:RequestData" />
+        <xs:element xmlns:q75="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="loginUid" type="q75:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveLoginResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerGroups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q76:RequestData" />
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/IdentityStream.Data" minOccurs="0" name="query" nillable="true" type="q77:QueryObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="GetCustomerGroupsResult" nillable="true" type="q78:ArrayOfCustomerGroupData" />
+        <xs:element minOccurs="0" name="totalResults" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerGroupById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q79:RequestData" />
+        <xs:element xmlns:q80="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="groupUid" type="q80:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerGroupByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="GetCustomerGroupByIdResult" nillable="true" type="q81:CustomerGroupData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerGroupsByNameOrMember">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q82:RequestData" />
+        <xs:element minOccurs="0" name="groupName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="customerName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerGroupsByNameOrMemberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="GetCustomerGroupsByNameOrMemberResult" nillable="true" type="q83:ArrayOfCustomerGroupData" />
+        <xs:element minOccurs="0" name="totalResults" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCustomerGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q84:RequestData" />
+        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="group" nillable="true" type="q85:CustomerGroupData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCustomerGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="AddCustomerGroupResult" type="q86:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q87:RequestData" />
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="group" nillable="true" type="q88:CustomerGroupData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveCustomerGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q89:RequestData" />
+        <xs:element xmlns:q90="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="groupUid" type="q90:guid" />
+        <xs:element minOccurs="0" name="newDefaultGroupUid" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveCustomerGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssignCustomersToGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q91:RequestData" />
+        <xs:element xmlns:q92="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="groupUid" type="q92:guid" />
+        <xs:element minOccurs="0" name="identityUids" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssignCustomersToGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveCustomersFromGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q93:RequestData" />
+        <xs:element xmlns:q94="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="groupUid" type="q94:guid" />
+        <xs:element minOccurs="0" name="identityUids" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveCustomersFromGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerGroupMemberCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q95:RequestData" />
+        <xs:element xmlns:q96="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="groupUid" type="q96:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerGroupMemberCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCustomerGroupMemberCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IdentifyCustomerInGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q97:RequestData" />
+        <xs:element minOccurs="0" name="template" nillable="true" type="xs:base64Binary" />
+        <xs:element xmlns:q98="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="groupUid" type="q98:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IdentifyCustomerInGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IdentifyCustomerInGroupResult" type="q99:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddEmployeeGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q100:RequestData" />
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="group" nillable="true" type="q101:EmployeeGroupData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddEmployeeGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="AddEmployeeGroupResult" type="q102:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEmployeeGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q103:RequestData" />
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="group" nillable="true" type="q104:EmployeeGroupData" />
+        <xs:element minOccurs="0" name="transactionCodes" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEmployeeGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveEmployeeGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q105:RequestData" />
+        <xs:element xmlns:q106="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="groupUid" type="q106:guid" />
+        <xs:element xmlns:q107="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="newDefaultGroupUid" nillable="true" type="q107:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveEmployeeGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEmployeeGroupForIdentities">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q108:RequestData" />
+        <xs:element xmlns:q109="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="groupUid" type="q109:guid" />
+        <xs:element minOccurs="0" name="identityUids" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEmployeeGroupForIdentitiesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuthenticationLevels">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q110:RequestData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuthenticationLevelsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="GetAuthenticationLevelsResult" nillable="true" type="q111:ArrayOfAuthenticationLevelData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuthenticationLevelUnits">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q112="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q112:RequestData" />
+        <xs:element xmlns:q113="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="levelUid" type="q113:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuthenticationLevelUnitsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q114="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="GetAuthenticationLevelUnitsResult" nillable="true" type="q114:ArrayOfAuthenticationUnitData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddAuthenticationLevel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q115="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q115:RequestData" />
+        <xs:element xmlns:q116="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="authenticationLevelData" nillable="true" type="q116:AuthenticationLevelData" />
+        <xs:element xmlns:q117="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="units" nillable="true" type="q117:ArrayOfAuthenticationUnitData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddAuthenticationLevelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q118="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="AddAuthenticationLevelResult" type="q118:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveAuthenticationLevel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q119="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q119:RequestData" />
+        <xs:element xmlns:q120="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="uid" type="q120:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveAuthenticationLevelResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAuthenticationLevel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q121="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q121:RequestData" />
+        <xs:element xmlns:q122="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="authenticationLevelData" nillable="true" type="q122:AuthenticationLevelData" />
+        <xs:element xmlns:q123="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="unitsToBeAdded" nillable="true" type="q123:ArrayOfAuthenticationUnitData" />
+        <xs:element xmlns:q124="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="unitsToBeRemoved" nillable="true" type="q124:ArrayOfAuthenticationUnitData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAuthenticationLevelResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddEnrollment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q125="http://schemas.datacontract.org/2004/07/IdentityStream.Models" minOccurs="0" name="requestData" nillable="true" type="q125:RequestData" />
+        <xs:element xmlns:q126="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="enrollmentData" nillable="true" type="q126:EnrollmentData" />
+        <xs:element xmlns:q127="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" minOccurs="0" name="templates" nillable="true" type="q127:ArrayOfAuthenticationTemplateData" />
+        <xs:element xmlns:q128="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="images" nillable="true" type="q128:ArrayOfKeyValueOfguidArrayOfbase64Binaryox8ieOcg" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddEnrollmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q129="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="AddEnrollmentResult" nillable="true" type="q129:guid" />
+        <xs:element xmlns:q130="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="enrollmentDuplicateUid" nillable="true" type="q130:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
