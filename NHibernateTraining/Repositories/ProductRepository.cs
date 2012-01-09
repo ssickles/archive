@@ -8,27 +8,23 @@ namespace NHibernateTraining.Repositories
 {
     public class ProductRepository : IProductRepository
     {
-        public void Add(Product product)
+        public Product GetById(Guid productId)
+        {
+            using (ISession session = NHibernateHelper.OpenSession())
+                return session.Get<Product>(productId);
+        }
+
+        public void Save(Product product)
         {
             using (ISession session = NHibernateHelper.OpenSession())
             using (ITransaction transaction = session.BeginTransaction())
             {
-                session.Save(product);
+                session.SaveOrUpdate(product);
                 transaction.Commit();
             }
         }
 
-        public void Update(Product product)
-        {
-            using (ISession session = NHibernateHelper.OpenSession())
-            using (ITransaction transaction = session.BeginTransaction())
-            {
-                session.Update(product);
-                transaction.Commit();
-            }
-        }
-
-        public void Remove(Product product)
+        public void Delete(Product product)
         {
             using (ISession session = NHibernateHelper.OpenSession())
             using (ITransaction transaction = session.BeginTransaction())
@@ -36,12 +32,6 @@ namespace NHibernateTraining.Repositories
                 session.Delete(product);
                 transaction.Commit();
             }
-        }
-
-        public Product GetById(Guid productId)
-        {
-            using (ISession session = NHibernateHelper.OpenSession())
-                return session.Get<Product>(productId);
         }
 
         public Product GetByName(string name)

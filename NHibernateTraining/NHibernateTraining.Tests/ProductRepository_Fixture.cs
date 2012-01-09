@@ -56,7 +56,7 @@ namespace NHibernateTraining.Tests
         {
             var product = new Product { Name = "Apple", Category = "Fruits" };
             IProductRepository repository = new ProductRepository();
-            repository.Add(product);
+            repository.Save(product);
 
             // use session to try to load the product
             using (ISession session = _sessionFactory.OpenSession())
@@ -76,7 +76,7 @@ namespace NHibernateTraining.Tests
             var product = _products[0];
             product.Name = "Yellow Pear";
             IProductRepository repository = new ProductRepository();
-            repository.Update(product);
+            repository.Save(product);
 
             // use session to try to load the product
             using (ISession session = _sessionFactory.OpenSession())
@@ -91,7 +91,7 @@ namespace NHibernateTraining.Tests
         {
             var product = _products[0];
             IProductRepository repository = new ProductRepository();
-            repository.Remove(product);
+            repository.Delete(product);
 
             using (ISession session = _sessionFactory.OpenSession())
             {

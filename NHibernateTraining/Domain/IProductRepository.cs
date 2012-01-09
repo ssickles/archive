@@ -5,12 +5,8 @@ using System.Text;
 
 namespace NHibernateTraining.Domain
 {
-    public interface IProductRepository
+    public interface IProductRepository: IRepository<Product, Guid>
     {
-        void Add(Product product);
-        void Update(Product product);
-        void Remove(Product product);
-        Product GetById(Guid productId);
         Product GetByName(string name);
         ICollection<Product> GetByCategory(string category);
     }
