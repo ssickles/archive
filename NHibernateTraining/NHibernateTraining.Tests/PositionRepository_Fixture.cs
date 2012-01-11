@@ -12,7 +12,7 @@ using NDbUnit.Core.SqlClient;
 namespace NHibernateTraining.Tests
 {
     [TestFixture]
-    public class PlayerRepository_Fixture
+    public class PositionRepository_Fixture
     {
         private ISessionFactory _sessionFactory;
         private Configuration _configuration;
@@ -23,13 +23,13 @@ namespace NHibernateTraining.Tests
         {
             _configuration = new Configuration();
             _configuration.Configure();
-            _configuration.AddAssembly(typeof(Player).Assembly);
+            _configuration.AddAssembly(typeof(Position).Assembly);
             _sessionFactory = _configuration.BuildSessionFactory();
 
             _mySqlDatabase = new SqlDbUnitTest(Properties.Settings.Default.NHibernateTrainingConnectionString);
 
             _mySqlDatabase.ReadXmlSchema(@"..\..\NHibernateTrainingDataSet.xsd");
-            _mySqlDatabase.ReadXml(@"..\..\PlayerRepositoryTestData.xml");
+            _mySqlDatabase.ReadXml(@"..\..\PositionRepositoryTestData.xml");
         }
 
         [TestFixtureTearDown]
@@ -47,77 +47,59 @@ namespace NHibernateTraining.Tests
         }
 
         [Test]
-        public void Can_add_new_player()
+        public void Can_add_new_Position()
         {
-            var player = new Player { Name = "Joe Nathan" };
-            IPlayerRepository repository = new PlayerRepository();
-            repository.Save(player);
+            var Position = new Position { Id = "3B", Name = "Third Base" };
+            IPositionRepository repository = new PositionRepository();
+            repository.Save(Position);
 
             // use session to try to load the product
             using (ISession session = _sessionFactory.OpenSession())
             {
-                var fromDb = session.Get<Player>(player.Id);
+                var fromDb = session.Get<Position>(Position.Id);
                 // Test that the product was successfully inserted
                 Assert.IsNotNull(fromDb);
-                Assert.AreNotSame(player, fromDb);
-                Assert.AreEqual(player.Name, fromDb.Name);
+                Assert.AreNotSame(Position, fromDb);
+                Assert.AreEqual(Position.Name, fromDb.Name);
             }
         }
 
         [Test]
-        public void Can_update_existing_player()
+        public void Can_update_existing_Position()
         {
-            IPlayerRepository repository = new PlayerRepository();
-            var player = new Player() { Id = 1, Name = "Hanley Ramirez", YahooId = 1 };
-            repository.Save(player);
+            IPositionRepository repository = new PositionRepository();
+            var Position = new Position() { Id = "1B", Type = PositionType.P };
+            repository.Save(Position);
 
             // use session to try to load the product
             using (ISession session = _sessionFactory.OpenSession())
             {
-                var fromDb = session.Get<Player>(player.Id);
-                Assert.AreEqual(player.Name, fromDb.Name);
+                var fromDb = session.Get<Position>(Position.Id);
+                Assert.AreEqual(Position.Type, fromDb.Type);
             }
         }
 
         [Test]
-        public void Can_remove_existing_player()
+        public void Can_remove_existing_Position()
         {
-            var player = new Player() { Id = 1 };
-            IPlayerRepository repository = new PlayerRepository();
-            repository.Delete(player);
+            var Position = new Position() { Id = "1B" };
+            IPositionRepository repository = new PositionRepository();
+            repository.Delete(Position);
 
             using (ISession session = _sessionFactory.OpenSession())
             {
-                var fromDb = session.Get<Player>(player.Id);
+                var fromDb = session.Get<Position>(Position.Id);
                 Assert.IsNull(fromDb);
             }
         }
 
         [Test]
-        public void Can_get_existing_player_by_id()
+        public void Can_get_existing_Position_by_id()
         {
-            IPlayerRepository repository = new PlayerRepository();
-            var fromDb = repository.GetById(1);
+            IPositionRepository repository = new PositionRepository();
+            var fromDb = repository.GetById("1B");
             Assert.IsNotNull(fromDb);
-            Assert.AreEqual("Prince Fielder", fromDb.Name);
-        }
-
-        [Test]
-        public void Can_get_existing_player_by_name()
-        {
-            IPlayerRepository repository = new PlayerRepository();
-            var fromDb = repository.GetByName("Prince Fielder");
-            Assert.IsNotNull(fromDb);
-            Assert.AreEqual("Prince Fielder", fromDb.Name);
-        }
-
-        [Test]
-        public void Can_get_existing_player_by_yahoo_id()
-        {
-            IPlayerRepository repository = new PlayerRepository();
-            var fromDb = repository.GetByYahooId(1);
-            Assert.IsNotNull(fromDb);
-            Assert.AreEqual(1, fromDb.YahooId);
+            Assert.AreEqual("First Base", fromDb.Name);
         }
     }
 }

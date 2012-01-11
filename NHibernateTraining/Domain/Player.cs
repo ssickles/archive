@@ -23,6 +23,7 @@ namespace NHibernateTraining.Domain
             }
         }
         public virtual int EspnId { get; set; }
+        public virtual int YahooId { get; set; }
         public virtual string Name { get; set; }
         public virtual string Pronounced { get; set; }
         private DateTime _birthdate;
@@ -61,9 +62,6 @@ namespace NHibernateTraining.Domain
             }
         }
 
-
         public virtual IList<Position> Eligibility { get; set; }
-        public virtual IList<YearlyBatting> YearlyBatting { get; set; }
-        public virtual IList<YearlyPitching> YearlyPitching { get; set; }
     }
 }

@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="NHibernateTraining"
+                   namespace="NHibernateTraining.Domain">
+
+  <class name="Player" table="Players">
+    <id name="Id" column="PLAYER_ID">
+      <generator class="identity"/>
+    </id>
+    <property name="MlbComId"/>
+    <property name="MlbComLastUpdated"/>
+    <property name="EspnId"/>
+    <property name="YahooId"/>
+    <property name="Name" length="100"/>
+    <property name="Pronounced" length="100"/>
+    <property name="Birthdate"/>
+    <property name="Birthplace" length="100"/>
+    <property name="Bats" length="50"/>
+    <property name="Throws" length="50"/>
+    <property name="Height" length="50"/>
+    <property name="Wieght" length="50"/>
+    <property name="Position" length="50"/>
+    <property name="Experience"/>
+    <property name="Salary"/>
+    <property name="College" length="100"/>
+    <property name="Debut"/>
+  </class>
+
+  <class name="Position" table="Positions">
+    <id name="Id" column="POSITION_ID"/>
+    <property name="Name" length="50"/>
+    <property name="Type" length="1"/>
+  </class>
+
+  <class name="Team" table="Teams">
+    <id name="Id" column="TEAM_ID">
+      <generator class="identity"/>
+    </id>
+    <property name="City" length="50"/>
+    <property name="Nickname" length="50"/>
+    <property name="YearStarted"/>
+    <property name="YearEnded"/>
+  </class>
+
+  <class name="YearlyBatting" table="YearlyBatting">
+    <id name="Id" column="YEARLY_BATTING_ID">
+      <generator class="identity"/>
+    </id>
+    <many-to-one name="Player" column="Player" cascade="save-update"/>
+    <property name="Year"/>
+    <many-to-one name="Team" column="Team" cascade="save-update"/>
+    <property name="G"/>
+    <property name="PA"/>
+    <property name="AB"/>
+    <property name="R"/>
+    <property name="H"/>
+    <property name="_2B"/>
+    <property name="_3B"/>
+    <property name="HR"/>
+    <property name="RBI"/>
+    <property name="BB"/>
+    <property name="SO"/>
+    <property name="SB"/>
+    <property name="CS"/>
+    <property name="SF"/>
+    <property name="SH"/>
+    <property name="HBP"/>
+    <property name="IBB"/>
+    <property name="GDP"/>
+    <property name="NP"/>
+    <property name="GO"/>
+    <property name="AO"/>
+  </class>
+
+  <class name="YearlyPitching" table="YearlyPitching">
+    <id name="Id" column="YEARLY_PITCHING_ID">
+      <generator class="identity"/>
+    </id>
+    <many-to-one name="Player" column="Player" cascade="save-update"/>
+    <property name="Year"/>
+    <many-to-one name="Team" column="Team" cascade="save-update"/>
+    <property name="W"/>
+    <property name="L"/>
+    <property name="G"/>
+    <property name="GS"/>
+    <property name="CG"/>
+    <property name="SHO"/>
+    <property name="HLD"/>
+    <property name="SV"/>
+    <property name="SVO"/>
+    <property name="OUTS"/>
+    <property name="H"/>
+    <property name="R"/>
+    <property name="ER"/>
+    <property name="HR"/>
+    <property name="HBP"/>
+    <property name="BB"/>
+    <property name="SO"/>
+    <property name="TB"/>
+    <property name="IBB"/>
+    <property name="WP"/>
+    <property name="BK"/>
+    <property name="SB"/>
+    <property name="CS"/>
+    <property name="PK"/>
+    <property name="GO"/>
+    <property name="AO"/>
+  </class>
+  
+</hibernate-mapping>

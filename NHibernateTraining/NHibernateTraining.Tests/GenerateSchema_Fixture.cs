@@ -13,7 +13,7 @@ namespace FirstSolution.Tests
         {
             var cfg = new Configuration();
             cfg.Configure();
-            cfg.AddAssembly(typeof(Product).Assembly);
+            cfg.AddAssembly(typeof(Player).Assembly);
 
             new SchemaExport(cfg).Execute(false, true, false);
         }

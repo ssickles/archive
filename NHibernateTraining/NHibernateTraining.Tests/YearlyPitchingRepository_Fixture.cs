@@ -6,13 +6,13 @@ using NHibernate.Tool.hbm2ddl;
 using NHibernateTraining.Repositories;
 using System.Collections.Generic;
 using System;
-using NDbUnit.Core;
 using NDbUnit.Core.SqlClient;
+using NDbUnit.Core;
 
 namespace NHibernateTraining.Tests
 {
     [TestFixture]
-    public class PlayerRepository_Fixture
+    public class YearlyPitchingRepository_Fixture
     {
         private ISessionFactory _sessionFactory;
         private Configuration _configuration;
@@ -29,7 +29,7 @@ namespace NHibernateTraining.Tests
             _mySqlDatabase = new SqlDbUnitTest(Properties.Settings.Default.NHibernateTrainingConnectionString);
 
             _mySqlDatabase.ReadXmlSchema(@"..\..\NHibernateTrainingDataSet.xsd");
-            _mySqlDatabase.ReadXml(@"..\..\PlayerRepositoryTestData.xml");
+            _mySqlDatabase.ReadXml(@"..\..\YearlyPitchingRepositoryTestData.xml");
         }
 
         [TestFixtureTearDown]
@@ -47,77 +47,74 @@ namespace NHibernateTraining.Tests
         }
 
         [Test]
-        public void Can_add_new_player()
+        public void Can_add_new_yearly_batting()
         {
-            var player = new Player { Name = "Joe Nathan" };
-            IPlayerRepository repository = new PlayerRepository();
-            repository.Save(player);
+            var stat = new YearlyPitching()
+            {
+                Player = new Player { Name = "Joe Nathan", YahooId = 6 },
+                Year = 2011,
+                Team = new Team() { City = "Minnesota", Nickname = "Twins" }
+            };
+            IYearlyPitchingRepository repository = new YearlyPitchingRepository();
+            repository.Save(stat);
 
             // use session to try to load the product
             using (ISession session = _sessionFactory.OpenSession())
             {
-                var fromDb = session.Get<Player>(player.Id);
+                var fromDb = session.Get<YearlyPitching>(stat.Id);
                 // Test that the product was successfully inserted
                 Assert.IsNotNull(fromDb);
-                Assert.AreNotSame(player, fromDb);
-                Assert.AreEqual(player.Name, fromDb.Name);
+                Assert.AreNotSame(stat, fromDb);
+                Assert.AreEqual(stat.Player.Name, fromDb.Player.Name);
+                Assert.AreEqual(stat.Year, fromDb.Year);
+                Assert.AreEqual(stat.Team.City, fromDb.Team.City);
             }
         }
 
         [Test]
-        public void Can_update_existing_player()
+        public void Can_update_existing_yearly_batting()
         {
-            IPlayerRepository repository = new PlayerRepository();
-            var player = new Player() { Id = 1, Name = "Hanley Ramirez", YahooId = 1 };
-            repository.Save(player);
+            IYearlyPitchingRepository repository = new YearlyPitchingRepository();
+            var stat = repository.GetById(2);
+            stat.SB = 65;
+            repository.Save(stat);
 
             // use session to try to load the product
             using (ISession session = _sessionFactory.OpenSession())
             {
-                var fromDb = session.Get<Player>(player.Id);
-                Assert.AreEqual(player.Name, fromDb.Name);
+                var fromDb = session.Get<YearlyPitching>(stat.Id);
+                Assert.AreEqual(stat.SB, fromDb.SB);
             }
         }
 
         [Test]
-        public void Can_remove_existing_player()
+        public void Can_remove_existing_yearly_batting()
         {
-            var player = new Player() { Id = 1 };
-            IPlayerRepository repository = new PlayerRepository();
-            repository.Delete(player);
+            IYearlyPitchingRepository repository = new YearlyPitchingRepository();
+            var stat = repository.GetById(1);
+            repository.Delete(stat);
 
             using (ISession session = _sessionFactory.OpenSession())
             {
-                var fromDb = session.Get<Player>(player.Id);
+                var fromDb = session.Get<YearlyPitching>(stat.Id);
                 Assert.IsNull(fromDb);
             }
         }
 
         [Test]
-        public void Can_get_existing_player_by_id()
+        public void Can_get_existing_player_batting_by_id()
         {
-            IPlayerRepository repository = new PlayerRepository();
+            IYearlyPitchingRepository repository = new YearlyPitchingRepository();
             var fromDb = repository.GetById(1);
-            Assert.IsNotNull(fromDb);
-            Assert.AreEqual("Prince Fielder", fromDb.Name);
-        }
-
-        [Test]
-        public void Can_get_existing_player_by_name()
-        {
-            IPlayerRepository repository = new PlayerRepository();
-            var fromDb = repository.GetByName("Prince Fielder");
-            Assert.IsNotNull(fromDb);
-            Assert.AreEqual("Prince Fielder", fromDb.Name);
-        }
-
-        [Test]
-        public void Can_get_existing_player_by_yahoo_id()
-        {
-            IPlayerRepository repository = new PlayerRepository();
-            var fromDb = repository.GetByYahooId(1);
-            Assert.IsNotNull(fromDb);
-            Assert.AreEqual(1, fromDb.YahooId);
+            using (ISession session = _sessionFactory.OpenSession())
+            {
+                session.Update(fromDb.Player);
+                session.Update(fromDb.Team);
+                Assert.IsNotNull(fromDb);
+                Assert.AreEqual("Felix Hernandez", fromDb.Player.Name);
+                Assert.AreEqual(2011, fromDb.Year);
+                Assert.AreEqual("Seattle", fromDb.Team.City);
+            }
         }
     }
 }

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NHibernateTrainingDataSet xmlns="http://tempuri.org/NHibernateTrainingDataSet.xsd">
+  <Positions>
+    <POSITION_ID>1B</POSITION_ID>
+    <Name>First Base</Name>
+    <Type>0</Type>
+  </Positions>
+  <Positions>
+    <POSITION_ID>SP</POSITION_ID>
+    <Name>Starting Pitcher</Name>
+    <Type>1</Type>
+  </Positions>
+  <Positions>
+    <POSITION_ID>C</POSITION_ID>
+    <Name>Catcher</Name>
+    <Type>0</Type>
+  </Positions>
+  <Positions>
+    <POSITION_ID>CL</POSITION_ID>
+    <Name>Closer</Name>
+    <Type>1</Type>
+  </Positions>
+</NHibernateTrainingDataSet>

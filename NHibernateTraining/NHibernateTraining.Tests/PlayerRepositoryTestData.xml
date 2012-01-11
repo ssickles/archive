@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NHibernateTrainingDataSet xmlns="http://tempuri.org/NHibernateTrainingDataSet.xsd">
+  <Players>
+    <PLAYER_ID>1</PLAYER_ID>
+    <YahooId>1</YahooId>
+    <Name>Prince Fielder</Name>
+  </Players>
+  <Players>
+    <PLAYER_ID>2</PLAYER_ID>
+    <YahooId>2</YahooId>
+    <Name>Mike Stanton</Name>
+  </Players>
+  <Players>
+    <PLAYER_ID>3</PLAYER_ID>
+    <YahooId>3</YahooId>
+    <Name>Jose Reyes</Name>
+  </Players>
+</NHibernateTrainingDataSet>

@@ -16,7 +16,7 @@ namespace NHibernateTraining.Repositories
                 {
                     var configuration = new Configuration();
                     configuration.Configure();
-                    configuration.AddAssembly(typeof(Product).Assembly);
+                    configuration.AddAssembly(typeof(Player).Assembly);
                     _sessionFactory = configuration.BuildSessionFactory();
                 }
                 return _sessionFactory;

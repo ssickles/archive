@@ -7,33 +7,25 @@ using NHibernate;
 
 namespace NHibernateTraining.Repositories
 {
-    public class PlayerRepository: IPlayerRepository
+    public class PlayerRepository: Repository<Player, int?>, IPlayerRepository
     {
-        public Player GetById(int? key)
+        public Player GetByName(string Name)
         {
             using (ISession session = NHibernateHelper.OpenSession())
             {
-                return session.Get<Player>(key);
+                var q = session.CreateQuery("from Player p where p.Name = :name");
+                q.SetParameter<string>("name", Name);
+                return q.UniqueResult<Player>();
             }
         }
 
-        public void Save(Player entity)
+        public Player GetByYahooId(int Id)
         {
             using (ISession session = NHibernateHelper.OpenSession())
-            using (ITransaction transaction = session.BeginTransaction())
             {
-                session.SaveOrUpdate(entity);
-                transaction.Commit();
-            }
-        }
-
-        public void Delete(Player entity)
-        {
-            using (ISession session = NHibernateHelper.OpenSession())
-            using (ITransaction transaction = session.BeginTransaction())
-            {
-                session.Delete(entity);
-                transaction.Commit();
+                var q = session.CreateQuery("from Player p where p.YahooId = :id");
+                q.SetParameter<int>("id", Id);
+                return q.UniqueResult<Player>();
             }
         }
     }

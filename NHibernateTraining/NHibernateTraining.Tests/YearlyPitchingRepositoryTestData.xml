@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NHibernateTrainingDataSet xmlns="http://tempuri.org/NHibernateTrainingDataSet.xsd">
+  <Players>
+    <PLAYER_ID>4</PLAYER_ID>
+    <YahooId>4</YahooId>
+    <Name>Felix Hernandez</Name>
+  </Players>
+  <Players>
+    <PLAYER_ID>5</PLAYER_ID>
+    <YahooId>5</YahooId>
+    <Name>Josh Beckett</Name>
+  </Players>
+  <Teams>
+    <TEAM_ID>3</TEAM_ID>
+    <City>Seattle</City>
+    <Nickname>Mariners</Nickname>
+  </Teams>
+  <Teams>
+    <TEAM_ID>4</TEAM_ID>
+    <City>Boston</City>
+    <Nickname>Red Sox</Nickname>
+  </Teams>
+  <YearlyPitching>
+    <YEARLY_PITCHING_ID>1</YEARLY_PITCHING_ID>
+    <Player>4</Player>
+    <Year>2011</Year>
+    <Team>3</Team>
+  </YearlyPitching>
+  <YearlyPitching>
+    <YEARLY_PITCHING_ID>2</YEARLY_PITCHING_ID>
+    <Player>5</Player>
+    <Year>2011</Year>
+    <Team>4</Team>
+  </YearlyPitching>
+  <YearlyPitching>
+    <YEARLY_PITCHING_ID>3</YEARLY_PITCHING_ID>
+    <Player>4</Player>
+    <Year>2010</Year>
+    <Team>3</Team>
+  </YearlyPitching>
+</NHibernateTrainingDataSet>

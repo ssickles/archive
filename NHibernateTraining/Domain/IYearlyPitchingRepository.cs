@@ -5,9 +5,7 @@ using System.Text;
 
 namespace NHibernateTraining.Domain
 {
-    public interface IPlayerRepository: IRepository<Player, int?>
+    public interface IYearlyPitchingRepository: IRepository<YearlyPitching, int?>
     {
-        Player GetByName(string Name);
-        Player GetByYahooId(int Id);
     }
 }

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NHibernateTrainingDataSet xmlns="http://tempuri.org/NHibernateTrainingDataSet.xsd">
+  <Teams>
+    <TEAM_ID>1</TEAM_ID>
+    <City>Miami</City>
+    <Nickname>Marlins</Nickname>
+  </Teams>
+  <Teams>
+    <TEAM_ID>2</TEAM_ID>
+    <City>Washington</City>
+    <Nickname>Nationals</Nickname>
+  </Teams>
+  <Teams>
+    <TEAM_ID>3</TEAM_ID>
+    <City>Seattle</City>
+    <Nickname>Mariners</Nickname>
+  </Teams>
+  <Teams>
+    <TEAM_ID>4</TEAM_ID>
+    <City>Boston</City>
+    <Nickname>Red Sox</Nickname>
+  </Teams>
+</NHibernateTrainingDataSet>

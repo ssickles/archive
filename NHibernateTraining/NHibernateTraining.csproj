@@ -64,24 +64,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\IPlayerRepository.cs" />
-    <Compile Include="Domain\IProductRepository.cs" />
+    <Compile Include="Domain\IPositionRepository.cs" />
+    <Compile Include="Domain\ITeamRepository.cs" />
+    <Compile Include="Domain\IYearlyBattingRepository.cs" />
+    <Compile Include="Domain\IYearlyPitchingRepository.cs" />
     <Compile Include="Domain\Position.cs" />
-    <Compile Include="Domain\Product.cs" />
     <Compile Include="Domain\Player.cs" />
     <Compile Include="Domain\Team.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\PositionRepository.cs" />
+    <Compile Include="Repositories\TeamRepository.cs" />
+    <Compile Include="Repositories\YearlyPitchingRepository.cs" />
     <Compile Include="Repositories\NHibernateHelper.cs" />
     <Compile Include="Repositories\PlayerRepository.cs" />
-    <Compile Include="Repositories\ProductRepository.cs" />
     <Compile Include="Domain\YearlyBatting.cs" />
     <Compile Include="Domain\YearlyPitching.cs" />
+    <Compile Include="Repositories\YearlyBattingRepository.cs" />
+    <Compile Include="Repository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Design\Domain.cd" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Mappings\Product.hbm.xml">
+    <EmbeddedResource Include="Mappings\Player.hbm.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
