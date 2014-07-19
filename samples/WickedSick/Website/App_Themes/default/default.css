@@ -1,0 +1,55 @@
+﻿body 
+{
+	margin: 0px;
+	font-family: Segoe UI;
+	font-size: 12px;
+	color: #4A4A4A;
+}
+input
+{
+	font-family: Segoe UI;
+	font-size: 12px;
+	color: #4A4A4A;
+}
+select
+{
+	font-family: Segoe UI;
+	font-size: 12px;
+	color: #4A4A4A;
+}
+button
+{
+	font-family: Segoe UI;
+	font-size: 12px;
+	color: #4A4A4A;
+}
+a
+{
+	color: #15428B;
+	font-weight:bold;
+}
+.menuOption
+{
+	background-color: Silver;
+	width: 150px;
+	border: solid 1px gray;
+	padding: 2px;
+}
+.tableHeader
+{
+	background-image: url('/images/headerGradient.gif');
+	height: 22px;
+	font-weight: bold;
+	color: White;
+	text-align: center;	
+}
+.rowStyle
+{
+	background-color: White;
+	height: 18px;
+}
+.altRowStyle
+{
+	background-color: #EBEBEB;
+	height: 18px;
+}

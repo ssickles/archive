@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="WpfApp_CS">
+</Property><Property Name="Solution File" Value="C:\Documents and Settings\Scott\Desktop\Infralution.Localization.Wpf\SampleApp_CS\WpfApp_CS.sln">
+</Property><Property Name="Date" Value="Saturday, January 01, 2011">
+</Property><Property Name="Time" Value="13:42:22 PM">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="Infralution.Localization.Wpf" Source="..\Infralution.Localization.Wpf.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Infralution.Localization.Wpf" Source="..\Infralution.Localization.Wpf.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Infralution.Localization.Wpf" Source="..\Infralution.Localization.Wpf.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

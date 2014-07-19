@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipCodeService", "ZipCodeService\ZipCodeService.csproj", "{F5FE76A7-EB31-4A07-A1E0-5E5A418E9341}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipCodeClient", "ZipCodeClient\ZipCodeClient.csproj", "{545889F0-5080-4597-9E99-DBC783D43115}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extensions", "Extensions\Extensions.csproj", "{DD95D5BF-CEFF-496F-AF71-9BA05D1A66B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5FE76A7-EB31-4A07-A1E0-5E5A418E9341}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5FE76A7-EB31-4A07-A1E0-5E5A418E9341}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5FE76A7-EB31-4A07-A1E0-5E5A418E9341}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5FE76A7-EB31-4A07-A1E0-5E5A418E9341}.Release|Any CPU.Build.0 = Release|Any CPU
+		{545889F0-5080-4597-9E99-DBC783D43115}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{545889F0-5080-4597-9E99-DBC783D43115}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{545889F0-5080-4597-9E99-DBC783D43115}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{545889F0-5080-4597-9E99-DBC783D43115}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD95D5BF-CEFF-496F-AF71-9BA05D1A66B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD95D5BF-CEFF-496F-AF71-9BA05D1A66B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD95D5BF-CEFF-496F-AF71-9BA05D1A66B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD95D5BF-CEFF-496F-AF71-9BA05D1A66B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,160 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using GalaSoft.MvvmLight.Messaging;
+
+namespace GalaSoft.MvvmLight.Test.Messaging
+{
+    [TestClass]
+    public class PropertyChangedMessageTest
+    {
+        private void ExecuteTest(object sender, object target)
+        {
+            const string TestContent1 = "abcd";
+            const string TestContent2 = "efgh";
+
+            DateTime receivedContentDateTime = DateTime.MinValue;
+            Exception receivedContentException = null;
+
+            object receivedSender = null;
+            object receivedTarget = null;
+
+            Messenger.Reset();
+
+            Messenger.Default.Register<PropertyChangedMessage<DateTime>>(this, m =>
+            {
+                receivedSender = m.Sender;
+                receivedTarget = m.Target;
+
+                if (m.PropertyName == TestSender.SomethingPropertyName)
+                {
+                    receivedContentDateTime = m.Content;
+                    return;
+                }
+            });
+
+            Messenger.Default.Register<PropertyChangedMessage<Exception>>(this, m =>
+            {
+                receivedSender = m.Sender;
+                receivedTarget = m.Target;
+
+                if (m.PropertyName == TestSender.MyExceptionPropertyName)
+                {
+                    receivedContentException = m.Content;
+                    return;
+                }
+            });
+
+            var testViewModel = 
+            
+            Assert.AreEqual(DateTime.MinValue, receivedContentDateTime);
+            Assert.AreEqual(null, receivedContentException);
+
+
+
+
+            Assert.AreEqual(sender, receivedSender);
+            Assert.AreEqual(target, receivedTarget);
+            Assert.AreEqual(TestContent1, receivedContent1);
+            Assert.AreEqual(null, receivedContent2);
+
+            receivedSender = null;
+            receivedTarget = null;
+
+            Messenger.Default.Send(commandMessage2);
+
+            Assert.AreEqual(sender, receivedSender);
+            Assert.AreEqual(target, receivedTarget);
+            Assert.AreEqual(TestContent1, receivedContent1);
+            Assert.AreEqual(TestContent2, receivedContent2);
+        }
+
+        [TestMethod]
+        public void TestPropertyChangedMessage()
+        {
+            ExecuteTest(null, null);
+        }
+
+        [TestMethod]
+        public void TestPropertyChangedMessageWithSender()
+        {
+            ExecuteTest(this, null);
+        }
+
+        [TestMethod]
+        public void TestPropertyChangedMessageWithTarget()
+        {
+            ExecuteTest(this, this);
+        }
+
+        // Helpers
+
+        public class TestViewModel : ViewModelBase
+        {
+            /// <summary>
+            /// The <see cref="MyDate" /> property's name.
+            /// </summary>
+            public const string MyDatePropertyName = "MyDate";
+
+            private DateTime _myDate;
+
+            /// <summary>
+            /// Gets the MyDate property.
+            /// Changes to that property's value raise the PropertyChanged event. 
+            /// This property's value is broadcasted by the Messenger's default instance when it changes.
+            /// </summary>
+            public DateTime MyDate
+            {
+                get
+                {
+                    return this._myDate;
+                }
+
+                private set
+                {
+                    if (this._myDate == value)
+                    {
+                        return;
+                    }
+
+                    this._myDate = value;
+                    RaisePropertyChanged(MyDatePropertyName, value, true);
+                }
+            }
+
+            /// <summary>
+            /// The <see cref="MyException" /> property's name.
+            /// </summary>
+            public const string MyExceptionPropertyName = "MyException";
+
+            private Exception _myException;
+
+            /// <summary>
+            /// Gets the MyException property.
+            /// Changes to that property's value raise the PropertyChanged event. 
+            /// This property's value is broadcasted by the Messenger's default instance when it changes.
+            /// </summary>
+            public Exception MyException
+            {
+                get
+                {
+                    return this._myException;
+                }
+
+                private set
+                {
+                    if (this._myException == value)
+                    {
+                        return;
+                    }
+
+                    this._myException = value;
+                    RaisePropertyChanged(MyExceptionPropertyName, value, true);
+                }
+            }
+        }
+    }
+}

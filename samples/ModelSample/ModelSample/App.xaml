@@ -1,0 +1,40 @@
+﻿<Application x:Class="ModelSample.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ModelSample" 
+    StartupUri="Window1.xaml"
+    >
+  <Application.Resources>
+    <!-- Data Template for individual stocks -->
+    <DataTemplate DataType="{x:Type local:StockModel}">
+      <StackPanel Orientation="Horizontal" local:ActivateModel.Model="{Binding}">
+        <TextBlock Text="{Binding Symbol}" Width="100"/>
+        <TextBlock Text="{Binding Quote}" />
+      </StackPanel>
+    </DataTemplate>
+
+    <!-- Definition of Portfolio view -->
+    <DataTemplate DataType="{x:Type local:PortfolioViewModel}">
+      <DockPanel LastChildFill="True">
+        <TextBlock DockPanel.Dock="Top" TextAlignment="Center">Portfolio View</TextBlock>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+          <TextBox Name="AddSymbol" Width="100" />
+          <Button Command="{Binding AddCommandModel.Command}"
+                  CommandParameter="{Binding Path=Text,ElementName=AddSymbol}"
+                  local:CreateCommandBinding.Command="{Binding AddCommandModel}"
+                  >
+            Add
+            </Button>
+          <Button Margin="50,0,0,0"
+                  Command="{Binding RemoveCommandModel.Command}"
+                  CommandParameter="{Binding Path=SelectedItem,ElementName=StockList}"
+                  local:CreateCommandBinding.Command="{Binding RemoveCommandModel}"
+                  >
+            Remove
+          </Button>
+        </StackPanel>
+        <ListBox Name="StockList" ItemsSource="{Binding Stocks}" />
+      </DockPanel>
+    </DataTemplate>
+  </Application.Resources>
+</Application>

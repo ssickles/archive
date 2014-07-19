@@ -1,0 +1,95 @@
+﻿<Window
+  x:Class="ShowMeTheTemplate.Window1"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:compModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+  xmlns:data="clr-namespace:System.Windows.Data;assembly=PresentationFramework"
+	xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+  xmlns:local="clr-namespace:ShowMeTheTemplate"
+  Title="Show Me The Template!">
+  <Window.Resources>
+    <CollectionViewSource x:Key="SortedElementTypes" Source="{Binding}">
+      <CollectionViewSource.SortDescriptions>
+        <compModel:SortDescription PropertyName="ElementType.Name" Direction="Ascending" />
+      </CollectionViewSource.SortDescriptions>
+    </CollectionViewSource>
+  </Window.Resources>
+
+  <Grid DataContext="{StaticResource SortedElementTypes}">
+    <Grid.Resources>
+      <DataTemplate x:Key="TemplatedElementInfoTemplate">
+        <TextBlock>
+          <TextBlock FontWeight="Bold" Text="{Binding ElementType.Name}" />
+          (base: <TextBlock Text="{Binding ElementType.BaseType.Name}" />)
+        </TextBlock>
+      </DataTemplate>
+
+      <DataTemplate x:Key="PropertyInfoTemplate">
+        <GroupBox>
+          <GroupBox.Header>
+            <TextBlock Background="Black" Foreground="White" >
+              <TextBlock Text="{Binding Name}" />
+              (<TextBlock Text="{Binding PropertyType.Name}" />)
+            </TextBlock>
+          </GroupBox.Header>
+          <WindowsFormsHost Loaded="WindowsFormsHost_Loaded">
+            <wf:WebBrowser Navigated="WebBrowser_Navigated" />
+          </WindowsFormsHost>
+        </GroupBox>
+      </DataTemplate>
+
+      <ControlTemplate x:Key="TemplatedPropertiesTemplate">
+        <StackPanel>
+          <GroupBox>
+            <GroupBox.Header>
+              <TextBlock>
+                <TextBlock Text="Element of type" />
+                <TextBlock Text="{Binding ElementType.FullName}" />
+                <TextBlock Text=" (if it can be shown as a child)" />
+              </TextBlock>
+            </GroupBox.Header>
+            <ContentControl DataContext="{Binding Path=/}" DataContextChanged="ElementHolder_DataContextChanged" />
+          </GroupBox>
+          <ItemsPresenter />
+        </StackPanel>
+      </ControlTemplate>
+
+    </Grid.Resources>
+
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="5" />
+        <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+
+    <ListBox Grid.Row="0" Grid.Column="0" ItemsSource="{Binding}" ItemTemplate="{StaticResource TemplatedElementInfoTemplate}" IsSynchronizedWithCurrentItem="True" VirtualizingStackPanel.IsVirtualizing="False" />
+    <GridSplitter Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" />
+    <DockPanel Grid.Row="0" Grid.Column="2">
+      <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+        <Label Target="{Binding ElementName=themes}">_Theme:</Label>
+        <ComboBox x:Name="themes">
+          <ComboBoxItem Content="Aero" Tag="/PresentationFramework.Aero;v3.0.0.0;31bf3856ad364e35;Component/themes/aero.normalcolor.xaml" />
+          <ComboBoxItem Content="Luna" Tag="/PresentationFramework.Luna;v3.0.0.0;31bf3856ad364e35;Component/themes/luna.normalcolor.xaml" />
+          <ComboBoxItem Content="Luna Homestead" Tag="/PresentationFramework.Luna;v3.0.0.0;31bf3856ad364e35;Component/themes/luna.homestead.xaml" />
+          <ComboBoxItem Content="Luna Metallic" Tag="/PresentationFramework.Luna;v3.0.0.0;31bf3856ad364e35;Component/themes/luna.metallic.xaml" />
+          <ComboBoxItem Content="Classic" Tag="/PresentationFramework.Classic;v3.0.0.0;31bf3856ad364e35;Component/themes/classic.xaml" />
+          <ComboBoxItem Content="Royale" Tag="/PresentationFramework.Royale;v3.0.0.0;31bf3856ad364e35;Component/themes/royale.normalcolor.xaml" />
+        </ComboBox>
+      </StackPanel>
+        <ScrollViewer>
+          <ItemsControl x:Name="templateItems" ItemsSource="{Binding TemplateProperties}" ItemTemplate="{StaticResource PropertyInfoTemplate}" Template="{StaticResource TemplatedPropertiesTemplate}" />
+        </ScrollViewer>
+    </DockPanel>
+
+    <StatusBar Grid.Row="1" Grid.ColumnSpan="3">
+      <TextBlock>This tool brought to you by Chris Sells &amp; Ian Griffiths as part of their book,
+        <Hyperlink Name="bookLink">Programming WPF</Hyperlink>.
+      </TextBlock>
+    </StatusBar>
+  </Grid>
+</Window>

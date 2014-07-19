@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="MediatorSample.FileSelector"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mvvmFactories="clr-namespace:MVVMHelper.Factory;assembly=MVVMHelper"
+    xmlns:viewModelFactories="clr-namespace:MediatorSample.ViewModels.Factories"
+    xmlns:converters="clr-namespace:MediatorSample.Converters"
+    mvvmFactories:ViewModelLoader.FactoryType="{x:Type viewModelFactories:FilesViewModelFactory}">
+    
+    <UserControl.Resources>
+        <converters:BoolToVisibility x:Key="visibilityConverter"/>
+    </UserControl.Resources>
+    <Grid>
+        <ListView ItemsSource="{Binding DataSource}" Visibility="{Binding HasItemsInDataSource, Converter={StaticResource visibilityConverter}}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Extension" DisplayMemberBinding="{Binding Extension}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <ContentControl Visibility="{Binding IsDataSourceEmpty, Converter={StaticResource visibilityConverter}}">
+            <Border HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="5"
+                BorderBrush="GreenYellow" BorderThickness="1" Padding="20" >
+                <TextBlock Text="No items to show" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" FontSize="18"/>
+            </Border>
+        </ContentControl>
+    </Grid>
+</UserControl>

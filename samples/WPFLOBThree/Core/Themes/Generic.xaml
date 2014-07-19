@@ -1,0 +1,16 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <!--the below code separtes each control's control template into its own source file-->
+  <ResourceDictionary.MergedDictionaries>
+    
+    <ResourceDictionary 
+      Source="/Core;component/WPF/Custom Controls/CustomToolBarButton/CustomToolBarResourceDictionary.xaml" />
+
+    <ResourceDictionary 
+      Source="/Core;component/WPF/Custom Controls/FormNotification/FormNotificationResourceDictionary.xaml" />
+
+  </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

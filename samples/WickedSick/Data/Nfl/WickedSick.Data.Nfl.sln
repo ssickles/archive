@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WickedSick.Data.Nfl", "WickedSick.Data.Nfl.csproj", "{2B8DEBE7-58AC-4075-8B52-69AA3BA78872}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://void:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = WickedSick.Data.Nfl.csproj
+		SccLocalPath1 = .
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B8DEBE7-58AC-4075-8B52-69AA3BA78872}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B8DEBE7-58AC-4075-8B52-69AA3BA78872}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B8DEBE7-58AC-4075-8B52-69AA3BA78872}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B8DEBE7-58AC-4075-8B52-69AA3BA78872}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

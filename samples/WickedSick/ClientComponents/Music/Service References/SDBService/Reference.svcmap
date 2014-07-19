@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="19817991-03a6-4c56-9385-0332f8eb5d63" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://sdbservice.wsick.com/SDBService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SDBService.xsd" MetadataType="Schema" ID="254de888-4f35-4b98-8c61-9fd4ed4adae6" SourceId="1" SourceUrl="http://sdbservice.wsick.com/SDBService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SDBService1.xsd" MetadataType="Schema" ID="64db5694-4cf9-481b-bda6-2e3fbbfcb1b4" SourceId="1" SourceUrl="http://sdbservice.wsick.com/SDBService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SDBService.wsdl" MetadataType="Wsdl" ID="b0fd71a2-308e-4be9-8f5e-9a94e620ce64" SourceId="1" SourceUrl="http://sdbservice.wsick.com/SDBService.svc?wsdl" />
+    <MetadataFile FileName="SDBService2.xsd" MetadataType="Schema" ID="7b715ad3-5fd4-496a-8a6e-4f3aaedfd4b0" SourceId="1" SourceUrl="http://sdbservice.wsick.com/SDBService.svc?xsd=xsd4" />
+    <MetadataFile FileName="SDBService3.xsd" MetadataType="Schema" ID="c203111b-d450-4d18-bc41-26f032b1f16c" SourceId="1" SourceUrl="http://sdbservice.wsick.com/SDBService.svc?xsd=xsd3" />
+    <MetadataFile FileName="SDBService.disco" MetadataType="Disco" ID="efcef822-f8dd-44ae-ab4a-760a8d793dd3" SourceId="1" SourceUrl="http://sdbservice.wsick.com/SDBService.svc?disco" />
+    <MetadataFile FileName="SDBService4.xsd" MetadataType="Schema" ID="cc86007c-27fe-4bf1-aac6-52365ed37910" SourceId="1" SourceUrl="http://sdbservice.wsick.com/SDBService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

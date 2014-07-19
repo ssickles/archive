@@ -1,0 +1,18 @@
+﻿<d:DesignerActivityBase x:Class="WickedSick.Workflow.DesignerActivities.Start"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="clr-namespace:WickedSick.Workflow.DesignerActivities">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Ellipse HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Ellipse.BitmapEffect>
+                <BitmapEffectGroup>
+                    <DropShadowBitmapEffect Color="Gray" Direction="315" ShadowDepth="10" Softness="0" Opacity="0.2"/>
+                    <BevelBitmapEffect BevelWidth="5" EdgeProfile="BulgedUp"/>
+                </BitmapEffectGroup>
+            </Ellipse.BitmapEffect>
+            <Ellipse.Fill>
+                <SolidColorBrush Color="Green"/>
+            </Ellipse.Fill>
+        </Ellipse>
+    </Grid>
+</d:DesignerActivityBase>

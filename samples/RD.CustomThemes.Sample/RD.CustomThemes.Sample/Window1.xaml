@@ -1,0 +1,45 @@
+﻿<Window x:Class="RD.CustomThemes.Sample.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cc="clr-namespace:RD.CustomThemes.Controls;assembly=RD.CustomThemes.Controls" 
+    Title="RioterDeckers Sample - Custom themes" Height="768" Width="1024"
+    >
+    <Grid>
+      <cc:BackgroundControl />
+      <StackPanel>
+        <TextBlock FontSize="14pt">Hit 'F5' to toggle to available themes</TextBlock>
+        <TextBlock FontSize="11" FontStyle="Italic" Foreground="Red" FontWeight="SemiBold">Powered by the RioterDeckers</TextBlock>
+      </StackPanel>
+      <Viewbox Stretch="Uniform" Margin="0,10,0,0">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="200" />
+            <RowDefinition />
+            <RowDefinition Height="50" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="150" />
+          </Grid.ColumnDefinitions>
+
+          <cc:WatermarkControl />
+          <cc:LogoControl />
+
+          <Button Grid.Row="2" Grid.Column="0" Content="Manage User Accounts" VerticalAlignment="Bottom" />
+          <Button Grid.Row="2" Grid.Column="1" Content="Guest Sign-in" VerticalAlignment="Bottom" />
+          <Button Grid.Row="2" Grid.Column="3" Content="Forgot your password?" VerticalAlignment="Bottom" />
+          <cc:LogonGrid>
+            <Grid.RowDefinitions>
+              <RowDefinition />
+              <RowDefinition />
+              <RowDefinition />
+            </Grid.RowDefinitions>
+            <PasswordBox />
+            <cc:LogonButton>Sign in</cc:LogonButton>
+          </cc:LogonGrid>
+        </Grid>
+      </Viewbox>
+    </Grid>
+</Window>

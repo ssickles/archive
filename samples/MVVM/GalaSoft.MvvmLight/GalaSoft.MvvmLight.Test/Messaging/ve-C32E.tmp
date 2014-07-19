@@ -1,0 +1,213 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using GalaSoft.MvvmLight.Messaging;
+
+namespace GalaSoft.MvvmLight.Test.Messaging
+{
+    [TestClass]
+    public class PropertyChangedMessageTest
+    {
+        [TestMethod]
+        public void TestPropertyChangedMessage()
+        {
+            var previousDateTime = DateTime.Now - TimeSpan.FromDays(1);
+            var currentDateTime = DateTime.Now + TimeSpan.FromDays(1);
+            const Exception PreviousException = null;
+            var currentException = new InvalidOperationException();
+
+            var receivedPreviousDateTime = DateTime.MinValue;
+            var receivedCurrentDateTime = DateTime.MinValue;
+            Exception receivedPreviousException = null;
+            Exception receivedCurrentException = null;
+
+            object receivedSender = null;
+            object receivedTarget = null;
+
+            var messageWasReceived = false;
+
+            var testViewModel = new TestViewModel(previousDateTime, (InvalidOperationException)PreviousException);
+
+            Messenger.Reset();
+
+            Messenger.Default.Register<PropertyChangedMessage<DateTime>>(this, m =>
+            {
+                receivedSender = m.Sender;
+                receivedTarget = m.Target;
+                messageWasReceived = true;
+
+                if (m.PropertyName == TestViewModel.MyDatePropertyName)
+                {
+                    receivedPreviousDateTime = m.OldValue;
+                    receivedCurrentDateTime = m.NewValue;
+                    return;
+                }
+            });
+
+            Messenger.Default.Register<PropertyChangedMessage<Exception>>(this, m =>
+            {
+                receivedSender = m.Sender;
+                receivedTarget = m.Target;
+                messageWasReceived = true;
+
+                if (m.PropertyName == TestViewModel.MyExceptionPropertyName)
+                {
+                    receivedPreviousException = m.OldValue;
+                    receivedCurrentException = m.NewValue;
+                    return;
+                }
+            });
+            
+            Assert.AreEqual(DateTime.MinValue, receivedPreviousDateTime);
+            Assert.AreEqual(DateTime.MinValue, receivedCurrentDateTime);
+            Assert.AreEqual(null, receivedPreviousException);
+            Assert.AreEqual(null, receivedCurrentException);
+
+            testViewModel.MyDate = currentDateTime;
+
+            Assert.IsTrue(messageWasReceived);
+            Assert.AreEqual(testViewModel, receivedSender);
+            Assert.AreEqual(null, receivedTarget);
+            Assert.AreEqual(previousDateTime, receivedPreviousDateTime);
+            Assert.AreEqual(currentDateTime, receivedCurrentDateTime);
+            Assert.AreEqual(null, receivedPreviousException);
+            Assert.AreEqual(null, receivedCurrentException);
+
+            receivedSender = null;
+            receivedTarget = null;
+            messageWasReceived = false;
+
+            testViewModel.MyException = currentException;
+
+            Assert.IsTrue(messageWasReceived);
+            Assert.AreEqual(testViewModel, receivedSender);
+            Assert.AreEqual(null, receivedTarget);
+            Assert.AreEqual(previousDateTime, receivedPreviousDateTime);
+            Assert.AreEqual(currentDateTime, receivedCurrentDateTime);
+            Assert.AreEqual(PreviousException, receivedPreviousException);
+            Assert.AreEqual(currentException, receivedCurrentException);
+
+            receivedSender = null;
+            receivedTarget = null;
+            messageWasReceived = false;
+
+            testViewModel.AnotherDate = currentDateTime + TimeSpan.FromDays(3);
+
+            Assert.IsTrue(messageWasReceived);
+            Assert.AreEqual(testViewModel, receivedSender);
+            Assert.AreEqual(null, receivedTarget);
+            Assert.AreEqual(previousDateTime, receivedPreviousDateTime);
+            Assert.AreEqual(currentDateTime, receivedCurrentDateTime);
+            Assert.AreEqual(PreviousException, receivedPreviousException);
+            Assert.AreEqual(currentException, receivedCurrentException);
+        }
+
+        // Helpers
+
+        public class TestViewModel : ViewModelBase
+        {
+            /// <summary>
+            /// The <see cref="AnotherDate" /> property's name.
+            /// </summary>
+            public const string AnotherDatePropertyName = "AnotherDate";
+
+            private DateTime _anotherDate;
+
+            /// <summary>
+            /// Gets the AnotherDate property.
+            /// Changes to that property's value raise the PropertyChanged event. 
+            /// This property's value is broadcasted by the Messenger's default instance when it changes.
+            /// </summary>
+            public DateTime AnotherDate
+            {
+                get
+                {
+                    return this._anotherDate;
+                }
+
+                set
+                {
+                    if (this._anotherDate == value)
+                    {
+                        return;
+                    }
+
+                    this._anotherDate = value;
+                    RaisePropertyChanged(AnotherDatePropertyName, value, true);
+                }
+            }
+
+
+            /// <summary>
+            /// The <see cref="MyDate" /> property's name.
+            /// </summary>
+            public const string MyDatePropertyName = "MyDate";
+
+            private DateTime _myDate;
+
+            /// <summary>
+            /// Gets the MyDate property.
+            /// Changes to that property's value raise the PropertyChanged event. 
+            /// This property's value is broadcasted by the Messenger's default instance when it changes.
+            /// </summary>
+            public DateTime MyDate
+            {
+                get
+                {
+                    return this._myDate;
+                }
+
+                set
+                {
+                    if (this._myDate == value)
+                    {
+                        return;
+                    }
+
+                    this._myDate = value;
+                    RaisePropertyChanged(MyDatePropertyName, value, true);
+                }
+            }
+
+            /// <summary>
+            /// The <see cref="MyException" /> property's name.
+            /// </summary>
+            public const string MyExceptionPropertyName = "MyException";
+
+            private InvalidOperationException _myException;
+
+            /// <summary>
+            /// Gets the MyException property.
+            /// Changes to that property's value raise the PropertyChanged event. 
+            /// This property's value is broadcasted by the Messenger's default instance when it changes.
+            /// </summary>
+            public InvalidOperationException MyException
+            {
+                get
+                {
+                    return this._myException;
+                }
+
+                set
+                {
+                    if (this._myException == value)
+                    {
+                        return;
+                    }
+
+                    this._myException = value;
+                    RaisePropertyChanged(MyExceptionPropertyName, value, true);
+                }
+            }
+
+            public TestViewModel(DateTime initialValueDateTime, InvalidOperationException initialValueException)
+            {
+                _myDate = initialValueDateTime;
+                _myException = initialValueException;
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceReference>
+	<ProxyGenerationParameters
+		ServiceReferenceUri="http://localhost/HelloIndigoWebHost_Certificates/helloindigoservice.svc"
+		Name="localhost"
+		NotifyPropertyChange="True"
+		UseObservableCollection="False">
+	</ProxyGenerationParameters>
+	<EndPoints>
+		<EndPoint
+			Address="http://mlbvaio/HelloIndigoWebHost_Certificates/HelloIndigoService.svc"
+			BindingConfiguration="WSHttpBinding_IHelloIndigoService"
+			Contract="PartnerClient.localhost.IHelloIndigoService"
+			>
+		</EndPoint>
+	</EndPoints>
+</ServiceReference>

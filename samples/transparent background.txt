@@ -1,0 +1,26 @@
+ div.box {
+    /*Any properties you'd want the box to have.*/
+    /*Would probably be position, dimension type stuff.*/
+    border: 1px solid #000000;
+    width: 500px;
+    height: 500px;
+    position: relative;
+}
+div.box_contents {
+    background-color:transparent;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    z-index: 101;
+}
+div.box_background {
+    background-color: blue;
+    height: 100%;
+    opacity: 0.5;
+    filter:alpha(opacity=50); /* IE's opacity*/
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    z-index: 100;
+}

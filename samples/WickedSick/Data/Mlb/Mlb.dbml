@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="MLB" Class="MlbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=VOID;Initial Catalog=MLB;Persist Security Info=True;User ID=sa" SettingsObjectName="WickedSick.Data.Mlb.Properties.Settings" SettingsPropertyName="MLBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.GAMES" Member="GAMEs">
+    <Type Name="GAME">
+      <Column Name="GAME_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AwayTeam" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HomeTeam" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AwayScore" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HomeScore" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Inning" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Outs" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Gametime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Season" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="TEAM_GAME" Member="TEAM" ThisKey="AwayTeam" Type="TEAM" IsForeignKey="true" />
+      <Association Name="TEAM_GAME1" Member="TEAM1" ThisKey="HomeTeam" Type="TEAM" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TEAMS" Member="TEAMs">
+    <Type Name="TEAM">
+      <Column Name="TEAM_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Franchise" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Division" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nickname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="YearStarted" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="YearEnded" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TEAM_GAME" Member="GAMEs" OtherKey="AwayTeam" Type="GAME" />
+      <Association Name="TEAM_GAME1" Member="GAMEs1" OtherKey="HomeTeam" Type="GAME" />
+      <Association Name="TEAM_PLAYER_YEARLY_BATTING" Member="PLAYER_YEARLY_BATTINGs" OtherKey="Team" Type="PLAYER_YEARLY_BATTING" />
+      <Association Name="TEAM_PLAYER_YEARLY_PITCHING" Member="PLAYER_YEARLY_PITCHINGs" OtherKey="Team" Type="PLAYER_YEARLY_PITCHING" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PLAYER_YEARLY_BATTING" Member="PLAYER_YEARLY_BATTINGs">
+    <Type Name="PLAYER_YEARLY_BATTING">
+      <Column Name="Player" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Year" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Team" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="G" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AB" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="R" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="H" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[2B]" Member="_2B" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[3B]" Member="_3B" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RBI" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BB" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SB" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SF" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SH" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HBP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IBB" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GDP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="TEAM_PLAYER_YEARLY_BATTING" Member="TEAM1" ThisKey="Team" Type="TEAM" IsForeignKey="true" />
+      <Association Name="PLAYER_PLAYER_YEARLY_BATTING" Member="PLAYER1" ThisKey="Player" Type="PLAYER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PLAYER_YEARLY_PITCHING" Member="PLAYER_YEARLY_PITCHINGs">
+    <Type Name="PLAYER_YEARLY_PITCHING">
+      <Column Name="Player" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Year" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Team" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="W" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="L" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="G" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CG" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SHO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HLD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SV" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SVO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OUTS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="H" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="R" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HBP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BB" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TB" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IBB" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SB" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="TEAM_PLAYER_YEARLY_PITCHING" Member="TEAM1" ThisKey="Team" Type="TEAM" IsForeignKey="true" />
+      <Association Name="PLAYER_PLAYER_YEARLY_PITCHING" Member="PLAYER1" ThisKey="Player" Type="PLAYER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PLAYERS" Member="PLAYERs">
+    <Type Name="PLAYER">
+      <Column Name="PLAYER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MlbComId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EspnId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Pronounced" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Birthdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Birthplace" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Bats" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Throws" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Height" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Weight" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Position" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Experience" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Salary" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="College" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Debut" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="PLAYER_PLAYER_YEARLY_BATTING" Member="PLAYER_YEARLY_BATTINGs" OtherKey="Player" Type="PLAYER_YEARLY_BATTING" />
+      <Association Name="PLAYER_PLAYER_YEARLY_PITCHING" Member="PLAYER_YEARLY_PITCHINGs" OtherKey="Player" Type="PLAYER_YEARLY_PITCHING" />
+      <Association Name="PLAYER_CONTRACT" Member="CONTRACTs" OtherKey="Player" Type="CONTRACT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONTRACTS" Member="CONTRACTs">
+    <Type Name="CONTRACT">
+      <Column Name="CONTRACT_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Player" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Team" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="YearSigned" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="CONTRACT_CONTRACT_YEAR" Member="CONTRACT_YEARs" OtherKey="Contract" Type="CONTRACT_YEAR" />
+      <Association Name="PLAYER_CONTRACT" Member="PLAYER1" ThisKey="Player" Type="PLAYER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONTRACT_YEARS" Member="CONTRACT_YEARs">
+    <Type Name="CONTRACT_YEAR">
+      <Column Name="Contract" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Year" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Salary" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Association Name="CONTRACT_CONTRACT_YEAR" Member="CONTRACT1" ThisKey="Contract" Type="CONTRACT" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

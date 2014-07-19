@@ -1,0 +1,4 @@
+﻿<SequentialWorkflowActivity x:Class="WickedSick.Workflow.Core.Test.Workflow1" x:Name="Workflow1" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<CodeActivity x:Name="codeActivity1" ExecuteCode="codeActivity1_ExecuteCode" />
+	<DelayActivity TimeoutDuration="00:00:05" x:Name="delayActivity1" />
+</SequentialWorkflowActivity>

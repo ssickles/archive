@@ -1,0 +1,154 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4DCC1CD5-AF95-4AB1-9FB2-3524B3E4BBBC}</ProjectGuid>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <RootNamespace>NavigationApplication</RootNamespace>
+    <AssemblyName>NavigationApplication</AssemblyName>
+    <WarningLevel>4</WarningLevel>
+    <OutputType>winexe</OutputType>
+    <MinFrameworkVersionRequired>3.0</MinFrameworkVersionRequired>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <ApplicationVersion>1.0.0.*</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <PublishUrl>Publish\</PublishUrl>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.IdentityModel" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml" />
+    <Page Include="EmbeddedPage.xaml" />
+    <Page Include="ExternalWebLinks.xaml" />
+    <Page Include="LinkToPageInLibrary.xaml" />
+    <Page Include="Menu.xaml" />
+    <Page Include="Page1.xaml" />
+    <Page Include="Page2.xaml" />
+    <Page Include="Page3.xaml" />
+    <Page Include="PageFunctionCall.xaml" />
+    <Page Include="PageWithMultipleJournalEntries.xaml" />
+    <Page Include="PageWithPersistentData.xaml" />
+    <Page Include="SelectProductPageFunction.xaml" />
+    <Page Include="StartupWindow.xaml" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EmbeddedPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>EmbeddedPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExternalWebLinks.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>ExternalWebLinks.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LinkToPageInLibrary.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>LinkToPageInLibrary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListSelectionState.cs" />
+    <Compile Include="Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page1.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>Page1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page2.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>Page2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page3.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>Page3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageFunctionCall.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>PageFunctionCall.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageWithMultipleJournalEntries.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>PageWithMultipleJournalEntries.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageWithPersistentData.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>PageWithPersistentData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SelectProductPageFunction.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>SelectProductPageFunction.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StartupWindow.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>StartupWindow.xaml</DependentUpon>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PageLibrary\PageLibrary.csproj">
+      <Project>{6D842AD2-F23F-4533-BC9D-49DF80E75E8E}</Project>
+      <Name>PageLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildBinPath)\Microsoft.WinFX.targets" />
+</Project>

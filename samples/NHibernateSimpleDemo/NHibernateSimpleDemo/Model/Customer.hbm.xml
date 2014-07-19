@@ -1,0 +1,35 @@
+﻿<?xml version="1.0"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="NHibernateSimpleDemo"
+                   assembly="NHibernateSimpleDemo">
+
+    <!-- Mappings for class 'Customer' -->
+    <class name="Customer" table="Customers" lazy="false">
+
+        <!-- Identity mapping -->
+        <id name="ID">
+            <column name="CustomerID" />
+            <generator class="native" />
+        </id>
+    
+        <!-- Component mapping: Address-->
+        <component name="Address">
+            <property name="StreetAddress" />
+            <property name="City" />
+            <property name="State" />
+            <property name="Zip" />
+        </component>
+            
+        <!-- One-to-many mapping: Orders -->
+        <bag name="Orders" cascade="all-delete-orphan" lazy="false">
+            <key column="CustomerID" />
+            <one-to-many class="Order" />
+        </bag>
+
+        <!-- Simple mappings -->
+        <property name="Name" />
+
+    </class>
+
+</hibernate-mapping>
+

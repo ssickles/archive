@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonComponents.IO", "IO\CommonComponents.IO.csproj", "{5FC9523F-4754-4C78-95C1-CE836151FF1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonComponents.Toolbox", "Toolbox\CommonComponents.Toolbox.csproj", "{F15253F5-F48D-4703-AAE9-9DD6BBC0285A}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccProjectUniqueName0 = IO\\CommonComponents.IO.csproj
+		SccProjectName0 = SurroundSCMScci
+		SccLocalPath0 = ..
+		SccProvider0 = MSSCCI:Surround\u0020SCM
+		SccProjectFilePathRelativizedFromConnection0 = CommonComponents\\IO\\
+		SccProjectUniqueName1 = Toolbox\\CommonComponents.Toolbox.csproj
+		SccProjectName1 = SurroundSCMScci
+		SccLocalPath1 = ..
+		SccProvider1 = MSSCCI:Surround\u0020SCM
+		SccProjectFilePathRelativizedFromConnection1 = CommonComponents\\Toolbox\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FC9523F-4754-4C78-95C1-CE836151FF1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FC9523F-4754-4C78-95C1-CE836151FF1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FC9523F-4754-4C78-95C1-CE836151FF1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FC9523F-4754-4C78-95C1-CE836151FF1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F15253F5-F48D-4703-AAE9-9DD6BBC0285A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F15253F5-F48D-4703-AAE9-9DD6BBC0285A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F15253F5-F48D-4703-AAE9-9DD6BBC0285A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F15253F5-F48D-4703-AAE9-9DD6BBC0285A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

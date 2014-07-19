@@ -1,0 +1,157 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+	xmlns:my="http://schemas.microsoft.com/wpf/2008/toolkit" 
+	xmlns:Entities="clr-namespace:Entities;assembly=Entities" 
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	mc:Ignorable="d" 
+	xmlns:TodoList_WpfClient_Converters="clr-namespace:TodoList.WpfClient.Converters" 
+	xmlns:TodoList_WpfClient_DesignTime="clr-namespace:TodoList.WpfClient.DesignTime" 
+	x:Class="TodoList.WpfClient.MainWindow"
+    Title="MainWindow"  
+	x:Name="window" d:DesignHeight="498" Background="{DynamicResource WindowBackgroundBrush}" MinWidth="671" d:DesignWidth="672">
+	<Window.Resources>
+		<TodoList_WpfClient_Converters:SatusToTextConverter x:Key="SatusToTextConverter"/>
+		<DataTemplate x:Key="RowDetailsTemplate"> 
+	        <StackPanel MinWidth="250" Orientation="Horizontal">      
+				<TextBox Text="{Binding Path=Description, Mode=TwoWay, UpdateSourceTrigger=LostFocus}" Width="Auto" MinWidth="250" Margin="0,0,16,0" />
+				<Button Margin="0,0,0,0" Content="Delete Task..." Click="DeleteTodoItem_Click" Width="90" HorizontalAlignment="Right"/> 
+			</StackPanel>
+		</DataTemplate>
+		<DataTemplate x:Key="StatusDataTemplate">
+			<TextBlock Text="{Binding Converter={StaticResource SatusToTextConverter}, Mode=Default}" />
+		</DataTemplate>
+		<DataTemplate x:Key="PriorityItemsDataTemplate">
+			<StackPanel Orientation="Horizontal">
+				<Rectangle Fill="{DynamicResource PriorityHighBrush}" Width="16" Height="16" Margin="0,0,8,0" x:Name="HighPriorityIcon" Visibility="Collapsed"/>
+				<Rectangle Fill="{DynamicResource PriorityNormalBrush}" Width="16" Height="16" Margin="0,0,8,0" x:Name="NormalPriorityIcon" Visibility="Collapsed"/>
+				<Rectangle Fill="{DynamicResource PriorityLowBrush}" Width="16" Height="16" Margin="0,0,8,0" x:Name="LowPriorityIcon" Visibility="Collapsed"/>
+				<TextBlock Text="{Binding}" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			</StackPanel>
+			<DataTemplate.Triggers>
+				<DataTrigger Binding="{Binding}" Value="0">
+					<Setter TargetName="LowPriorityIcon" Property="Visibility" Value="Visible" />
+				</DataTrigger>
+				<DataTrigger Binding="{Binding}" Value="1">
+					<Setter TargetName="NormalPriorityIcon" Property="Visibility" Value="Visible" />
+				</DataTrigger>
+				<DataTrigger Binding="{Binding}" Value="2">
+					<Setter TargetName="HighPriorityIcon" Property="Visibility" Value="Visible" />
+				</DataTrigger>
+			</DataTemplate.Triggers>
+		</DataTemplate>
+		<TodoList_WpfClient_DesignTime:Data x:Key="TodosDataSource" d:IsDataSource="True"/>
+	</Window.Resources>
+    <Grid>
+        <my:DataGrid Margin="8,70.96,8,8" x:Name="TodoDataGrid" RowDetailsTemplate="{DynamicResource RowDetailsTemplate}" AutoGenerateColumns="False" SelectionMode="Single" CanUserAddRows="False" ItemsSource="{Binding Path=DesignTimeData, Mode=Default, Source={StaticResource TodosDataSource}}" AlternatingRowBackground="{DynamicResource AlternatingRowBackgroundBrush}" RowValidationErrorTemplate="{DynamicResource ErrorTemplate}" RowBackground="{DynamicResource RowBackgroundBrush}" BorderBrush="{DynamicResource NormalBorderBrush}" VerticalGridLinesBrush="{DynamicResource DisabledBorderBrush}" CanUserSortColumns="True"   >
+        	<my:DataGrid.RowValidationRules>
+        		<ExceptionValidationRule/>
+        	</my:DataGrid.RowValidationRules>
+        	<my:DataGrid.Foreground>
+        		<SolidColorBrush Color="{DynamicResource BlackColor}"/>
+        	</my:DataGrid.Foreground>
+        	<my:DataGrid.Columns>
+        		<my:DataGridTextColumn Header="ID" IsReadOnly="True" SortMemberPath="ID" MinWidth="20" Binding="{Binding Path=ID}"  />
+        		<my:DataGridTemplateColumn Header="Priority" CanUserSort="True" SortMemberPath="Priority" >
+        			<my:DataGridTemplateColumn.CellEditingTemplate>
+        				<DataTemplate>
+        					<ComboBox HorizontalAlignment="Center" ItemsSource="{Binding Source={x:Static Entities:TodoItem.PriorityFlags}}" SelectedItem="{Binding Path=Priority, Mode=TwoWay}" VerticalAlignment="Center" MinWidth="100" ItemTemplate="{DynamicResource PriorityItemsDataTemplate}" x:Name="PriorityComboBox"/>
+						</DataTemplate>
+				</my:DataGridTemplateColumn.CellEditingTemplate>
+        			<my:DataGridTemplateColumn.CellTemplate>
+        				<DataTemplate>
+				 			<StackPanel Orientation="Horizontal">
+								<Rectangle Fill="{DynamicResource PriorityHighBrush}" Width="16" Height="16" Margin="0,0,8,0" x:Name="HighPriorityIcon" Visibility="Collapsed"/>
+								<Rectangle Fill="{DynamicResource PriorityNormalBrush}" Width="16" Height="16" Margin="0,0,8,0" x:Name="NormalPriorityIcon" Visibility="Collapsed"/>
+								<Rectangle Fill="{DynamicResource PriorityLowBrush}" Width="16" Height="16" Margin="0,0,8,0" x:Name="LowPriorityIcon" Visibility="Collapsed"/>
+								<TextBlock Text="{Binding Path=Priority}" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							</StackPanel>
+							<DataTemplate.Triggers>
+								<DataTrigger Binding="{Binding Path=Priority}" Value="0">
+									<Setter TargetName="LowPriorityIcon" Property="Visibility" Value="Visible" />
+								</DataTrigger>
+								<DataTrigger Binding="{Binding Path=Priority}" Value="1">
+									<Setter TargetName="NormalPriorityIcon" Property="Visibility" Value="Visible" />
+								</DataTrigger>
+								<DataTrigger Binding="{Binding Path=Priority}" Value="2">
+									<Setter TargetName="HighPriorityIcon" Property="Visibility" Value="Visible" />
+								</DataTrigger>
+							</DataTemplate.Triggers>
+						</DataTemplate>
+        			</my:DataGridTemplateColumn.CellTemplate>
+        		</my:DataGridTemplateColumn>
+        		<my:DataGridTextColumn Header="Title" MinWidth="150" Binding="{Binding Path=Title, ValidatesOnExceptions=True}" />
+        		<my:DataGridTemplateColumn Header="Start Date" MinWidth="80" CanUserSort="True" SortMemberPath="CreationDate">
+				    <my:DataGridTemplateColumn.CellEditingTemplate>
+        				<DataTemplate>
+        					<my:DatePicker SelectedDate="{Binding Path=CreationDate, Mode=TwoWay, ValidatesOnExceptions=True}"/>
+						</DataTemplate>
+        			</my:DataGridTemplateColumn.CellEditingTemplate>
+        			<my:DataGridTemplateColumn.CellTemplate>
+         				<DataTemplate>
+        					<TextBlock Text="{Binding Path=CreationDate, StringFormat=d}" TextWrapping="Wrap"/>
+						</DataTemplate>
+        			</my:DataGridTemplateColumn.CellTemplate>
+        		</my:DataGridTemplateColumn>
+        		<my:DataGridTemplateColumn Header="Due Date" MinWidth="80" CanUserSort="True" SortMemberPath="DueDate">
+				    <my:DataGridTemplateColumn.CellEditingTemplate>
+        				<DataTemplate>
+        					<my:DatePicker SelectedDate="{Binding Path=DueDate, Mode=TwoWay, ValidatesOnExceptions=True}"/>
+        				</DataTemplate>
+        			</my:DataGridTemplateColumn.CellEditingTemplate>
+        			<my:DataGridTemplateColumn.CellTemplate>
+         				<DataTemplate>
+        					<TextBlock Text="{Binding Path=DueDate, StringFormat=d}" TextWrapping="Wrap"/>
+						</DataTemplate>
+        			</my:DataGridTemplateColumn.CellTemplate>
+        		</my:DataGridTemplateColumn>
+        		<my:DataGridTemplateColumn Header="Status" MinWidth="80" SortMemberPath="Status" CanUserSort="True">
+        			<my:DataGridTemplateColumn.CellEditingTemplate>
+        				<DataTemplate>
+        					<ComboBox ItemsSource="{Binding Source={x:Static Entities:TodoItem.StatusFlags}}" ItemTemplate="{DynamicResource StatusDataTemplate}"  SelectedItem="{Binding Path=Status, Mode=TwoWay}" MinWidth="80"/>
+						</DataTemplate>
+        			</my:DataGridTemplateColumn.CellEditingTemplate>
+        			<my:DataGridTemplateColumn.CellTemplate>
+        				<DataTemplate>
+        					<TextBlock Text="{Binding Path=Status, Converter={StaticResource SatusToTextConverter}, Mode=Default}" TextWrapping="Wrap"/>
+						</DataTemplate>
+        			</my:DataGridTemplateColumn.CellTemplate>
+        		</my:DataGridTemplateColumn>
+        		<my:DataGridTemplateColumn Header="% Complete" SortMemberPath="PercentComplete" CanUserSort="True" >
+        			<my:DataGridTemplateColumn.CellEditingTemplate>
+        				<DataTemplate>
+        					<TextBox Text="{Binding Path=PercentComplete, Mode=TwoWay, ValidatesOnExceptions=True}" />
+						</DataTemplate>
+        			</my:DataGridTemplateColumn.CellEditingTemplate>
+        			<my:DataGridTemplateColumn.CellTemplate>
+         				<DataTemplate>
+        					<Viewbox Stretch="Fill">
+         						<Canvas Width="102" Height="20">
+        							<Rectangle Height="20" Width="100" Stroke="{DynamicResource NormalBorderBrush}"/>
+        							<Rectangle Fill="{DynamicResource ListItemSelectedBrush}" Height="18" Width="{Binding Path=PercentComplete, Mode=Default}" VerticalAlignment="Center" Canvas.Top="1"/>
+         							<TextBlock Text="{Binding Path=PercentComplete, Mode=Default, StringFormat=##.##}" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Canvas.Left="8" Canvas.Top="3"/>
+        						</Canvas>
+         					</Viewbox>
+						</DataTemplate>
+        			</my:DataGridTemplateColumn.CellTemplate>
+        		</my:DataGridTemplateColumn>
+            </my:DataGrid.Columns>
+        </my:DataGrid>
+        <Border Margin="8,8,8,0" VerticalAlignment="Top" Height="58.96" BorderThickness="1,1,1,1" CornerRadius="4,4,4,4" BorderBrush="{DynamicResource NormalBorderBrush}" Padding="4,4,4,4">
+        	<Grid x:Name="NewItemPanel">
+        		<Label HorizontalAlignment="Left" x:Name="TitleLabel" Width="41" Content="_Title:" Target="{Binding ElementName=TitleTextBox}" VerticalAlignment="Top" Margin="4,3,0,0"/>
+        		<StackPanel Margin="76.853,0,61,25.96" Orientation="Horizontal">
+        			<TextBox Height="Auto" x:Name="TitleTextBox" Width="150" Margin="0,0,10,0" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding Path=Title, Mode=TwoWay, UpdateSourceTrigger=LostFocus, ValidatesOnExceptions=True}" />
+        			<Label Height="Auto" x:Name="DueDateLabel" Width="Auto" Content="Due Date:" Target="{Binding ElementName=DueDatePicker, Mode=OneWay}" VerticalAlignment="Center" Margin="0,0,4,0"/>
+        			<my:DatePicker Height="24" x:Name="DueDatePicker" Width="119" Margin="0,0,10,0" VerticalAlignment="Center" SelectedDate="{Binding Path=DueDate, Mode=TwoWay, UpdateSourceTrigger=LostFocus, ValidatesOnExceptions=True}" />
+        			<Label Content="_Priority:" Target="{Binding ElementName=PriorityComboBox, Mode=OneWay}" VerticalAlignment="Center" Margin="0,0,4,0"/>
+        			<ComboBox HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="100" x:Name="PriorityComboBox" IsSynchronizedWithCurrentItem="False" ItemsSource="{Binding Path=PriorityFlags, ElementName=window, Mode=Default}" ItemTemplate="{DynamicResource PriorityItemsDataTemplate}" SelectedIndex="1"/>	
+        		</StackPanel>
+        		<Label HorizontalAlignment="Left" x:Name="DescriptionLabel" VerticalAlignment="Bottom" Content="_Description:" Margin="4,0,0,4.04" Target="{Binding ElementName=DescriptionTextBox, Mode=OneWay}"/>
+        		<TextBox VerticalAlignment="Bottom" Text="{Binding Path=Description, Mode=TwoWay, UpdateSourceTrigger=LostFocus}" TextWrapping="Wrap" Margin="76.853,0,61,0" x:Name="DescriptionTextBox"/>
+        		<Button HorizontalAlignment="Right" Margin="0,9,0,0" Width="57" Content="Add" IsDefault="True" FontWeight="Bold" Click="AddTodoButton_Click"/>
+        	</Grid>
+        </Border>
+    </Grid>
+</Window>

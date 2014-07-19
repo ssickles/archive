@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Core", "Core\Core.vbproj", "{BAED5D05-09A2-45BA-815F-92A102027F27}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WPFBusiessApplicationSample", "WPFBusinessApplicationSample\WPFBusiessApplicationSample.vbproj", "{2808FECD-C6F0-4948-B717-FCC50FDBA333}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DemonstrationForms", "DemonstrationForms\DemonstrationForms.vbproj", "{FFCE30A1-E487-431A-BA51-62CE87F9C642}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BAED5D05-09A2-45BA-815F-92A102027F27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAED5D05-09A2-45BA-815F-92A102027F27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAED5D05-09A2-45BA-815F-92A102027F27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAED5D05-09A2-45BA-815F-92A102027F27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2808FECD-C6F0-4948-B717-FCC50FDBA333}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2808FECD-C6F0-4948-B717-FCC50FDBA333}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2808FECD-C6F0-4948-B717-FCC50FDBA333}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2808FECD-C6F0-4948-B717-FCC50FDBA333}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFCE30A1-E487-431A-BA51-62CE87F9C642}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFCE30A1-E487-431A-BA51-62CE87F9C642}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFCE30A1-E487-431A-BA51-62CE87F9C642}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFCE30A1-E487-431A-BA51-62CE87F9C642}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

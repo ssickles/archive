@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfTicketingService", "WcfTicketingService\WcfTicketingService.csproj", "{3940817E-A97F-4C6A-B14D-6829B6680A3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{7BB40B17-F73F-4589-9FDF-999EC2F8EE20}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3940817E-A97F-4C6A-B14D-6829B6680A3B} = {3940817E-A97F-4C6A-B14D-6829B6680A3B}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3940817E-A97F-4C6A-B14D-6829B6680A3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3940817E-A97F-4C6A-B14D-6829B6680A3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3940817E-A97F-4C6A-B14D-6829B6680A3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3940817E-A97F-4C6A-B14D-6829B6680A3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BB40B17-F73F-4589-9FDF-999EC2F8EE20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BB40B17-F73F-4589-9FDF-999EC2F8EE20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BB40B17-F73F-4589-9FDF-999EC2F8EE20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BB40B17-F73F-4589-9FDF-999EC2F8EE20}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WickedSick.CommonComponents.Music" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WickedSick.CommonComponents.Music" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="AuditTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Add" />
+      <xs:enumeration value="Remove" />
+      <xs:enumeration value="Modify" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AuditTypes" nillable="true" type="tns:AuditTypes" />
+  <xs:simpleType name="ObjectTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Song" />
+      <xs:enumeration value="Album" />
+      <xs:enumeration value="Artist" />
+      <xs:enumeration value="Playlist" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ObjectTypes" nillable="true" type="tns:ObjectTypes" />
+</xs:schema>

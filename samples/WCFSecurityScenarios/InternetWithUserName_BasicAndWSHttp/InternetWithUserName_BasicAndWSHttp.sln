@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloIndigo", "HelloIndigo\HelloIndigo.csproj", "{0DA2D069-2860-435E-9875-94E021757633}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "https://localhost/HelloIndigoWebHostSSL/", "https://localhost/HelloIndigoWebHostSSL", "{4BA213AE-BA45-48B0-9106-35598CD25CD5}"
+	ProjectSection(WebsiteProperties) = preProject
+		ProjectReferences = "{0DA2D069-2860-435E-9875-94E021757633}|HelloIndigo.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/HelloIndigoWebHostSSL"
+		Debug.AspNetCompiler.PhysicalPath = "HelloIndigoWebHostSSL\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\HelloIndigoWebHostSSL\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/HelloIndigoWebHostSSL"
+		Release.AspNetCompiler.PhysicalPath = "HelloIndigoWebHostSSL\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\HelloIndigoWebHostSSL\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "HelloIndigoWebHostSSL\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InternetClient", "InternetClient\InternetClient.csproj", "{A27A4350-F76A-43C9-B412-106F4BF13A58}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Release|.NET = Release|.NET
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0DA2D069-2860-435E-9875-94E021757633}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{0DA2D069-2860-435E-9875-94E021757633}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DA2D069-2860-435E-9875-94E021757633}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DA2D069-2860-435E-9875-94E021757633}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{0DA2D069-2860-435E-9875-94E021757633}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{0DA2D069-2860-435E-9875-94E021757633}.Release|.NET.ActiveCfg = Release|Any CPU
+		{0DA2D069-2860-435E-9875-94E021757633}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DA2D069-2860-435E-9875-94E021757633}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DA2D069-2860-435E-9875-94E021757633}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{0DA2D069-2860-435E-9875-94E021757633}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{4BA213AE-BA45-48B0-9106-35598CD25CD5}.Debug|.NET.ActiveCfg = Debug|.NET
+		{4BA213AE-BA45-48B0-9106-35598CD25CD5}.Debug|.NET.Build.0 = Debug|.NET
+		{4BA213AE-BA45-48B0-9106-35598CD25CD5}.Debug|Any CPU.ActiveCfg = Debug|.NET
+		{4BA213AE-BA45-48B0-9106-35598CD25CD5}.Debug|Mixed Platforms.ActiveCfg = Debug|.NET
+		{4BA213AE-BA45-48B0-9106-35598CD25CD5}.Debug|Mixed Platforms.Build.0 = Debug|.NET
+		{4BA213AE-BA45-48B0-9106-35598CD25CD5}.Release|.NET.ActiveCfg = Debug|.NET
+		{4BA213AE-BA45-48B0-9106-35598CD25CD5}.Release|.NET.Build.0 = Debug|.NET
+		{4BA213AE-BA45-48B0-9106-35598CD25CD5}.Release|Any CPU.ActiveCfg = Debug|.NET
+		{4BA213AE-BA45-48B0-9106-35598CD25CD5}.Release|Mixed Platforms.ActiveCfg = Debug|.NET
+		{4BA213AE-BA45-48B0-9106-35598CD25CD5}.Release|Mixed Platforms.Build.0 = Debug|.NET
+		{A27A4350-F76A-43C9-B412-106F4BF13A58}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{A27A4350-F76A-43C9-B412-106F4BF13A58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A27A4350-F76A-43C9-B412-106F4BF13A58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A27A4350-F76A-43C9-B412-106F4BF13A58}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A27A4350-F76A-43C9-B412-106F4BF13A58}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A27A4350-F76A-43C9-B412-106F4BF13A58}.Release|.NET.ActiveCfg = Release|Any CPU
+		{A27A4350-F76A-43C9-B412-106F4BF13A58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A27A4350-F76A-43C9-B412-106F4BF13A58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A27A4350-F76A-43C9-B412-106F4BF13A58}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A27A4350-F76A-43C9-B412-106F4BF13A58}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

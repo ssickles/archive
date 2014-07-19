@@ -1,0 +1,8 @@
+﻿<UserControl x:Class="SilverlightFileUploader.Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:Vci_Silverlight_FileUploader="clr-namespace:Vci.Silverlight.FileUploader">
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Vci_Silverlight_FileUploader:FileUploaderControl x:Name="fileUploader" />
+    </Grid>
+</UserControl>

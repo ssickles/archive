@@ -1,0 +1,48 @@
+﻿<Window x:Class="WickedSick.Clients.FileSync.Main"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Main" Height="300" Width="500" ShowInTaskbar="False" Icon="Sync.ico">
+    <Window.Resources>
+        <ContextMenu x:Key="NotifyContext">
+            <MenuItem Header="Open" Click="Open_Click"></MenuItem>
+            <MenuItem Header="Exit" Click="Exit_Click"></MenuItem>
+        </ContextMenu>
+    </Window.Resources>
+    <DockPanel>
+        <StatusBar DockPanel.Dock="Bottom">
+            <Label Padding="2">Status</Label>
+        </StatusBar>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="Add Location..." Click="MenuItem_Click" />
+            </MenuItem>
+        </Menu>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ListView Grid.Column="0" Margin="2" Name="SyncList">
+                <ListView.View>
+                    <GridView>
+                        <GridView.Columns>
+                            <GridViewColumn Header="Path" DisplayMemberBinding="{Binding Path=Path}"></GridViewColumn>
+                            <GridViewColumn Header="Number of Changes" DisplayMemberBinding="{Binding Path=Changes.Count}"></GridViewColumn>
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <ListView Grid.Column="1" Margin="2" Name="ChangeList" ItemsSource="{Binding ElementName=SyncList, Path=SelectedItem.Changes}">
+                <ListView.View>
+                    <GridView>
+                        <GridView.Columns>
+                            <GridViewColumn Header="File" DisplayMemberBinding="{Binding Path=Filename}"></GridViewColumn>
+                            <GridViewColumn Header="Change" DisplayMemberBinding="{Binding Path=Change}"></GridViewColumn>
+                            <GridViewColumn Header="Time" DisplayMemberBinding="{Binding Path=Time}"></GridViewColumn>
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+    </DockPanel>
+</Window>

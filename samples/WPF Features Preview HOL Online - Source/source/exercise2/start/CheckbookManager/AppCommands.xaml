@@ -1,0 +1,127 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--
+    xmlns:r="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary">
+
+    <r:RibbonCommand x:Key="CutCommand"
+        LabelTitle="Cut"
+        ToolTipTitle="Cut"
+        ToolTipDescription="Cut text element to the clipboard."
+        SmallImageSource="images/Cut.png"
+        LargeImageSource="images/Cut.png" />
+
+    <r:RibbonCommand x:Key="CopyCommand"
+        LabelTitle="Copy"
+        ToolTipTitle="Copy"
+        ToolTipDescription="Copy text element to the clipboard."
+        SmallImageSource="images/Copy.png"
+        LargeImageSource="images/Copy.png" />
+
+    <r:RibbonCommand x:Key="PasteCommand"
+        LabelTitle="Paste"
+        ToolTipTitle="Paste"
+        ToolTipDescription="Paste text element from the clipboard."
+        SmallImageSource="images/Paste.png"
+        LargeImageSource="images/Paste.png" />
+
+    <r:RibbonCommand x:Key="HelpCommand"
+        LabelTitle="Help"
+        ToolTipTitle="Help"
+        ToolTipDescription="Show application help."
+        SmallImageSource="images/Help.png"
+        LargeImageSource="images/Help.png" />
+
+    <r:RibbonCommand x:Key="AddNewCommand"
+        LabelTitle="Add"
+        ToolTipTitle="Add New Entry"
+        ToolTipDescription="Add New Entry into the Register."
+        SmallImageSource="images/AddNew.png"
+        LargeImageSource="images/AddNew.png" />
+
+    <r:RibbonCommand x:Key="DeleteCommand"
+        LabelTitle="Delete"
+        ToolTipTitle="Delete Entries"
+        ToolTipDescription="Delete Entry from the Register."
+        SmallImageSource="images/Delete.png"
+        LargeImageSource="images/Delete.png" />
+
+    <r:RibbonCommand x:Key="ClearCommand"
+        LabelTitle="Mark Cleared"
+        ToolTipTitle="Mark As Cleared"
+        ToolTipDescription="Mark entry as cleared in the register."
+        SmallImageSource="images/Clear.png"
+        LargeImageSource="images/Clear.png" />
+
+    <r:RibbonCommand x:Key="ReconcileCommand"
+        LabelTitle="Reconcile"
+        ToolTipTitle="Reconcile"
+        ToolTipDescription="Reconcile entries against statement."
+        SmallImageSource="images/Reconcile.png"
+        LargeImageSource="images/Reconcile.png" />
+
+    <r:RibbonCommand x:Key="CashflowReportCommand"
+        LabelTitle="Cashflow Report"
+        ToolTipTitle="Run Cashflow Report"
+        ToolTipDescription="Generate a Cash Flow Report from account data."
+        SmallImageSource="images/CashflowReport.png"
+        LargeImageSource="images/CashflowReport.png" />
+
+    <r:RibbonCommand x:Key="BudgetReportCommand"
+        LabelTitle="Budget Report"
+        ToolTipTitle="Run Budget Report"
+        ToolTipDescription="Generate a Budget Report from account data."
+        SmallImageSource="images/BudgetReport.png"
+        LargeImageSource="images/BudgetReport.png" />
+
+    <r:RibbonCommand x:Key="TrendReportCommand"
+        LabelTitle="Trend Report"
+        ToolTipTitle="Run Balance Trend Report"
+        ToolTipDescription="Generate a Balance Trend Report from account data."
+        SmallImageSource="images/CashFlowReport.png"
+        LargeImageSource="images/CashFlowReport.png" />
+
+    <r:RibbonCommand x:Key="OtherReportsCommand"
+        LabelTitle="Other Report"
+        ToolTipTitle="Run Favorite Reports"
+        ToolTipDescription="Display report favorites."
+        SmallImageSource="images/TrendReport.png"
+        LargeImageSource="images/TrendReport.png" />
+
+    <r:RibbonCommand x:Key="DownloadStatementsCommand"
+        LabelTitle="Statements"
+        ToolTipTitle="Download Banking Statements"
+        ToolTipDescription="Download banking statements from your financial institution."
+        SmallImageSource="images/Bank.png"
+        LargeImageSource="images/Bank.png" />
+
+    <r:RibbonCommand x:Key="DownloadCreditCardsCommand"
+        LabelTitle="Credit Cards"
+        ToolTipTitle="Download Credit Card Statements"
+        ToolTipDescription="Download credit card statements from your financial institution."
+        SmallImageSource="images/CreditCards.png"
+        LargeImageSource="images/CreditCards.png" />
+
+    <r:RibbonCommand x:Key="TransferCommand"
+        LabelTitle="Transfer"
+        ToolTipTitle="Transfer"
+        ToolTipDescription="Initiate an electronic transfer."
+        SmallImageSource="images/Transfer.png"
+        LargeImageSource="images/Transfer.png" />
+
+    <r:RibbonCommand x:Key="BackupCommand"
+        LabelTitle="Backup"
+        ToolTipTitle="System Backup"
+        ToolTipDescription="Backup System Data."
+        SmallImageSource="images/Backup.png"
+        LargeImageSource="images/Backup.png" />
+
+    <r:RibbonCommand x:Key="CalculatorCommand"
+        LabelTitle="Calculator"
+        ToolTipTitle="Display Calculator"
+        ToolTipDescription="Display the Calculator."
+        SmallImageSource="images/Calc.png"
+        LargeImageSource="images/Calc.png" />
+-->
+    
+</ResourceDictionary>

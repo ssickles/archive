@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="NHibernateSimpleDemo.Customer">
+    <Position X="1" Y="1.75" Width="1.5" />
+    <Members>
+      <Field Name="p_Address" Hidden="true" />
+      <Field Name="p_ID" Hidden="true" />
+      <Field Name="p_Name" Hidden="true" />
+      <Field Name="p_Orders" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAEAAAAgAAAAgAAEAAQAAAQAAAIACAACAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Customer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Address" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Orders" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="NHibernateSimpleDemo.Address">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <Members>
+      <Field Name="p_City" Hidden="true" />
+      <Field Name="p_State" Hidden="true" />
+      <Field Name="p_StreetAddress" Hidden="true" />
+      <Field Name="p_Zip" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAIAAAACAAAAAAAAAQAEAAABAQAABA=</HashCode>
+      <FileName>Model\Address.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NHibernateSimpleDemo.Order">
+    <Position X="6.5" Y="5.25" Width="1.5" />
+    <Members>
+      <Field Name="p_Customer" Hidden="true" />
+      <Field Name="p_Date" Hidden="true" />
+      <Field Name="p_ID" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAEAAADgAAEAgAAEAAAAAAAAAAAAAAABAAAABAAAAAA=</HashCode>
+      <FileName>Model\Order.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Customer" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="OrderItems" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="NHibernateSimpleDemo.OrderSystem">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <Members>
+      <Field Name="p_Catalog" Hidden="true" />
+      <Field Name="p_Customers" Hidden="true" />
+      <Field Name="p_Orders" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="Catalog" Type="NHibernateSimpleDemo.Product" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.25" Y="0.75" />
+        <Point X="10.625" Y="0.75" />
+        <Point X="10.625" Y="2.823" />
+        <Point X="10.25" Y="2.823" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Customers" Type="NHibernateSimpleDemo.Customer" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.75" Y="0.982" />
+        <Point X="1.75" Y="0.982" />
+        <Point X="1.75" Y="1.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Orders" Type="NHibernateSimpleDemo.Order" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.25" Y="0.982" />
+        <Point X="7.25" Y="0.982" />
+        <Point X="7.25" Y="5.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>CAEAAEAYAAAQAAEAAAQAAAAFQAAAAAAACAAAAAAAABA=</HashCode>
+      <FileName>Model\OrderSystem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Catalog" />
+      <Property Name="Customers" />
+      <Property Name="Orders" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="NHibernateSimpleDemo.Product">
+    <Position X="8.75" Y="2.25" Width="1.5" />
+    <Members>
+      <Field Name="p_Name" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAgAAEAAAAAAQAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

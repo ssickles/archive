@@ -1,0 +1,103 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:demo="clr-namespace:DemonstrationForms;assembly=DemonstrationForms"
+    xmlns:Core_WPF="clr-namespace:Core.WPF;assembly=Core"
+    x:Class="ApplicationMainWindow"
+    Title="http://karlshifflett.wordpress.com" 
+    Height="440" Width="450" ResizeMode="CanResize"
+    Background="{DynamicResource Brush_WindowBackground}" 
+    Icon="Resources\Images\rss.png"
+>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="E_xit" Click="OnMenuItemExitClick"/>
+            </MenuItem>
+            <MenuItem Header="_View" MenuItem.Click="OnViewMenuItemClick" >
+                <MenuItem IsCheckable="True" IsChecked="True" CommandParameter=".\Resources\Skins\OfficeBlue\OfficeBlueResourceDictionary.xaml">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Width="100" Content="Office Blue" VerticalAlignment="Center" Margin="2,0,5,0"/>
+                            <Rectangle Width="75" Height="50" >
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                        <GradientStop Color="#FFCEE0F5" Offset="0"/>
+                                        <GradientStop Color="#FFDDEEFF" Offset="0.041666666666666664"/>
+                                        <GradientStop Color="#FFE5F0FD" Offset="0.5"/>
+                                        <GradientStop Color="#FFAECBEF" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem CommandParameter=".\Resources\Skins\OfficeBlack\OfficeBlackResourceDictionary.xaml" >
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Width="100" Content="Office Black"  VerticalAlignment="Center" Margin="2,0,5,0"/>
+                            <Rectangle Width="75" Height="50" >
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                        <GradientStop Color="#FF1B1B1B" Offset="0"/>
+                                        <GradientStop Color="#FF000000" Offset="1"/>
+                                        <GradientStop Color="#FF6A6969" Offset="0.776"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem CommandParameter=".\Resources\Skins\Metallic\MetallicResourceDictionary.xaml">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Width="100" Content="Metallic" VerticalAlignment="Center" Margin="2,0,5,0" />
+                            <Rectangle Width="75" Height="50">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                        <GradientStop Color="#FFCCCCCC" Offset="0" />
+                                        <GradientStop Color="#FFCACACA" Offset="1" />
+                                        <GradientStop Color="#FFEBEBEB" Offset="0.776" />
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+
+            </MenuItem>
+        </Menu>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBar.Resources>
+                <Core_WPF:TimeDisplay x:Key="timeDisplay"/>
+                <Core_WPF:FormattingConverter x:Key="formattingConverter" />
+            </StatusBar.Resources>
+            <StatusBarItem Margin="5,0,5,0" Content="{Binding Source={StaticResource timeDisplay}, Path=Now, Converter={StaticResource formattingConverter}, ConverterParameter=\{0:f\}}" DockPanel.Dock="Right"/>
+            <StatusBarItem Content="WPF Business Application Series - Part 3" />
+        </StatusBar>
+        
+        <Border Style="{DynamicResource Application_Border}" DockPanel.Dock="Top">
+            <!-- The tab strip TabStripPlacement must be set here, because when the 
+                   skins are swapped out, the TabItem triggers do no fire unless this is here-->
+            <TabControl  
+                    x:Name="tcOpenPages" SelectedIndex="2" TabStripPlacement="Bottom"
+                    Style="{DynamicResource TabControlStyle_Application}" >
+
+                <TabItem Style="{DynamicResource TabItemStyle_Application}" Header="Part 1">
+                    <demo:PartOne />
+                </TabItem>
+                <TabItem Style="{DynamicResource TabItemStyle_Application}" Header="Part 2">
+                    <demo:PartTwo />
+                </TabItem>
+                <TabItem Style="{DynamicResource TabItemStyle_Application}" Header="Part 3">
+                    <demo:PartThree />
+                </TabItem>
+            </TabControl>
+        </Border>
+    </DockPanel>
+
+</Window>
+
+
+
+

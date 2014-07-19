@@ -1,0 +1,97 @@
+﻿<UserControl x:Class="CheckbookManager.AccountBalanceGraph"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Data="clr-namespace:CheckbookManager.Data"
+    xmlns:Converters="clr-namespace:CheckbookManager.Converters"
+    Loaded="BalanceGraph_Loaded">
+
+    <Grid>
+
+        <!-- Visual State Manager animations -->
+        <!-- May get Intellisense error on the next line indicating that the property 
+             does not exist.  It does, and it will compile just fine - it's a bug in 
+             VS.NET that you can ignore. -->
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="CommonStates">
+                <VisualStateGroup.Transitions>
+                    <VisualTransition To="Active" GeneratedDuration="0:0:0.0" />
+                    <VisualTransition To="Inactive" GeneratedDuration="0:0:0" />
+                </VisualStateGroup.Transitions>
+                <VisualState x:Name="Active">
+                    <Storyboard>
+                        <DoubleAnimation From="0" To="1" Duration="0:0:0.25" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="bd" />
+                        <DoubleAnimation From="0" To="250" Duration="0:0:0.25" Storyboard.TargetProperty="Height" Storyboard.TargetName="bd" />
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Inactive">
+                    <Storyboard>
+                        <DoubleAnimation To="0" Duration="0:0:0.1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="bd" />
+                        <DoubleAnimation To="0" Duration="0:0:0.1" Storyboard.TargetProperty="Height" Storyboard.TargetName="bd" />
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid.Resources>
+            <Converters:PositiveNumberToColorConverter x:Key="BalanceDisplayConverter" PositiveColor="Green" NegativeColor="Red" />
+            <Converters:RegisterPositionCalculator x:Key="posCalculator" />
+            <Converters:RegisterEntriesToPointCollection x:Key="RegisterEntriesToPointCollection" />
+            <Converters:IsTypeToVisibilityConverter x:Key="elemToVisibilityConverter" Type="Data:RegisterTransaction" />
+        </Grid.Resources>
+
+        <!-- Graph -->
+        <Border x:Name="bd" Height="0" Opacity="0" BorderBrush="DarkGray" BorderThickness="1" Background="#C0FFFFFF">
+            <Border.Effect>
+                <DropShadowEffect  ShadowDepth="3" Color="DarkGray" Opacity="0.85" />
+            </Border.Effect>
+            <Viewbox Stretch="Uniform" Margin="10">
+                <Canvas Width="100" Height="100" RenderTransformOrigin=".5,.5">
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="-1" />
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+
+                    <Line X1="0" X2="100" Y1="50" Y2="50" StrokeDashArray="1,2" Stroke="DarkGray" StrokeThickness="1" />
+
+                    <Polyline Stroke="Black" StrokeThickness="1" Points="{Binding Converter={StaticResource RegisterEntriesToPointCollection}, Mode=OneWay}" RenderTransformOrigin=".5,.5">
+                        <Polyline.Effect>
+                            <DropShadowEffect />
+                        </Polyline.Effect>
+                    </Polyline>
+
+                    <ItemsControl ItemsSource="{Binding Mode=OneWay}" Background="{x:Null}" Margin="-2">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <Canvas />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+
+                        <ItemsControl.ItemContainerStyle>
+                            <Style TargetType="ContentPresenter">
+                                <Setter Property="Canvas.Left" Value="{Binding Converter={StaticResource posCalculator}, Mode=OneWay}" />
+                                <Setter Property="Canvas.Top" Value="{Binding Converter={StaticResource posCalculator}, ConverterParameter=1, Mode=OneWay}" />
+                            </Style>
+                        </ItemsControl.ItemContainerStyle>
+
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Ellipse Visibility="{Binding Converter={StaticResource elemToVisibilityConverter}, Mode=OneWay}"
+                                     Fill="{Binding TotalBalance, Converter={StaticResource BalanceDisplayConverter}, Mode=OneWay}" 
+                                     Width="4" Height="4" Stroke="Black" StrokeThickness=".5">
+                                    <Ellipse.ToolTip>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Margin="5" Text="{Binding Date, StringFormat=d}" />
+                                            <TextBlock Margin="5" Text="{Binding TotalBalance, StringFormat=C}" />
+                                        </StackPanel>
+                                    </Ellipse.ToolTip>
+                                </Ellipse>
+                            </DataTemplate>
+
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Canvas>
+            </Viewbox>
+        </Border>
+    </Grid>
+</UserControl>

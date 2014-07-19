@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://tempuri.org/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" name="SDBService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://sdbservice.wsick.com/SDBService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://sdbservice.wsick.com/SDBService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://sdbservice.wsick.com/SDBService.svc?xsd=xsd2" namespace="http://sdbservice.wsick.com/Common" />
+      <xsd:import schemaLocation="http://sdbservice.wsick.com/SDBService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://sdbservice.wsick.com/SDBService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/WickedSick.CommonComponents.Music" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISDBService_RequestAllSongs_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestAllSongs" />
+  </wsdl:message>
+  <wsdl:message name="ISDBService_RequestAllSongs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestAllSongsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDBService_RequestNextSongChunk_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestNextSongChunk" />
+  </wsdl:message>
+  <wsdl:message name="ISDBService_RequestNextSongChunk_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestNextSongChunkResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDBService_RequestAllAlbums_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestAllAlbums" />
+  </wsdl:message>
+  <wsdl:message name="ISDBService_RequestAllAlbums_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestAllAlbumsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDBService_RequestNextAlbumChunk_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestNextAlbumChunk" />
+  </wsdl:message>
+  <wsdl:message name="ISDBService_RequestNextAlbumChunk_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestNextAlbumChunkResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDBService_RequestAllArtists_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestAllArtists" />
+  </wsdl:message>
+  <wsdl:message name="ISDBService_RequestAllArtists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestAllArtistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDBService_RequestNextArtistChunk_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestNextArtistChunk" />
+  </wsdl:message>
+  <wsdl:message name="ISDBService_RequestNextArtistChunk_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestNextArtistChunkResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDBService_RequestChanges_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestChanges" />
+  </wsdl:message>
+  <wsdl:message name="ISDBService_RequestChanges_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestChangesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDBService_RequestNextChangesChunk_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestNextChangesChunk" />
+  </wsdl:message>
+  <wsdl:message name="ISDBService_RequestNextChangesChunk_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestNextChangesChunkResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDBService_RequestAllPlaylists_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestAllPlaylists" />
+  </wsdl:message>
+  <wsdl:message name="ISDBService_RequestAllPlaylists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestAllPlaylistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDBService_RequestNextPlaylistChunk_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestNextPlaylistChunk" />
+  </wsdl:message>
+  <wsdl:message name="ISDBService_RequestNextPlaylistChunk_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestNextPlaylistChunkResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDBService_RequestLibraryIDs_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestLibraryIDs" />
+  </wsdl:message>
+  <wsdl:message name="ISDBService_RequestLibraryIDs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestLibraryIDsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISDBService">
+    <wsdl:operation name="RequestAllSongs">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDBService/RequestAllSongs" message="tns:ISDBService_RequestAllSongs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDBService/RequestAllSongsResponse" message="tns:ISDBService_RequestAllSongs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestNextSongChunk">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDBService/RequestNextSongChunk" message="tns:ISDBService_RequestNextSongChunk_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDBService/RequestNextSongChunkResponse" message="tns:ISDBService_RequestNextSongChunk_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestAllAlbums">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDBService/RequestAllAlbums" message="tns:ISDBService_RequestAllAlbums_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDBService/RequestAllAlbumsResponse" message="tns:ISDBService_RequestAllAlbums_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestNextAlbumChunk">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDBService/RequestNextAlbumChunk" message="tns:ISDBService_RequestNextAlbumChunk_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDBService/RequestNextAlbumChunkResponse" message="tns:ISDBService_RequestNextAlbumChunk_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestAllArtists">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDBService/RequestAllArtists" message="tns:ISDBService_RequestAllArtists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDBService/RequestAllArtistsResponse" message="tns:ISDBService_RequestAllArtists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestNextArtistChunk">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDBService/RequestNextArtistChunk" message="tns:ISDBService_RequestNextArtistChunk_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDBService/RequestNextArtistChunkResponse" message="tns:ISDBService_RequestNextArtistChunk_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestChanges">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDBService/RequestChanges" message="tns:ISDBService_RequestChanges_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDBService/RequestChangesResponse" message="tns:ISDBService_RequestChanges_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestNextChangesChunk">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDBService/RequestNextChangesChunk" message="tns:ISDBService_RequestNextChangesChunk_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDBService/RequestNextChangesChunkResponse" message="tns:ISDBService_RequestNextChangesChunk_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestAllPlaylists">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDBService/RequestAllPlaylists" message="tns:ISDBService_RequestAllPlaylists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDBService/RequestAllPlaylistsResponse" message="tns:ISDBService_RequestAllPlaylists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestNextPlaylistChunk">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDBService/RequestNextPlaylistChunk" message="tns:ISDBService_RequestNextPlaylistChunk_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDBService/RequestNextPlaylistChunkResponse" message="tns:ISDBService_RequestNextPlaylistChunk_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestLibraryIDs">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDBService/RequestLibraryIDs" message="tns:ISDBService_RequestLibraryIDs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDBService/RequestLibraryIDsResponse" message="tns:ISDBService_RequestLibraryIDs_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISDBService" type="tns:ISDBService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RequestAllSongs">
+      <soap:operation soapAction="http://tempuri.org/ISDBService/RequestAllSongs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestNextSongChunk">
+      <soap:operation soapAction="http://tempuri.org/ISDBService/RequestNextSongChunk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestAllAlbums">
+      <soap:operation soapAction="http://tempuri.org/ISDBService/RequestAllAlbums" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestNextAlbumChunk">
+      <soap:operation soapAction="http://tempuri.org/ISDBService/RequestNextAlbumChunk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestAllArtists">
+      <soap:operation soapAction="http://tempuri.org/ISDBService/RequestAllArtists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestNextArtistChunk">
+      <soap:operation soapAction="http://tempuri.org/ISDBService/RequestNextArtistChunk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestChanges">
+      <soap:operation soapAction="http://tempuri.org/ISDBService/RequestChanges" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestNextChangesChunk">
+      <soap:operation soapAction="http://tempuri.org/ISDBService/RequestNextChangesChunk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestAllPlaylists">
+      <soap:operation soapAction="http://tempuri.org/ISDBService/RequestAllPlaylists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestNextPlaylistChunk">
+      <soap:operation soapAction="http://tempuri.org/ISDBService/RequestNextPlaylistChunk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestLibraryIDs">
+      <soap:operation soapAction="http://tempuri.org/ISDBService/RequestLibraryIDs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SDBService">
+    <wsdl:port name="BasicHttpBinding_ISDBService" binding="tns:BasicHttpBinding_ISDBService">
+      <soap:address location="http://sdbservice.wsick.com/SDBService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

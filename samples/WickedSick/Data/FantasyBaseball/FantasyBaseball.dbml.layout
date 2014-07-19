@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.625, 8.5" name="FantasyBaseball">
+  <DataContextMoniker Name="/FantasyBaseballDataContext" />
+  <nestedChildShapes>
+    <classShape Id="e740ee43-8c5b-4727-9cf5-4978c4e0d865" absoluteBounds="3.5, 0.5, 2, 1.0961531575520835">
+      <DataClassMoniker Name="/FantasyBaseballDataContext/DRAFT_TYPE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f435f019-42c4-4973-ad98-90e61e579c0f" absoluteBounds="3.515, 0.96, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e25d1943-80e0-4a92-97e8-6e981a721f65" absoluteBounds="3.5, 2.25, 2, 2.2465844726562505">
+      <DataClassMoniker Name="/FantasyBaseballDataContext/LEAGUE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3dcc0d85-6783-49e9-95ff-23d7103dc3a2" absoluteBounds="3.515, 2.71, 1.9700000000000002, 1.68658447265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7d70c0f2-0331-4628-8521-f910dae938d9" absoluteBounds="7.875, 6.125, 2, 1.2605004882812505">
+      <DataClassMoniker Name="/FantasyBaseballDataContext/POSITION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b714a532-d327-4946-9a13-73631a9ba251" absoluteBounds="7.89, 6.585, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.5 : 1.59615315755208); (4.5 : 2.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/FantasyBaseballDataContext/DRAFT_TYPE/DRAFT_TYPE_LEAGUE" />
+      <nodes>
+        <classShapeMoniker Id="e740ee43-8c5b-4727-9cf5-4978c4e0d865" />
+        <classShapeMoniker Id="e25d1943-80e0-4a92-97e8-6e981a721f65" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b4596afb-eb2d-4f69-959b-9654100d5725" absoluteBounds="4.5, 4.875, 2, 1.0961531575520833">
+      <DataClassMoniker Name="/FantasyBaseballDataContext/PLAYER_ELIGIBILITY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5d505c80-cb48-46a2-96c5-9157957eee6e" absoluteBounds="4.515, 5.335, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.875 : 6.75525024414063); (5.5 : 6.75525024414063); (5.5 : 5.97115315755208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/FantasyBaseballDataContext/POSITION/POSITION_PLAYER_ELIGIBILITY" />
+      <nodes>
+        <classShapeMoniker Id="7d70c0f2-0331-4628-8521-f910dae938d9" />
+        <classShapeMoniker Id="b4596afb-eb2d-4f69-959b-9654100d5725" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="bbf06b86-a2eb-4a66-a179-9744d6aa6e28" absoluteBounds="9.375, 3.125, 2, 1.26050048828125">
+      <DataClassMoniker Name="/FantasyBaseballDataContext/TEAM_ROSTER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="28ad045c-68a8-4989-a191-f0fdbe457354" absoluteBounds="9.39, 3.585, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0240b15c-6a91-4ec2-ad7d-ed5970c57722" absoluteBounds="6.75, 1.25, 2, 1.26050048828125">
+      <DataClassMoniker Name="/FantasyBaseballDataContext/LEAGUE_POSITION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c7c7519d-ba24-450c-9902-0ca8a6810f0e" absoluteBounds="6.765, 1.71, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.031252 : 2.25); (5.031252 : 1.88025024414063); (6.75 : 1.88025024414063)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/FantasyBaseballDataContext/LEAGUE/LEAGUE_LEAGUE_POSITION" />
+      <nodes>
+        <classShapeMoniker Id="e25d1943-80e0-4a92-97e8-6e981a721f65" />
+        <classShapeMoniker Id="0240b15c-6a91-4ec2-ad7d-ed5970c57722" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="9d484da8-cdd5-494b-9a87-680038ac32a9" absoluteBounds="6.5, 3, 2, 1.5891951497395831">
+      <DataClassMoniker Name="/FantasyBaseballDataContext/TEAM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eaf837ef-a926-4c11-951e-3f3ab6b21fc0" absoluteBounds="6.515, 3.46, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.5 : 3.75525024414063); (9.375 : 3.75525024414063)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FantasyBaseballDataContext/TEAM/TEAM_TEAM_ROSTER" />
+      <nodes>
+        <classShapeMoniker Id="9d484da8-cdd5-494b-9a87-680038ac32a9" />
+        <classShapeMoniker Id="bbf06b86-a2eb-4a66-a179-9744d6aa6e28" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 3.74829223632813); (6.5 : 3.74829223632813)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FantasyBaseballDataContext/LEAGUE/LEAGUE_TEAM" />
+      <nodes>
+        <classShapeMoniker Id="e25d1943-80e0-4a92-97e8-6e981a721f65" />
+        <classShapeMoniker Id="9d484da8-cdd5-494b-9a87-680038ac32a9" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

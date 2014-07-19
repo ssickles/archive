@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverlightFileUploader", "SilverlightFileUploader\SilverlightFileUploader.csproj", "{3B4A42BA-206F-4041-9A34-978CCFBEEEBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverlightFileUploader.Web", "SilverlightFileUploader.Web\SilverlightFileUploader.Web.csproj", "{0D6EF3BF-DA79-4107-AF28-C2A298B3BB1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vci.FileUploader", "Vci.FileUploader\Vci.FileUploader.csproj", "{1B94E090-A489-4E9F-ACB2-763A75BAFAD5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B4A42BA-206F-4041-9A34-978CCFBEEEBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B4A42BA-206F-4041-9A34-978CCFBEEEBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B4A42BA-206F-4041-9A34-978CCFBEEEBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B4A42BA-206F-4041-9A34-978CCFBEEEBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D6EF3BF-DA79-4107-AF28-C2A298B3BB1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D6EF3BF-DA79-4107-AF28-C2A298B3BB1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D6EF3BF-DA79-4107-AF28-C2A298B3BB1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D6EF3BF-DA79-4107-AF28-C2A298B3BB1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B94E090-A489-4E9F-ACB2-763A75BAFAD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B94E090-A489-4E9F-ACB2-763A75BAFAD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B94E090-A489-4E9F-ACB2-763A75BAFAD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B94E090-A489-4E9F-ACB2-763A75BAFAD5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

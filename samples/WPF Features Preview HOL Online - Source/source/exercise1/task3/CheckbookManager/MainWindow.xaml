@@ -1,0 +1,228 @@
+﻿<Window x:Class="CheckbookManager.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:me="clr-namespace:CheckbookManager"
+    xmlns:Data="clr-namespace:CheckbookManager.Data"
+    xmlns:Converters="clr-namespace:CheckbookManager.Converters"
+    xmlns:dg="http://schemas.microsoft.com/wpf/2008/toolkit"
+    Height="600" Width="800"  WindowStartupLocation="CenterScreen"
+    FontFamily="Arial" Background="{DynamicResource WindowBackground}"
+    Title="Personal Finance Manager | Checking Account" Icon="images/Coins.png">
+
+    <!-- Command bindings -->
+    <Window.CommandBindings>
+        <CommandBinding Command="me:AppCommands.AddNew" Executed="OnAddNewEntry" />
+        <CommandBinding Command="me:AppCommands.Clear" Executed="OnClearEntry" CanExecute="OnHasSelectedEntries" />
+        <CommandBinding Command="me:AppCommands.Delete" Executed="OnDeleteEntry" CanExecute="OnHasSelectedEntries" />
+        <CommandBinding Command="me:AppCommands.Help" Executed="OnIgnore" />
+        <CommandBinding Command="me:AppCommands.Reconcile" Executed="OnIgnore" />
+        <CommandBinding Command="me:AppCommands.CashflowReport" Executed="OnIgnore" />
+        <CommandBinding Command="me:AppCommands.BudgetReport" Executed="OnIgnore" />
+        <CommandBinding Command="me:AppCommands.Transfer" Executed="OnIgnore" />
+        <CommandBinding Command="me:AppCommands.DownloadStatements" Executed="OnIgnore" />
+        <CommandBinding Command="me:AppCommands.DownloadCreditCards" Executed="OnIgnore" />
+        <CommandBinding Command="me:AppCommands.Backup" Executed="OnIgnore" />
+        <CommandBinding Command="me:AppCommands.Calculator" Executed="OnIgnore" />
+    </Window.CommandBindings>
+
+    <!-- Dock used for primary layout -->
+    <DockPanel>
+        <DockPanel.Resources>
+
+            <!-- Converters -->
+            <Converters:AmountToCreditDebitConverter x:Key="amountConverter" />
+            <Converters:PositiveNumberToColorConverter x:Key="BalanceDisplayConverter" PositiveColor="Black" NegativeColor="Red" />
+
+            <!-- Brushes -->
+            <LinearGradientBrush x:Key="dgHeaderBrush" StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Color="#FF6B8E95" Offset="0"/>
+                <GradientStop Color="#FF14A7C1" Offset="1"/>
+                <GradientStop Color="#FF1E424E" Offset="0.509"/>
+                <GradientStop Color="#FF1D4855" Offset="0.542"/>
+                <GradientStop Color="#FF1D4855" Offset="0.542"/>
+                <GradientStop Color="#FF193A44" Offset="0.526"/>
+            </LinearGradientBrush>
+
+            <LinearGradientBrush x:Key="dgHeaderBorderBrush" StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Color="#FF1D1D1D" Offset="0.614"/>
+                <GradientStop Color="#FF007F96" Offset="0.853"/>
+                <GradientStop Color="#FF0AEAFA" Offset="1"/>
+            </LinearGradientBrush>
+
+            <Style x:Key="dgHeaderStyle" TargetType="GridViewColumnHeader">
+                <Setter Property="Background" Value="{StaticResource dgHeaderBrush}" />
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="BorderBrush" Value="{StaticResource dgHeaderBorderBrush}" />
+            </Style>
+
+            <Style x:Key="dgRowStyle" TargetType="ListViewItem">
+                <Setter Property="SnapsToDevicePixels" Value="True" />
+                <Setter Property="Background" Value="White" />
+                <Style.Triggers>
+                    <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                        <Setter Property="Background" Value="#FFD0D0E0" />
+                    </Trigger>
+                    <Trigger Property="IsSelected" Value="True">
+                        <Setter Property="Background" Value="LightGoldenrodYellow" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <!-- Images for menu/toolbar -->
+            <Image x:Key="addNewImage" Width="16" Height="16" Source="images/AddNew.png" x:Shared="False" />
+            <Image x:Key="backupImage" Width="16" Height="16" Source="images/Backup.png" x:Shared="False" />
+            <Image x:Key="bankImage" Width="16" Height="16" Source="images/Bank.png" x:Shared="False" />
+            <Image x:Key="budgetReportImage" Width="16" Height="16" Source="images/BudgetReport.png" x:Shared="False" />
+            <Image x:Key="calcImage" Width="16" Height="16" Source="images/Calc.png" x:Shared="False" />
+            <Image x:Key="cashflowReportImage" Width="16" Height="16" Source="images/CashflowReport.png" x:Shared="False" />
+            <Image x:Key="clearImage" Width="16" Height="16" Source="images/Clear.png" x:Shared="False" />
+            <Image x:Key="cutImage" Width="16" Height="16" Source="images/Cut.png" x:Shared="False" />
+            <Image x:Key="copyImage" Width="16" Height="16" Source="images/Copy.png" x:Shared="False" />
+            <Image x:Key="creditCardsImage" Width="16" Height="16" Source="images/CreditCards.png" x:Shared="False" />
+            <Image x:Key="deleteImage" Width="16" Height="16" Source="images/Delete.png" x:Shared="False" />
+            <Image x:Key="helpImage" Width="16" Height="16" Source="images/Help.png" x:Shared="False" />
+            <Image x:Key="reconcileImage" Width="16" Height="16" Source="images/Reconcile.png" x:Shared="False" />
+            <Image x:Key="transferImage" Width="16" Height="16" Source="images/Transfer.png" x:Shared="False" />
+            <Image x:Key="trendReportImage" Width="16" Height="16" Source="images/TrendReport.png" x:Shared="False" />
+            <Image x:Key="pasteImage" Width="16" Height="16" Source="images/Paste.png" x:Shared="False" />
+
+        </DockPanel.Resources>
+
+        <!-- Menu docked to top -->
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="Backup" Command="me:AppCommands.Backup" Icon="{StaticResource backupImage}" />
+                <Separator />
+                <MenuItem Header="E_xit" Command="ApplicationCommands.Close" />
+            </MenuItem>
+
+            <MenuItem Header="_Edit">
+                <MenuItem Header="Cut" Command="ApplicationCommands.Cut" InputGestureText="CTRL+X" Icon="{StaticResource cutImage}" />
+                <MenuItem Header="Copy" Command="ApplicationCommands.Copy" InputGestureText="CTRL+C" Icon="{StaticResource copyImage}" />
+                <MenuItem Header="Paste" Command="ApplicationCommands.Paste" InputGestureText="CTRL+V" Icon="{StaticResource pasteImage}" />
+                <Separator />
+                <MenuItem Header="Add _New" Command="me:AppCommands.AddNew" Icon="{StaticResource addNewImage}" />
+                <MenuItem Header="Mark Cleared" Command="me:AppCommands.Clear" Icon="{StaticResource clearImage}" />
+                <MenuItem Header="Delete" Command="me:AppCommands.Delete" Icon="{StaticResource deleteImage}" />
+            </MenuItem>
+
+            <MenuItem Header="_Statements">
+                <MenuItem Header="Reconcile Statement"  Command="me:AppCommands.Reconcile" Icon="{StaticResource reconcileImage}" />
+                <MenuItem Header="Download Statements"  Command="me:AppCommands.DownloadStatements" Icon="{StaticResource bankImage}" />
+                <MenuItem Header="Download Credit Cards"  Command="me:AppCommands.DownloadCreditCards" Icon="{StaticResource creditCardsImage}" />
+                <MenuItem Header="Initiate Electronic Transfer"  Command="me:AppCommands.Transfer" Icon="{StaticResource transferImage}" />
+            </MenuItem>
+
+            <MenuItem Header="_Reports">
+                <MenuItem Header="Spending Trend Report"  Command="me:AppCommands.TrendReport" Icon="{StaticResource trendReportImage}" />
+                <MenuItem Header="Budget Report"  Command="me:AppCommands.BudgetReport" Icon="{StaticResource budgetReportImage}" />
+                <MenuItem Header="Cash Flow Report"  Command="me:AppCommands.CashflowReport" Icon="{StaticResource cashflowReportImage}" />
+            </MenuItem>
+
+            <MenuItem Header="_Tools">
+                <MenuItem Header="Calculator"  Command="me:AppCommands.Calculator" Icon="{StaticResource calcImage}" />
+            </MenuItem>
+
+            <MenuItem Header="_Help">
+                <MenuItem Header="About"  Command="ApplicationCommands.Help" Icon="{StaticResource helpImage}" />
+            </MenuItem>
+        </Menu>
+
+        <!-- Toolbar docked to top -->
+        <ToolBarTray DockPanel.Dock="Top" Orientation="Horizontal">
+            <ToolBar Header="Edit">
+                <ToolBarPanel Orientation="Horizontal">
+                    <Button Command="me:AppCommands.AddNew" Content="{StaticResource addNewImage}" />
+                    <Button Command="me:AppCommands.Clear" Content="{StaticResource clearImage}" />
+                    <Button Command="me:AppCommands.Delete" Content="{StaticResource deleteImage}" />
+                    <Separator Margin="5,0" />
+                    <Button Command="ApplicationCommands.Cut" Content="{StaticResource cutImage}" />
+                    <Button Command="ApplicationCommands.Copy" Content="{StaticResource copyImage}" />
+                    <Button Command="ApplicationCommands.Paste" Content="{StaticResource pasteImage}" />
+                </ToolBarPanel>
+            </ToolBar>
+            <ToolBar Header="Statements">
+                <ToolBarPanel Orientation="Horizontal">
+                    <Button Command="me:AppCommands.Reconcile" Content="{StaticResource reconcileImage}" />
+                    <Button Command="me:AppCommands.DownloadStatements" Content="{StaticResource bankImage}" />
+                    <Button Command="me:AppCommands.DownloadCreditCards" Content="{StaticResource creditCardsImage}" />
+                    <Button Command="me:AppCommands.Transfer" Content="{StaticResource transferImage}" />
+                </ToolBarPanel>
+            </ToolBar>
+            <ToolBar Header="Reports">
+                <ToolBarPanel Orientation="Horizontal" ToolBar.OverflowMode="Always">
+                    <Button Command="me:AppCommands.TrendReport" Content="{StaticResource trendReportImage}" />
+                    <Button Command="me:AppCommands.BudgetReport" Content="{StaticResource budgetReportImage}" />
+                    <Button Command="me:AppCommands.CashflowReport" Content="{StaticResource cashflowReportImage}" />
+                </ToolBarPanel>
+            </ToolBar>
+        </ToolBarTray>
+
+        <!-- Status bar on bottom: holds balance -->
+        <StatusBar DockPanel.Dock="Bottom" Background="{StaticResource whiteBackBrush}" 
+                   BorderBrush="SteelBlue" BorderThickness="0,1,0,0">
+            <StatusBarItem DockPanel.Dock="Right" HorizontalAlignment="Right">
+                <StackPanel Margin="5" Orientation="Horizontal">
+                    <TextBlock Margin="5,0"  Text="Current Balance:" FontWeight="Bold" />
+                    <TextBlock Foreground="{Binding CurrentBalance,Converter={StaticResource BalanceDisplayConverter}}" Text="{Binding CurrentBalance, StringFormat=C}" />
+                </StackPanel>
+            </StatusBarItem>
+        </StatusBar>
+
+        <!-- DataGrid fills remainder of space -->
+        <dg:DataGrid x:Name="dg" ItemsSource="{Binding}" Margin="10"
+                  AutoGenerateColumns="False"
+                  Background="#80909090" AlternationCount="2">
+
+            <dg:DataGrid.ContextMenu >
+                <ContextMenu >
+                    <MenuItem Header="Copy Selected Transactions" Command="{x:Static ApplicationCommands.Copy}" />
+                </ContextMenu>
+            </dg:DataGrid.ContextMenu>
+
+            <!-- Column definition -->
+            <dg:DataGrid.Columns>
+                <dg:DataGridTextColumn Header="No." Width="SizeToCells"  Binding="{Binding CheckNumber}" />
+
+                <!--<dg:DataGridTextColumn Header="Date" Binding="{Binding Date, StringFormat=d}" />-->
+                <dg:DataGridTemplateColumn Header="Date" MinWidth="100">
+                    <dg:DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <dg:DatePicker SelectedDate="{Binding Date}" SelectedDateFormat="Short" />
+                        </DataTemplate>
+                    </dg:DataGridTemplateColumn.CellEditingTemplate>
+                    <dg:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Date, StringFormat=d}" />
+                        </DataTemplate>
+                    </dg:DataGridTemplateColumn.CellTemplate>
+                </dg:DataGridTemplateColumn>
+                
+                <dg:DataGridTextColumn Header="Pay To" MinWidth="200" Binding="{Binding Recipient}" />
+
+                <dg:DataGridComboBoxColumn Header="Memo" Width="*"
+                           ItemsSource="{Binding Source={x:Static Data:CheckBook.Descriptions}, Mode=OneWay}"
+                           TextBinding="{Binding Memo}">
+                    <dg:DataGridComboBoxColumn.EditingElementStyle>
+                        <Style TargetType="ComboBox">
+                            <Setter Property="IsEditable" Value="True" />
+                        </Style>
+                    </dg:DataGridComboBoxColumn.EditingElementStyle>
+                </dg:DataGridComboBoxColumn>
+
+                <dg:DataGridCheckBoxColumn Header="C" Width="SizeToHeader" Binding="{Binding Cleared}" ElementStyle="{DynamicResource NoBorderCheckBoxStyle}" EditingElementStyle="{DynamicResource NoBorderCheckBoxStyle}" />
+                <dg:DataGridTextColumn Width="SizeToCells" Header="Payment" Binding="{Binding Amount, Converter={StaticResource amountConverter}, ConverterParameter=0, StringFormat=C}" />
+                <dg:DataGridTextColumn Width="SizeToCells" Header="Deposit" Binding="{Binding Amount, Converter={StaticResource amountConverter}, ConverterParameter=1, StringFormat=C}" />
+
+                <dg:DataGridTemplateColumn Width="SizeToCells" Header="Balance" ClipboardContentBinding="{Binding TotalBalance}">
+                    <dg:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Foreground="{Binding TotalBalance,Converter={StaticResource BalanceDisplayConverter}}" Text="{Binding TotalBalance, StringFormat=C}" />
+                        </DataTemplate>
+                    </dg:DataGridTemplateColumn.CellTemplate>
+                </dg:DataGridTemplateColumn>
+            </dg:DataGrid.Columns>
+        </dg:DataGrid>
+
+    </DockPanel>
+</Window>

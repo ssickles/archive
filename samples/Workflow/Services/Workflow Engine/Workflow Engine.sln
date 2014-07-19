@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workflow Engine", "Workflow Engine.csproj", "{72B1BA4C-C935-4022-AD56-511BA5250417}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D5EBEA23-1F82-414C-A5B3-9DFEBDED7828} = {D5EBEA23-1F82-414C-A5B3-9DFEBDED7828}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CdcSoftware.Workflow.Core", "..\..\Core\CdcSoftware.Workflow.Core.csproj", "{D5EBEA23-1F82-414C-A5B3-9DFEBDED7828}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Workflow Engine Installer", "..\Workflow Engine Installer\Workflow Engine Installer.vdproj", "{496BDDBA-DEBF-45C1-9D21-79B2D6F0A0D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72B1BA4C-C935-4022-AD56-511BA5250417}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72B1BA4C-C935-4022-AD56-511BA5250417}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72B1BA4C-C935-4022-AD56-511BA5250417}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72B1BA4C-C935-4022-AD56-511BA5250417}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5EBEA23-1F82-414C-A5B3-9DFEBDED7828}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5EBEA23-1F82-414C-A5B3-9DFEBDED7828}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5EBEA23-1F82-414C-A5B3-9DFEBDED7828}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5EBEA23-1F82-414C-A5B3-9DFEBDED7828}.Release|Any CPU.Build.0 = Release|Any CPU
+		{496BDDBA-DEBF-45C1-9D21-79B2D6F0A0D6}.Debug|Any CPU.ActiveCfg = Debug
+		{496BDDBA-DEBF-45C1-9D21-79B2D6F0A0D6}.Debug|Any CPU.Build.0 = Debug
+		{496BDDBA-DEBF-45C1-9D21-79B2D6F0A0D6}.Release|Any CPU.ActiveCfg = Release
+		{496BDDBA-DEBF-45C1-9D21-79B2D6F0A0D6}.Release|Any CPU.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

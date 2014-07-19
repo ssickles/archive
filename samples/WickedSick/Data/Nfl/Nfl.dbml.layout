@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 15.75, 15.625" name="Nfl">
+	<DataContextMoniker Name="/NflDataContext" />
+	<nestedChildShapes>
+		<classShape Id="5b297baa-48a1-4973-918a-f4f4ac22f0ca" absoluteBounds="0.5, 3.625, 2, 1.4248478190104168">
+			<DataClassMoniker Name="/NflDataContext/LEAGUE" />
+			<nestedChildShapes>
+				<elementListCompartment Id="13fb914d-01d5-471c-8856-64dad8411f36" absoluteBounds="0.515, 4.085, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+			</nestedChildShapes>
+		</classShape>
+		<classShape Id="f9504ebc-a142-42fa-9e68-40f5a5abe097" absoluteBounds="0.5, 6.75, 2, 1.5891951497395827">
+			<DataClassMoniker Name="/NflDataContext/CONFERENCE" />
+			<nestedChildShapes>
+				<elementListCompartment Id="f7f39baf-7d5c-46b9-b61b-136749e55807" absoluteBounds="0.51500000000000057, 7.21, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+			</nestedChildShapes>
+		</classShape>
+		<associationConnector edgePoints="[(1.5 : 5.04984781901042); (1.5 : 6.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+			<AssociationMoniker Name="/NflDataContext/LEAGUE/LEAGUE_CONFERENCE" />
+			<nodes>
+				<classShapeMoniker Id="5b297baa-48a1-4973-918a-f4f4ac22f0ca" />
+				<classShapeMoniker Id="f9504ebc-a142-42fa-9e68-40f5a5abe097" />
+			</nodes>
+		</associationConnector>
+		<classShape Id="1797c354-81b7-40fc-b476-c54615d88a74" absoluteBounds="0.5, 10.125, 2, 1.5891951497395827">
+			<DataClassMoniker Name="/NflDataContext/DIVISION" />
+			<nestedChildShapes>
+				<elementListCompartment Id="ada97405-07b1-48fe-8fd4-491033cbef2a" absoluteBounds="0.51500000000000057, 10.585, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+			</nestedChildShapes>
+		</classShape>
+		<associationConnector edgePoints="[(1.5 : 8.33919514973958); (1.5 : 10.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+			<AssociationMoniker Name="/NflDataContext/CONFERENCE/CONFERENCE_DIVISION" />
+			<nodes>
+				<classShapeMoniker Id="f9504ebc-a142-42fa-9e68-40f5a5abe097" />
+				<classShapeMoniker Id="1797c354-81b7-40fc-b476-c54615d88a74" />
+			</nodes>
+		</associationConnector>
+		<classShape Id="626e2fc0-67ef-465b-bb96-a586682c3fe2" absoluteBounds="3.375, 9.75, 2, 1.4248478190104166">
+			<DataClassMoniker Name="/NflDataContext/DIVISION_TEAM" />
+			<nestedChildShapes>
+				<elementListCompartment Id="185bb01c-b9e4-4efc-b9a7-f71586fd0b17" absoluteBounds="3.3900000000000006, 10.21, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+			</nestedChildShapes>
+		</classShape>
+		<associationConnector edgePoints="[(2.5 : 10.6499239095052); (3.375 : 10.6499239095052)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+			<AssociationMoniker Name="/NflDataContext/DIVISION/DIVISION_DIVISION_TEAM" />
+			<nodes>
+				<classShapeMoniker Id="1797c354-81b7-40fc-b476-c54615d88a74" />
+				<classShapeMoniker Id="626e2fc0-67ef-465b-bb96-a586682c3fe2" />
+			</nodes>
+		</associationConnector>
+		<classShape Id="75652daa-f95d-4f69-9339-9ee48066b5a8" absoluteBounds="6.25, 8.125, 2, 1.9178898111979166">
+			<DataClassMoniker Name="/NflDataContext/TEAM" />
+			<nestedChildShapes>
+				<elementListCompartment Id="c02418dd-7033-496f-9a51-e1e9f770922e" absoluteBounds="6.2650000000000006, 8.585, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+			</nestedChildShapes>
+		</classShape>
+		<associationConnector edgePoints="[(6.25 : 8.9374995); (4.375 : 8.9374995); (4.375 : 9.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+			<AssociationMoniker Name="/NflDataContext/TEAM/TEAM_DIVISION_TEAM" />
+			<nodes>
+				<classShapeMoniker Id="75652daa-f95d-4f69-9339-9ee48066b5a8" />
+				<classShapeMoniker Id="626e2fc0-67ef-465b-bb96-a586682c3fe2" />
+			</nodes>
+		</associationConnector>
+		<classShape Id="f600fbc7-439f-4c17-957f-913ef0d9ba56" absoluteBounds="3.25, 5.125, 2, 1.4248478190104166">
+			<DataClassMoniker Name="/NflDataContext/TEAM_PLAYER" />
+			<nestedChildShapes>
+				<elementListCompartment Id="c3472e1e-9f88-4376-99af-3b826de4066c" absoluteBounds="3.2649999999999997, 5.5850000000000009, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+			</nestedChildShapes>
+		</classShape>
+		<associationConnector edgePoints="[(6.25 : 8.49999725); (3.28125 : 8.49999725); (3.28125 : 6.54984781901042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+			<AssociationMoniker Name="/NflDataContext/TEAM/TEAM_TEAM_PLAYER" />
+			<nodes>
+				<classShapeMoniker Id="75652daa-f95d-4f69-9339-9ee48066b5a8" />
+				<classShapeMoniker Id="f600fbc7-439f-4c17-957f-913ef0d9ba56" />
+			</nodes>
+		</associationConnector>
+		<classShape Id="e5b788e2-8a26-420c-9cff-3ce66ce41405" absoluteBounds="6.375, 3.625, 2, 3.0683211263020818">
+			<DataClassMoniker Name="/NflDataContext/PLAYER" />
+			<nestedChildShapes>
+				<elementListCompartment Id="41e167c5-1264-4dd5-bcc6-54fe617b5a1e" absoluteBounds="6.3900000000000006, 4.0850000000000009, 1.9700000000000002, 2.508321126302083" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+			</nestedChildShapes>
+		</classShape>
+		<associationConnector edgePoints="[(6.375 : 5.83742390950521); (6.36458333333333 : 5.83742390950521 : JumpStart); (6.19791666666667 : 5.83742390950521 : JumpEnd); (5.25 : 5.83742390950521)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+			<AssociationMoniker Name="/NflDataContext/PLAYER/PLAYER_TEAM_PLAYER" />
+			<nodes>
+				<classShapeMoniker Id="e5b788e2-8a26-420c-9cff-3ce66ce41405" />
+				<classShapeMoniker Id="f600fbc7-439f-4c17-957f-913ef0d9ba56" />
+			</nodes>
+		</associationConnector>
+		<classShape Id="bb97faad-36fd-49a2-80b3-c43f03c0fb31" absoluteBounds="9.5, 0.5, 2, 2.4109318033854166">
+			<DataClassMoniker Name="/NflDataContext/PLAYER_GAME_DEFENSE" />
+			<nestedChildShapes>
+				<elementListCompartment Id="a42403e2-f403-42e4-aa24-863783bab6fa" absoluteBounds="9.515, 0.96000000000000085, 1.9700000000000002, 1.8509318033854165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+			</nestedChildShapes>
+		</classShape>
+		<associationConnector edgePoints="[(7.375 : 3.625); (7.375 : 1.70546590169271); (9.5 : 1.70546590169271)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+			<AssociationMoniker Name="/NflDataContext/PLAYER/PLAYER_PLAYER_GAME_DEFENSE" />
+			<nodes>
+				<classShapeMoniker Id="e5b788e2-8a26-420c-9cff-3ce66ce41405" />
+				<classShapeMoniker Id="bb97faad-36fd-49a2-80b3-c43f03c0fb31" />
+			</nodes>
+		</associationConnector>
+		<associationConnector edgePoints="[(6.28125 : 8.125); (6.28125 : 2.33945135253906); (7.29166666666667 : 2.33945135253906 : JumpStart); (7.45833333333333 : 2.33945135253906 : JumpEnd); (9.5 : 2.33945135253906)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+			<AssociationMoniker Name="/NflDataContext/TEAM/TEAM_PLAYER_GAME_DEFENSE" />
+			<nodes>
+				<classShapeMoniker Id="75652daa-f95d-4f69-9339-9ee48066b5a8" />
+				<classShapeMoniker Id="bb97faad-36fd-49a2-80b3-c43f03c0fb31" />
+			</nodes>
+		</associationConnector>
+		<classShape Id="fb5e94fc-9a7a-4148-a792-a66bbac3e6d1" absoluteBounds="12.25, 0.5, 2, 1.9178898111979166">
+			<DataClassMoniker Name="/NflDataContext/PLAYER_GAME_FUMBLE" />
+			<nestedChildShapes>
+				<elementListCompartment Id="17a5769e-2cef-4b1a-a536-3c13f1270f40" absoluteBounds="12.265, 0.96000000000000085, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+			</nestedChildShapes>
+		</classShape>
+		<associationConnector edgePoints="[(8.375 : 6.33685546875); (9.66666666666667 : 6.33685546875 : JumpStart); (9.83333333333333 : 6.33685546875 : JumpEnd); (10.1666666666667 : 6.33685546875 : JumpStart); (10.3333333333333 : 6.33685546875 : JumpEnd); (12.69140375 : 6.33685546875); (12.69140375 : 2.41788981119792)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+			<AssociationMoniker Name="/NflDataContext/PLAYER/PLAYER_PLAYER_GAME_FUMBLE" />
+			<nodes>
+				<classShapeMoniker Id="e5b788e2-8a26-420c-9cff-3ce66ce41405" />
+				<classShapeMoniker Id="fb5e94fc-9a7a-4148-a792-a66bbac3e6d1" />
+			</nodes>
+		</associationConnector>
+		<associationConnector edgePoints="[(8.25 : 9.38211166320801); (8.27604166666667 : 9.38211166320801 : JumpStart); (8.44270833333333 : 9.38211166320801 : JumpEnd); (8.54166666666667 : 9.38211166320801 : JumpStart); (8.70833333333333 : 9.38211166320801 : JumpEnd); (9.66666666666667 : 9.38211166320801 : JumpStart); (9.83333333333333 : 9.38211166320801 : JumpEnd); (10.0416666666667 : 9.38211166320801 : JumpStart); (10.2083333333333 : 9.38211166320801 : JumpEnd); (12.5260416666667 : 9.38211166320801 : JumpStart); (12.6927083333333 : 9.38211166320801 : JumpEnd); (12.8359375 : 9.38211166320801); (12.8359375 : 2.41788981119792)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+			<AssociationMoniker Name="/NflDataContext/TEAM/TEAM_PLAYER_GAME_FUMBLE" />
+			<nodes>
+				<classShapeMoniker Id="75652daa-f95d-4f69-9339-9ee48066b5a8" />
+				<classShapeMoniker Id="fb5e94fc-9a7a-4148-a792-a66bbac3e6d1" />
+			</nodes>
+		</associationConnector>
+		<classShape Id="e1f4c6c3-3f0e-4b7c-9c1f-3a54f1c42a35" absoluteBounds="13.125, 4, 2, 1.9178898111979166">
+			<DataClassMoniker Name="/NflDataContext/PLAYER_GAME_KICK_RETURN" />
+			<nestedChildShapes>
+				<elementListCompartment Id="24e6d66b-4300-4ecd-9014-149d4e5fc447" absoluteBounds="13.14, 4.4600000000000009, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+			</nestedChildShapes>
+		</classShape>
+		<associationConnector edgePoints="[(8.375 : 6.54634079752604); (9.66666666666667 : 6.54634079752604 : JumpStart); (9.83333333333333 : 6.54634079752604 : JumpEnd); (10.0416666666667 : 6.54634079752604 : JumpStart); (10.3333333333333 : 6.54634079752604 : JumpEnd); (12.5260416666667 : 6.54634079752604 : JumpStart); (12.6927083333333 : 6.54634079752604 : JumpEnd); (12.7526041666667 : 6.54634079752604 : JumpStart); (13.0833333333333 : 6.54634079752604 : JumpEnd); (13.593748 : 6.54634079752604); (13.593748 : 5.91788981119792)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+			<AssociationMoniker Name="/NflDataContext/PLAYER/PLAYER_PLAYER_GAME_KICK_RETURN" />
+			<nodes>
+				<classShapeMoniker Id="e5b788e2-8a26-420c-9cff-3ce66ce41405" />
+				<classShapeMoniker Id="e1f4c6c3-3f0e-4b7c-9c1f-3a54f1c42a35" />
+			</nodes>
+		</associationConnector>
+		<associationConnector edgePoints="[(8.25 : 8.57322045279948); (8.27604166666667 : 8.57322045279948 : JumpStart); (8.44270833333333 : 8.57322045279948 : JumpEnd); (9.66666666666667 : 8.57322045279948 : JumpStart); (9.83333333333333 : 8.57322045279948 : JumpEnd); (10 : 8.57322045279948); (10 : 6.75); (10.0416666666667 : 6.75 : JumpStart); (10.3333333333333 : 6.75 : JumpEnd); (12.5260416666667 : 6.75 : JumpStart); (12.6927083333333 : 6.75 : JumpEnd); (12.7526041666667 : 6.75 : JumpStart); (13.0833333333333 : 6.75 : JumpEnd); (14.125 : 6.75); (14.125 : 5.91788981119792)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+			<AssociationMoniker Name="/NflDataContext/TEAM/TEAM_PLAYER_GAME_KICK_RETURN" />
+			<nodes>
+				<classShapeMoniker Id="75652daa-f95d-4f69-9339-9ee48066b5a8" />
+				<classShapeMoniker Id="e1f4c6c3-3f0e-4b7c-9c1f-3a54f1c42a35" />
+			</nodes>
+		</associationConnector>
+		<classShape Id="acb6dc4b-5fb5-46d6-991c-5356af2f6237" absoluteBounds="13.125, 6.875, 2, 2.0822371419270835">
+			<DataClassMoniker Name="/NflDataContext/PLAYER_GAME_KICKING" />
+			<nestedChildShapes>
+				<elementListCompartment Id="6dae4f20-76f8-48e8-9e58-3139f4cce30c" absoluteBounds="13.14, 7.335, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+			</nestedChildShapes>
+		</classShape>
+		<associationConnector edgePoints="[(8.34375 : 6.69332112630208); (8.34375 : 6.96875); (9.66666666666667 : 6.96875 : JumpStart); (9.83333333333333 : 6.96875 : JumpEnd); (9.91666666666667 : 6.96875 : JumpStart); (10.3333333333333 : 6.96875 : JumpEnd); (12.5260416666667 : 6.96875 : JumpStart); (12.6927083333333 : 6.96875 : JumpEnd); (12.7526041666667 : 6.96875 : JumpStart); (13.0833333333333 : 6.96875 : JumpEnd); (13.125 : 6.96875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+			<AssociationMoniker Name="/NflDataContext/PLAYER/PLAYER_PLAYER_GAME_KICKING" />
+			<nodes>
+				<classShapeMoniker Id="e5b788e2-8a26-420c-9cff-3ce66ce41405" />
+				<classShapeMoniker Id="acb6dc4b-5fb5-46d6-991c-5356af2f6237" />
+			</nodes>
+		</associationConnector>
+		<associationConnector edgePoints="[(8.25 : 9.73979239339193); (8.27604166666667 : 9.73979239339193 : JumpStart); (8.44270833333333 : 9.73979239339193 : JumpEnd); (8.54166666666667 : 9.73979239339193 : JumpStart); (8.70833333333333 : 9.73979239339193 : JumpEnd); (9.66666666666667 : 9.73979239339193 : JumpStart); (9.83333333333333 : 9.73979239339193 : JumpEnd); (10.0416666666667 : 9.73979239339193 : JumpStart); (10.2083333333333 : 9.73979239339193 : JumpEnd); (12.5260416666667 : 9.73979239339193 : JumpStart); (12.6927083333333 : 9.73979239339193 : JumpEnd); (12.7916666666667 : 9.73979239339193 : JumpStart); (13.2083333333333 : 9.73979239339193 : JumpEnd); (14.125 : 9.73979239339193); (14.125 : 8.95723714192708)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+			<AssociationMoniker Name="/NflDataContext/TEAM/TEAM_PLAYER_GAME_KICKING" />
+			<nodes>
+				<classShapeMoniker Id="75652daa-f95d-4f69-9339-9ee48066b5a8" />
+				<classShapeMoniker Id="acb6dc4b-5fb5-46d6-991c-5356af2f6237" />
+			</nodes>
+		</associationConnector>
+		<classShape Id="c32c0ab0-46bc-4ef1-9484-45a8befe6d46" absoluteBounds="10.5, 10.375, 2, 2.0822371419270844">
+			<DataClassMoniker Name="/NflDataContext/PLAYER_GAME_PASSING" />
+			<nestedChildShapes>
+				<elementListCompartment Id="73172806-06e7-48b7-b75b-fad9128c4aab" absoluteBounds="10.515, 10.835, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+			</nestedChildShapes>
+		</classShape>
+		<associationConnector edgePoints="[(8.359375 : 6.69332112630208); (8.359375 : 10.8643072854818); (8.54166666666667 : 10.8643072854818 : JumpStart); (8.70833333333333 : 10.8643072854818 : JumpEnd); (9.66666666666667 : 10.8643072854818 : JumpStart); (9.83333333333333 : 10.8643072854818 : JumpEnd); (10.0416666666667 : 10.8643072854818 : JumpStart); (10.2083333333333 : 10.8643072854818 : JumpEnd); (10.5 : 10.8643072854818)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+			<AssociationMoniker Name="/NflDataContext/PLAYER/PLAYER_PLAYER_GAME_PASSING" />
+			<nodes>
+				<classShapeMoniker Id="e5b788e2-8a26-420c-9cff-3ce66ce41405" />
+				<classShapeMoniker Id="c32c0ab0-46bc-4ef1-9484-45a8befe6d46" />
+			</nodes>
+		</associationConnector>
+		<associationConnector edgePoints="[(6.7187475 : 10.0428898111979); (6.7187475 : 11.4161185709635); (7.02577411858974 : 11.4161185709635 : JumpStart); (7.19244078525641 : 11.4161185709635 : JumpEnd); (7.41613407051282 : 11.4161185709635 : JumpStart); (7.58280073717949 : 11.4161185709635 : JumpEnd); (8.54166666666667 : 11.4161185709635 : JumpStart); (8.70833333333333 : 11.4161185709635 : JumpEnd); (9.66666666666667 : 11.4161185709635 : JumpStart); (9.83333333333333 : 11.4161185709635 : JumpEnd); (10.0416666666667 : 11.4161185709635 : JumpStart); (10.2083333333333 : 11.4161185709635 : JumpEnd); (10.5 : 11.4161185709635)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+			<AssociationMoniker Name="/NflDataContext/TEAM/TEAM_PLAYER_GAME_PASSING" />
+			<nodes>
+				<classShapeMoniker Id="75652daa-f95d-4f69-9339-9ee48066b5a8" />
+				<classShapeMoniker Id="c32c0ab0-46bc-4ef1-9484-45a8befe6d46" />
+			</nodes>
+		</associationConnector>
+		<classShape Id="106ff8cd-08a0-407c-9631-549c8b86c2b2" absoluteBounds="10.5, 4, 2, 1.9178898111979166">
+			<DataClassMoniker Name="/NflDataContext/PLAYER_GAME_PUNT_RETURN" />
+			<nestedChildShapes>
+				<elementListCompartment Id="98712a50-2767-47bd-851e-c73ad2d857d9" absoluteBounds="10.515, 4.46, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+			</nestedChildShapes>
+		</classShape>
+		<associationConnector edgePoints="[(8.375 : 4.62459392834786); (9.66666666666667 : 4.62459392834786 : JumpStart); (9.83333333333333 : 4.62459392834786 : JumpEnd); (10.5 : 4.62459392834786)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+			<AssociationMoniker Name="/NflDataContext/PLAYER/PLAYER_PLAYER_GAME_PUNT_RETURN" />
+			<nodes>
+				<classShapeMoniker Id="e5b788e2-8a26-420c-9cff-3ce66ce41405" />
+				<classShapeMoniker Id="106ff8cd-08a0-407c-9631-549c8b86c2b2" />
+			</nodes>
+		</associationConnector>
+		<associationConnector edgePoints="[(8.25 : 8.125); (8.26919943490112 : 8.10580056509888 : JumpStart); (8.41830056509888 : 7.95669943490112 : JumpEnd); (8.625 : 7.75); (9.66666666666667 : 7.75 : JumpStart); (9.83333333333333 : 7.75 : JumpEnd); (9.91666666666667 : 7.75 : JumpStart); (10.2083333333333 : 7.75 : JumpEnd); (10.25 : 7.75); (10.25 : 6.1369085142478); (10.5 : 5.25105427684295)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+			<AssociationMoniker Name="/NflDataContext/TEAM/TEAM_PLAYER_GAME_PUNT_RETURN" />
+			<nodes>
+				<classShapeMoniker Id="75652daa-f95d-4f69-9339-9ee48066b5a8" />
+				<classShapeMoniker Id="106ff8cd-08a0-407c-9631-549c8b86c2b2" />
+			</nodes>
+		</associationConnector>
+		<classShape Id="c1ed4ddf-de9a-43a5-af99-f081399ceb2c" absoluteBounds="10.5, 7.125, 2, 2.0822371419270835">
+			<DataClassMoniker Name="/NflDataContext/PLAYER_GAME_PUNTING" />
+			<nestedChildShapes>
+				<elementListCompartment Id="477a187d-691f-4716-95af-a981a5779227" absoluteBounds="10.515, 7.585, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+			</nestedChildShapes>
+		</classShape>
+		<associationConnector edgePoints="[(8.328125 : 6.69332112630208); (8.328125 : 8.16161022639974); (9.66666666666667 : 8.16161022639974 : JumpStart); (9.83333333333333 : 8.16161022639974 : JumpEnd); (9.91666666666667 : 8.16161022639974 : JumpStart); (10.2083333333333 : 8.16161022639974 : JumpEnd); (10.5 : 8.16161022639974)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+			<AssociationMoniker Name="/NflDataContext/PLAYER/PLAYER_PLAYER_GAME_PUNTING" />
+			<nodes>
+				<classShapeMoniker Id="e5b788e2-8a26-420c-9cff-3ce66ce41405" />
+				<classShapeMoniker Id="c1ed4ddf-de9a-43a5-af99-f081399ceb2c" />
+			</nodes>
+		</associationConnector>
+		<associationConnector edgePoints="[(8.25 : 8.82858267919922); (8.27604166666667 : 8.82858267919922 : JumpStart); (8.44270833333333 : 8.82858267919922 : JumpEnd); (9.66666666666667 : 8.82858267919922 : JumpStart); (9.83333333333333 : 8.82858267919922 : JumpEnd); (10.0416666666667 : 8.82858267919922 : JumpStart); (10.2083333333333 : 8.82858267919922 : JumpEnd); (10.5 : 8.82858267919922)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+			<AssociationMoniker Name="/NflDataContext/TEAM/TEAM_PLAYER_GAME_PUNTING" />
+			<nodes>
+				<classShapeMoniker Id="75652daa-f95d-4f69-9339-9ee48066b5a8" />
+				<classShapeMoniker Id="c1ed4ddf-de9a-43a5-af99-f081399ceb2c" />
+			</nodes>
+		</associationConnector>
+		<classShape Id="f1fe40b7-d5b3-48fd-ac85-faaacb84ab61" absoluteBounds="13.25, 10.375, 2, 1.9178898111979166">
+			<DataClassMoniker Name="/NflDataContext/PLAYER_GAME_RECEIVING" />
+			<nestedChildShapes>
+				<elementListCompartment Id="99840362-4f3d-44e6-a318-a4998b3ba9c1" absoluteBounds="13.265, 10.835, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+			</nestedChildShapes>
+		</classShape>
+		<associationConnector edgePoints="[(8.375 : 3.78125); (9.66666666666667 : 3.78125 : JumpStart); (9.83333333333333 : 3.78125 : JumpEnd); (12.6080704166667 : 3.78125 : JumpStart); (13.0833333333333 : 3.78125 : JumpEnd); (15.2187495 : 3.78125); (15.2187495 : 10.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+			<AssociationMoniker Name="/NflDataContext/PLAYER/PLAYER_PLAYER_GAME_RECEIVING" />
+			<nodes>
+				<classShapeMoniker Id="e5b788e2-8a26-420c-9cff-3ce66ce41405" />
+				<classShapeMoniker Id="f1fe40b7-d5b3-48fd-ac85-faaacb84ab61" />
+			</nodes>
+		</associationConnector>
+		<associationConnector edgePoints="[(8.25 : 9.92259360229492); (8.27604166666667 : 9.92259360229492 : JumpStart); (8.44270833333333 : 9.92259360229492 : JumpEnd); (8.54166666666667 : 9.92259360229492 : JumpStart); (8.70833333333333 : 9.92259360229492 : JumpEnd); (9.66666666666667 : 9.92259360229492 : JumpStart); (9.83333333333333 : 9.92259360229492 : JumpEnd); (10.0416666666667 : 9.92259360229492 : JumpStart); (10.2083333333333 : 9.92259360229492 : JumpEnd); (12.5260416666667 : 9.92259360229492 : JumpStart); (12.6927083333333 : 9.92259360229492 : JumpEnd); (12.7916666666667 : 9.92259360229492 : JumpStart); (13.2083333333333 : 9.92259360229492 : JumpEnd); (14.25 : 9.92259360229492); (14.25 : 10.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+			<AssociationMoniker Name="/NflDataContext/TEAM/TEAM_PLAYER_GAME_RECEIVING" />
+			<nodes>
+				<classShapeMoniker Id="75652daa-f95d-4f69-9339-9ee48066b5a8" />
+				<classShapeMoniker Id="f1fe40b7-d5b3-48fd-ac85-faaacb84ab61" />
+			</nodes>
+		</associationConnector>
+		<classShape Id="5bcf13f1-be98-4e9a-834b-e01a4349a6ed" absoluteBounds="11.75, 13.5, 2, 1.9178898111979166">
+			<DataClassMoniker Name="/NflDataContext/PLAYER_GAME_RUSHING" />
+			<nestedChildShapes>
+				<elementListCompartment Id="51215cff-37d0-4038-9d7e-9e30a3895120" absoluteBounds="11.765, 13.96, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+			</nestedChildShapes>
+		</classShape>
+		<associationConnector edgePoints="[(8.375 : 6.07413981119792); (9.66666666666667 : 6.07413981119792 : JumpStart); (9.83333333333333 : 6.07413981119792 : JumpEnd); (10.2604166666667 : 6.07413981119792 : JumpStart); (10.4270833333333 : 6.07413981119792 : JumpEnd); (12.609375 : 6.07413981119792); (12.609375 : 13.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+			<AssociationMoniker Name="/NflDataContext/PLAYER/PLAYER_PLAYER_GAME_RUSHING" />
+			<nodes>
+				<classShapeMoniker Id="e5b788e2-8a26-420c-9cff-3ce66ce41405" />
+				<classShapeMoniker Id="5bcf13f1-be98-4e9a-834b-e01a4349a6ed" />
+			</nodes>
+		</associationConnector>
+		<associationConnector edgePoints="[(8.25 : 9.55699118448893); (8.27604166666667 : 9.55699118448893 : JumpStart); (8.44270833333333 : 9.55699118448893 : JumpEnd); (8.54166666666667 : 9.55699118448893 : JumpStart); (8.70833333333333 : 9.55699118448893 : JumpEnd); (9.66666666666667 : 9.55699118448893 : JumpStart); (9.83333333333333 : 9.55699118448893 : JumpEnd); (10.0416666666667 : 9.55699118448893 : JumpStart); (10.2083333333333 : 9.55699118448893 : JumpEnd); (12.5260416666667 : 9.55699118448893 : JumpStart); (12.6927083333333 : 9.55699118448893 : JumpEnd); (12.9375 : 9.55699118448893); (12.9375 : 13.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+			<AssociationMoniker Name="/NflDataContext/TEAM/TEAM_PLAYER_GAME_RUSHING" />
+			<nodes>
+				<classShapeMoniker Id="75652daa-f95d-4f69-9339-9ee48066b5a8" />
+				<classShapeMoniker Id="5bcf13f1-be98-4e9a-834b-e01a4349a6ed" />
+			</nodes>
+		</associationConnector>
+		<classShape Id="68cf5585-9966-4f88-bd57-7225100886d0" absoluteBounds="6.25, 12.5, 2, 2.7396264648437505">
+			<DataClassMoniker Name="/NflDataContext/GAME" />
+			<nestedChildShapes>
+				<elementListCompartment Id="5e374df1-d9af-4416-a9b5-ccc768d66335" absoluteBounds="6.2650000000000006, 12.96, 1.9700000000000002, 2.17962646484375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+			</nestedChildShapes>
+		</classShape>
+		<associationConnector edgePoints="[(8.25 : 13.8698132324219); (9.75 : 13.8698132324219); (9.75 : 2.91093180338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+			<AssociationMoniker Name="/NflDataContext/GAME/GAME_PLAYER_GAME_DEFENSE" />
+			<nodes>
+				<classShapeMoniker Id="68cf5585-9966-4f88-bd57-7225100886d0" />
+				<classShapeMoniker Id="bb97faad-36fd-49a2-80b3-c43f03c0fb31" />
+			</nodes>
+		</associationConnector>
+		<associationConnector edgePoints="[(8.25 : 13.1536546162109); (9.66666666666667 : 13.1536546162109 : JumpStart); (9.83333333333333 : 13.1536546162109 : JumpEnd); (11.5 : 13.1536546162109); (11.5 : 13.25); (12.5260416666667 : 13.25 : JumpStart); (12.6927083333333 : 13.25 : JumpEnd); (12.7916666666667 : 13.25 : JumpStart); (12.9583333333333 : 13.25 : JumpEnd); (13 : 13.25); (13 : 2.79288981119792); (13.57422075 : 2.79288981119792); (13.57422075 : 2.41788981119792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+			<AssociationMoniker Name="/NflDataContext/GAME/GAME_PLAYER_GAME_FUMBLE" />
+			<nodes>
+				<classShapeMoniker Id="68cf5585-9966-4f88-bd57-7225100886d0" />
+				<classShapeMoniker Id="fb5e94fc-9a7a-4148-a792-a66bbac3e6d1" />
+			</nodes>
+		</associationConnector>
+		<associationConnector edgePoints="[(8.25 : 14.5859718486328); (11.25 : 14.5859718486328); (11.25 : 13.375); (12.5260416666667 : 13.375 : JumpStart); (12.6927083333333 : 13.375 : JumpEnd); (12.875 : 13.375); (12.875 : 6.16788981119792); (12.9166666666667 : 6.16788981119792 : JumpStart); (13.0833333333333 : 6.16788981119792 : JumpEnd); (13.5104146666667 : 6.16788981119792 : JumpStart); (13.6770813333333 : 6.16788981119792 : JumpEnd); (14.0416666666667 : 6.16788981119792 : JumpStart); (14.2083333333333 : 6.16788981119792 : JumpEnd); (14.656252 : 6.16788981119792); (14.656252 : 5.91788981119792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+			<AssociationMoniker Name="/NflDataContext/GAME/GAME_PLAYER_GAME_KICK_RETURN" />
+			<nodes>
+				<classShapeMoniker Id="68cf5585-9966-4f88-bd57-7225100886d0" />
+				<classShapeMoniker Id="e1f4c6c3-3f0e-4b7c-9c1f-3a54f1c42a35" />
+			</nodes>
+		</associationConnector>
+		<associationConnector edgePoints="[(8.25 : 12.7955753081055); (9.66666666666667 : 12.7955753081055 : JumpStart); (9.83333333333333 : 12.7955753081055 : JumpEnd); (10.7916666666667 : 12.7955753081055 : JumpStart); (10.9583333333333 : 12.7955753081055 : JumpEnd); (11.75 : 12.7955753081055); (11.75 : 13); (12.5260416666667 : 13 : JumpStart); (12.6927083333333 : 13 : JumpEnd); (12.7916666666667 : 13 : JumpStart); (13.0833333333333 : 13 : JumpEnd); (13.125 : 13); (13.125 : 9.33223714192708); (14.125 : 9.33223714192708); (14.125 : 8.95723714192708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+			<AssociationMoniker Name="/NflDataContext/GAME/GAME_PLAYER_GAME_KICKING" />
+			<nodes>
+				<classShapeMoniker Id="68cf5585-9966-4f88-bd57-7225100886d0" />
+				<classShapeMoniker Id="acb6dc4b-5fb5-46d6-991c-5356af2f6237" />
+			</nodes>
+		</associationConnector>
+		<associationConnector edgePoints="[(8.25 : 12.9290401540527); (9.66666666666667 : 12.9290401540527 : JumpStart); (9.83333333333333 : 12.9290401540527 : JumpEnd); (10.875 : 12.9290401540527); (10.875 : 12.4572371419271)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+			<AssociationMoniker Name="/NflDataContext/GAME/GAME_PLAYER_GAME_PASSING" />
+			<nodes>
+				<classShapeMoniker Id="68cf5585-9966-4f88-bd57-7225100886d0" />
+				<classShapeMoniker Id="c32c0ab0-46bc-4ef1-9484-45a8befe6d46" />
+			</nodes>
+		</associationConnector>
+		<associationConnector edgePoints="[(8.25 : 12.5338451538462); (8.65884515384615 : 12.125); (9.66666666666667 : 12.125 : JumpStart); (9.83333333333333 : 12.125 : JumpEnd); (10.125 : 12.125); (10.125 : 6.29288981119792); (10.5 : 5.91788981119792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+			<AssociationMoniker Name="/NflDataContext/GAME/GAME_PLAYER_GAME_PUNT_RETURN" />
+			<nodes>
+				<classShapeMoniker Id="68cf5585-9966-4f88-bd57-7225100886d0" />
+				<classShapeMoniker Id="106ff8cd-08a0-407c-9631-549c8b86c2b2" />
+			</nodes>
+		</associationConnector>
+		<associationConnector edgePoints="[(8.21769230769231 : 12.5); (8.625 : 12.0926923076923); (8.625 : 8.89022829736328); (9.66666666666667 : 8.89022829736328 : JumpStart); (9.83333333333333 : 8.89022829736328 : JumpEnd); (10.0416666666667 : 8.89022829736328 : JumpStart); (10.2083333333333 : 8.89022829736328 : JumpEnd); (10.5 : 8.89022829736328)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+			<AssociationMoniker Name="/NflDataContext/GAME/GAME_PLAYER_GAME_PUNTING" />
+			<nodes>
+				<classShapeMoniker Id="68cf5585-9966-4f88-bd57-7225100886d0" />
+				<classShapeMoniker Id="c1ed4ddf-de9a-43a5-af99-f081399ceb2c" />
+			</nodes>
+		</associationConnector>
+		<associationConnector edgePoints="[(8.25 : 12.6647102309758); (9.66666666666667 : 12.6647102309758 : JumpStart); (9.83333333333333 : 12.6647102309758 : JumpEnd); (10.7916666666667 : 12.6647102309758 : JumpStart); (10.9583333333333 : 12.6647102309758 : JumpEnd); (12.5260416666667 : 12.6647102309758 : JumpStart); (12.6927083333333 : 12.6647102309758 : JumpEnd); (12.7916666666667 : 12.6647102309758 : JumpStart); (13.2083333333333 : 12.6647102309758 : JumpEnd); (14.53125 : 12.6647102309758); (14.53125 : 12.2928898111979)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+			<AssociationMoniker Name="/NflDataContext/GAME/GAME_PLAYER_GAME_RECEIVING" />
+			<nodes>
+				<classShapeMoniker Id="68cf5585-9966-4f88-bd57-7225100886d0" />
+				<classShapeMoniker Id="f1fe40b7-d5b3-48fd-ac85-faaacb84ab61" />
+			</nodes>
+		</associationConnector>
+		<associationConnector edgePoints="[(8.25 : 14.9752991567383); (11.75 : 14.9752991567383)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+			<AssociationMoniker Name="/NflDataContext/GAME/GAME_PLAYER_GAME_RUSHING" />
+			<nodes>
+				<classShapeMoniker Id="68cf5585-9966-4f88-bd57-7225100886d0" />
+				<classShapeMoniker Id="5bcf13f1-be98-4e9a-834b-e01a4349a6ed" />
+			</nodes>
+		</associationConnector>
+		<associationConnector edgePoints="[(7.49946740384615 : 10.0428898111979); (7.49946740384615 : 12.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+			<AssociationMoniker Name="/NflDataContext/TEAM/TEAM_GAME" />
+			<nodes>
+				<classShapeMoniker Id="75652daa-f95d-4f69-9339-9ee48066b5a8" />
+				<classShapeMoniker Id="68cf5585-9966-4f88-bd57-7225100886d0" />
+			</nodes>
+		</associationConnector>
+		<associationConnector edgePoints="[(7.10910745192308 : 10.0428898111979); (7.10910745192308 : 12.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+			<AssociationMoniker Name="/NflDataContext/TEAM/TEAM_GAME1" />
+			<nodes>
+				<classShapeMoniker Id="75652daa-f95d-4f69-9339-9ee48066b5a8" />
+				<classShapeMoniker Id="68cf5585-9966-4f88-bd57-7225100886d0" />
+			</nodes>
+		</associationConnector>
+	</nestedChildShapes>
+</ordesignerObjectsDiagram>

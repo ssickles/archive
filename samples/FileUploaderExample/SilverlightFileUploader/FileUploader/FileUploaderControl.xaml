@@ -1,0 +1,118 @@
+﻿<!--
+Copyright 2003-2009 Virtual Chemistry, Inc. (VCI)
+http://www.virtualchemistry.com
+Using .Net, Silverlight, SharePoint and more to solve your tough problems in web-based data management.
+
+Author: Peter Coley
+-->
+<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:Vci_Silverlight_FileUploader="clr-namespace:Vci.Silverlight.FileUploader"
+	mc:Ignorable="d"
+	x:Class="Vci.Silverlight.FileUploader.FileUploaderControl"
+	d:DesignWidth="640" d:DesignHeight="480" xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows">
+    <UserControl.Resources>
+        <Vci_Silverlight_FileUploader:ByteConverter x:Key="ByteConverter" />
+        <Vci_Silverlight_FileUploader:PercentConverter x:Key="PercentConverter" />
+        <Storyboard x:Name="sbProgress">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="progressPercent" Storyboard.TargetProperty="(RangeBase.Value)">
+                <SplineDoubleKeyFrame x:Name="sbProgressFrame" KeyTime="00:00:00.5000000" Value="10"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+
+	<Grid x:Name="LayoutRoot">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="28"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="28"/>
+		</Grid.RowDefinitions>
+		<vsm:VisualStateManager.VisualStateGroups>
+			<vsm:VisualStateGroup x:Name="UploadingStates">
+				<vsm:VisualStateGroup.Transitions>
+					<vsm:VisualTransition GeneratedDuration="00:00:00.2000000"/>
+				</vsm:VisualStateGroup.Transitions>
+				<vsm:VisualState x:Name="Empty">
+					<Storyboard>
+						<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="progressPercent" Storyboard.TargetProperty="(UIElement.Opacity)">
+							<SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+						</DoubleAnimationUsingKeyFrames>
+						<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="txtUploadedBytes" Storyboard.TargetProperty="(UIElement.Opacity)">
+							<SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+						</DoubleAnimationUsingKeyFrames>
+						<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="txtEmptyMessage" Storyboard.TargetProperty="(UIElement.Opacity)">
+							<SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+						</DoubleAnimationUsingKeyFrames>
+						<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="txtPercent" Storyboard.TargetProperty="(UIElement.Opacity)">
+							<SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+						</DoubleAnimationUsingKeyFrames>
+					</Storyboard>
+				</vsm:VisualState>
+				<vsm:VisualState x:Name="Uploading">
+					<Storyboard>
+						<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="progressPercent" Storyboard.TargetProperty="(UIElement.Opacity)">
+							<SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+						</DoubleAnimationUsingKeyFrames>
+						<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="txtUploadedBytes" Storyboard.TargetProperty="(UIElement.Opacity)">
+							<SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+						</DoubleAnimationUsingKeyFrames>
+						<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="txtEmptyMessage" Storyboard.TargetProperty="(UIElement.Opacity)">
+							<SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+						</DoubleAnimationUsingKeyFrames>
+						<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="txtPercent" Storyboard.TargetProperty="(UIElement.Opacity)">
+							<SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+						</DoubleAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="txtEmptyMessage" Storyboard.TargetProperty="(UIElement.Visibility)">
+							<DiscreteObjectKeyFrame KeyTime="00:00:00">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</vsm:VisualState>
+				<vsm:VisualState x:Name="Finished">
+					<Storyboard>
+						<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="progressPercent" Storyboard.TargetProperty="(UIElement.Opacity)">
+							<SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+						</DoubleAnimationUsingKeyFrames>
+						<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="txtUploadedBytes" Storyboard.TargetProperty="(UIElement.Opacity)">
+							<SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+						</DoubleAnimationUsingKeyFrames>
+						<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="txtEmptyMessage" Storyboard.TargetProperty="(UIElement.Opacity)">
+							<SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+						</DoubleAnimationUsingKeyFrames>
+						<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="txtPercent" Storyboard.TargetProperty="(UIElement.Opacity)">
+							<SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+						</DoubleAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="txtEmptyMessage" Storyboard.TargetProperty="(UIElement.Visibility)">
+							<DiscreteObjectKeyFrame KeyTime="00:00:00">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</vsm:VisualState>
+			</vsm:VisualStateGroup>
+		</vsm:VisualStateManager.VisualStateGroups>
+		<ScrollViewer Grid.Row="1" x:Name="svFiles" Padding="0,0,0,0">
+			<ItemsControl Height="Auto" Width="Auto" x:Name="icFiles">
+				<ItemsControl.ItemTemplate>
+					<DataTemplate>
+						<Vci_Silverlight_FileUploader:FileListItemControl />
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ItemsControl>
+		</ScrollViewer>
+		<Button HorizontalAlignment="Left" Margin="0,0,0,4" Width="104" Content="Upload Files..." x:Name="btnChoose" Click="btnChoose_Click" Height="24" VerticalAlignment="Bottom"/>
+		<Button Margin="0,4,0,0" Grid.Row="2" Content="Clear List" x:Name="btnClear" Click="btnClear_Click" Width="80" HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment" Height="24"/>
+		<ProgressBar Margin="191,0,0,4" x:Name="progressPercent" Height="24" d:LayoutOverrides="Height" VerticalAlignment="Bottom"/>
+		<TextBlock Margin="108,0,0,0" Text="{Binding Converter={StaticResource ByteConverter}, Path=BytesUploaded}" TextWrapping="NoWrap" x:Name="txtUploadedBytes" Width="79" HorizontalAlignment="Left" TextAlignment="Right" VerticalAlignment="Bottom" Height="24"/>
+		<TextBlock HorizontalAlignment="Stretch" Margin="8,8,24,8" x:Name="txtEmptyMessage" Grid.Row="1" FontFamily="Portable User Interface" FontSize="12" FontStyle="Italic" Foreground="#FF363636" Text="Click 'Upload Files...' and choose 1 or more files to begin uploading." TextWrapping="Wrap" Width="Auto"/>
+		<TextBlock Height="18" Margin="0,0,8,7" VerticalAlignment="Bottom" TextWrapping="Wrap" x:Name="txtPercent" FontSize="12" FontStyle="Normal" FontFamily="Portable User Interface" Width="72" HorizontalAlignment="Right" TextAlignment="Right" Canvas.ZIndex="1" Text="{Binding Converter={StaticResource PercentConverter}, Path=Percentage}"/>
+	</Grid>
+</UserControl>

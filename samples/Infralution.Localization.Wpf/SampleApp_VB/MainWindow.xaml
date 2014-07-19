@@ -1,0 +1,37 @@
+<Window Language="{UICulture}" x:Class="MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="{Resx ResxName=WpfApp.MainWindow, Key=Window.Title}" Height="300" Width="334" Icon="{Resx ResxName=WpfApp.MainWindow, Key=Window.Icon}">
+  <Grid>
+    <Menu Height="22" Name="_mainMenu" VerticalAlignment="Top">
+      <MenuItem Header="{Resx ResxName=WpfApp.MainWindow, Key=_fileMenuItem.Header}" Name="_fileMenuItem">
+        <MenuItem Header="{Resx ResxName=WpfApp.MainWindow, Key=_newMenuItem.Header}" Icon="{Resx ResxName=WpfApp.MainWindow, Key=_newMenuItem.Icon}" Name="_newMenuItem" />
+        <MenuItem Header="{Resx ResxName=WpfApp.MainWindow, Key=_openMenuItem.Header}" Icon="{Resx ResxName=WpfApp.MainWindow, Key=_openMenuItem.Icon}" Name="_openMenuItem" />
+        <Separator />
+        <MenuItem Header="{Resx ResxName=WpfApp.MainWindow, Key=_exitMenuItem.Header}" Icon="{Resx ResxName=WpfApp.MainWindow, Key=_exitMenuItem.Icon}" Name="_exitMenuItem" />
+      </MenuItem>
+      <MenuItem Header="{Resx ResxName=WpfApp.MainWindow, Key=_languageMenuItem.Header}" Name="_languageMenuItem">
+        <MenuItem Header="{Resx ResxName=WpfApp.MainWindow, Key=_englishMenuItem.Header}" Name="_englishMenuItem" IsCheckable="True" />
+        <MenuItem Header="{Resx ResxName=WpfApp.MainWindow, Key=_frenchMenuItem.Header}" Name="_frenchMenuItem" />
+      </MenuItem>
+      <MenuItem Header="{Resx ResxName=WpfApp.MainWindow, Key=_helpMenuItem.Header}" Name="_helpMenuItem">
+        <MenuItem Header="{Resx ResxName=WpfApp.MainWindow, Key=_aboutMenuItem.Header}" Icon="{Resx ResxName=WpfApp.MainWindow, Key=_aboutMenuItem.Icon}" Name="_aboutMenuItem" />
+      </MenuItem>
+    </Menu>
+    <TabControl Margin="10,40,10,10" Name="_tabControl">
+      <TabItem Header="{Resx ResxName=WpfApp.MainWindow, Key=_fileTab.Header}" Name="_fileTab">
+        <Grid>
+          <Button Height="21" HorizontalAlignment="Left" Margin="11,26,0,0" Name="_addButton" VerticalAlignment="Top" Width="97">
+            <Resx ResxName="WpfApp.MainWindow" Key="_addButton.Content" />
+          </Button>
+          <Button Height="21" HorizontalAlignment="Left" Margin="11,53,0,0" Name="_removeButton" VerticalAlignment="Top" Width="97">
+            <Resx ResxName="WpfApp.MainWindow" Key="_removeButton.Content" />
+          </Button>
+          <ListBox Margin="122,28,13,14" Name="_fileListBox" />
+        </Grid>
+      </TabItem>
+      <TabItem Header="{Resx ResxName=WpfApp.MainWindow, Key=_directoryTab.Header}" Name="_directoryTab">
+        <Grid>
+          <TextBox Height="21" Name="_dirTextBox" Margin="14,16,24,0" VerticalAlignment="Top" />
+        </Grid>
+      </TabItem>
+    </TabControl>
+  </Grid>
+</Window>

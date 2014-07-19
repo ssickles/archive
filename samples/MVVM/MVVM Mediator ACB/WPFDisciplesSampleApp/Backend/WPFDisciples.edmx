@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="UniblueLabsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="UniblueLabsModelStoreContainer">
+          <EntitySet Name="Developers" EntityType="UniblueLabsModel.Store.Developers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Projects" EntityType="UniblueLabsModel.Store.Projects" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Projects_Developers" Association="UniblueLabsModel.Store.FK_Projects_Developers">
+            <End Role="Developers" EntitySet="Developers" />
+            <End Role="Projects" EntitySet="Projects" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Developers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Avatar" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Projects">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="Developer" Type="int" />
+          <Property Name="Link" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Projects_Developers">
+          <End Role="Developers" Type="UniblueLabsModel.Store.Developers" Multiplicity="0..1" />
+          <End Role="Projects" Type="UniblueLabsModel.Store.Projects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Developers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Projects">
+              <PropertyRef Name="Developer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="UniblueLabsModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="UniblueLabsEntities">
+          <EntitySet Name="Developers" EntityType="UniblueLabsModel.Developers" />
+          <EntitySet Name="Projects" EntityType="UniblueLabsModel.Projects" />
+          <AssociationSet Name="FK_Projects_Developers" Association="UniblueLabsModel.FK_Projects_Developers">
+            <End Role="Developers" EntitySet="Developers" />
+            <End Role="Projects" EntitySet="Projects" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Developers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Avatar" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Projects" Relationship="UniblueLabsModel.FK_Projects_Developers" FromRole="Developers" ToRole="Projects" />
+        </EntityType>
+        <EntityType Name="Projects">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Developers" Relationship="UniblueLabsModel.FK_Projects_Developers" FromRole="Projects" ToRole="Developers" />
+          <Property Name="Link" Type="String" Nullable="true" /></EntityType>
+        <Association Name="FK_Projects_Developers">
+          <End Role="Developers" Type="UniblueLabsModel.Developers" Multiplicity="0..1" />
+          <End Role="Projects" Type="UniblueLabsModel.Projects" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="UniblueLabsModelStoreContainer" CdmEntityContainer="UniblueLabsEntities">
+          <EntitySetMapping Name="Developers">
+            <EntityTypeMapping TypeName="IsTypeOf(UniblueLabsModel.Developers)">
+              <MappingFragment StoreEntitySet="Developers">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Projects">
+            <EntityTypeMapping TypeName="IsTypeOf(UniblueLabsModel.Projects)">
+              <MappingFragment StoreEntitySet="Projects">
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_Projects_Developers" TypeName="UniblueLabsModel.FK_Projects_Developers" StoreEntitySet="Projects">
+            <EndProperty Name="Developers">
+              <ScalarProperty Name="id" ColumnName="Developer" />
+            </EndProperty>
+            <EndProperty Name="Projects">
+              <ScalarProperty Name="id" ColumnName="id" />
+            </EndProperty>
+            <Condition ColumnName="Developer" IsNull="false" />
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="UniblueLabs">
+        <EntityTypeShape EntityType="UniblueLabsModel.Developers" Width="1.5" PointX="2" PointY="0.5" Height="1.7879850260416668" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniblueLabsModel.Projects" Width="1.5" PointX="6.375" PointY="1.125" Height="2.1725878906249996" IsExpanded="true" />
+        <AssociationConnector Association="UniblueLabsModel.FK_Projects_Developers" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.5" PointY="1.7064925130208333" />
+          <ConnectorPoint PointX="6.375" PointY="1.7064925130208333" />
+          </AssociationConnector></Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

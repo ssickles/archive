@@ -1,0 +1,42 @@
+﻿<Window x:Class="Samples.DragDrop.DragCanvasExample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Liquidnet" 
+    Height="400" Width="400"
+    xmlns:dnd="clr-namespace:Samples.DragDrop"
+	xmlns:ctrl="http://www.liquidnet.com/wpf"
+	Icon="../icon.png"
+    >
+	<Window.Resources>
+		<dnd:CanvasDragDropAdvisor x:Key="advisor"/>
+	</Window.Resources>
+	<Grid>
+		<Canvas
+			Background="White"
+			dnd:DragDropManager.DragSourceAdvisor="{StaticResource advisor}"
+			dnd:DragDropManager.DropTargetAdvisor="{StaticResource advisor}"
+        >
+			<Rectangle Width="50" Height="50" Fill="Red" Canvas.Left="200" Canvas.Top="100"/>
+			<Rectangle Width="50" Height="50" Fill="Green" Canvas.Left="200" Canvas.Top="200"/>
+			<Rectangle Width="50" Height="50" Fill="Blue" Canvas.Left="200" Canvas.Top="300"/>
+			<Rectangle Width="50" Height="50" Fill="Yellow" Canvas.Left="200" Canvas.Top="400"/>
+
+			<Ellipse Width="75" Height="50" Fill="Yellow" Canvas.Left="300" Canvas.Top="400"
+							 Stroke="Black" StrokeThickness="1"
+                 />
+
+			<ListBox Width="200" Canvas.Left="300" Canvas.Top="50">
+				<TextBlock>Hello</TextBlock>
+				<TextBlock>World!</TextBlock>
+				<TextBlock>How</TextBlock>
+				<TextBlock>Are</TextBlock>
+				<TextBlock>You</TextBlock>
+				<TextBlock>?</TextBlock>
+			</ListBox>
+
+			<Button Content="Nothing" Canvas.Left="200" Canvas.Top="0"/>
+			<Button Content="Nothing" Canvas.Left="0" Canvas.Top="0"/>
+
+		</Canvas>
+	</Grid>
+</Window>

@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLocatorSample", "ServiceLocatorSample\ServiceLocatorSample.csproj", "{9DA1FA7A-4593-4C71-B738-29442B89B49E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMHelper", "..\MVVMHelper\MVVMHelper.csproj", "{92A71D19-F6AE-47CC-9E23-D65BCBB03F8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLocatorSampleTest", "ServiceLocatorSampleTest\ServiceLocatorSampleTest.csproj", "{6B31FDED-824F-46B0-88EF-BB986C85B041}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9FAB86D5-B2DD-4836-AD3C-2CF3BB3DBCE4}"
+	ProjectSection(SolutionItems) = preProject
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+		ServiceLocatorSample.vsmdi = ServiceLocatorSample.vsmdi
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = ServiceLocatorSample.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Full|Any CPU = Full|Any CPU
+		Incremental|Any CPU = Incremental|Any CPU
+		JustRun|Any CPU = JustRun|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DA1FA7A-4593-4C71-B738-29442B89B49E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DA1FA7A-4593-4C71-B738-29442B89B49E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DA1FA7A-4593-4C71-B738-29442B89B49E}.Full|Any CPU.ActiveCfg = Release|Any CPU
+		{9DA1FA7A-4593-4C71-B738-29442B89B49E}.Full|Any CPU.Build.0 = Release|Any CPU
+		{9DA1FA7A-4593-4C71-B738-29442B89B49E}.Incremental|Any CPU.ActiveCfg = Release|Any CPU
+		{9DA1FA7A-4593-4C71-B738-29442B89B49E}.Incremental|Any CPU.Build.0 = Release|Any CPU
+		{9DA1FA7A-4593-4C71-B738-29442B89B49E}.JustRun|Any CPU.ActiveCfg = Release|Any CPU
+		{9DA1FA7A-4593-4C71-B738-29442B89B49E}.JustRun|Any CPU.Build.0 = Release|Any CPU
+		{9DA1FA7A-4593-4C71-B738-29442B89B49E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DA1FA7A-4593-4C71-B738-29442B89B49E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92A71D19-F6AE-47CC-9E23-D65BCBB03F8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92A71D19-F6AE-47CC-9E23-D65BCBB03F8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92A71D19-F6AE-47CC-9E23-D65BCBB03F8A}.Full|Any CPU.ActiveCfg = Full|Any CPU
+		{92A71D19-F6AE-47CC-9E23-D65BCBB03F8A}.Full|Any CPU.Build.0 = Full|Any CPU
+		{92A71D19-F6AE-47CC-9E23-D65BCBB03F8A}.Incremental|Any CPU.ActiveCfg = Incremental|Any CPU
+		{92A71D19-F6AE-47CC-9E23-D65BCBB03F8A}.Incremental|Any CPU.Build.0 = Incremental|Any CPU
+		{92A71D19-F6AE-47CC-9E23-D65BCBB03F8A}.JustRun|Any CPU.ActiveCfg = JustRun|Any CPU
+		{92A71D19-F6AE-47CC-9E23-D65BCBB03F8A}.JustRun|Any CPU.Build.0 = JustRun|Any CPU
+		{92A71D19-F6AE-47CC-9E23-D65BCBB03F8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92A71D19-F6AE-47CC-9E23-D65BCBB03F8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B31FDED-824F-46B0-88EF-BB986C85B041}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B31FDED-824F-46B0-88EF-BB986C85B041}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B31FDED-824F-46B0-88EF-BB986C85B041}.Full|Any CPU.ActiveCfg = Release|Any CPU
+		{6B31FDED-824F-46B0-88EF-BB986C85B041}.Full|Any CPU.Build.0 = Release|Any CPU
+		{6B31FDED-824F-46B0-88EF-BB986C85B041}.Incremental|Any CPU.ActiveCfg = Release|Any CPU
+		{6B31FDED-824F-46B0-88EF-BB986C85B041}.Incremental|Any CPU.Build.0 = Release|Any CPU
+		{6B31FDED-824F-46B0-88EF-BB986C85B041}.JustRun|Any CPU.ActiveCfg = Release|Any CPU
+		{6B31FDED-824F-46B0-88EF-BB986C85B041}.JustRun|Any CPU.Build.0 = Release|Any CPU
+		{6B31FDED-824F-46B0-88EF-BB986C85B041}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B31FDED-824F-46B0-88EF-BB986C85B041}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

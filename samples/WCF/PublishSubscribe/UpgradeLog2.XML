@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="PublishSubscribe">
+</Property><Property Name="Solution File" Value="C:\Documents and Settings\ssickles\Desktop\WCF\PublishSubscribe\PublishSubscribe.sln">
+</Property><Property Name="Date" Value="Thursday, June 04, 2009">
+</Property><Property Name="Time" Value="14:22 PM">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="Publisher" Source="Publisher\Publisher.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Publisher" Source="Publisher\Publisher.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="PublishSubscribeService" Source="PublishSubscribeService\PublishSubscribeService.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="PublishSubscribeService" Source="PublishSubscribeService\PublishSubscribeService.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="TransientSubscriber" Source="TransientSubscriber\TransientSubscriber.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="TransientSubscriber" Source="TransientSubscriber\TransientSubscriber.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="PersistentSubscriptionManager" Source="PersistentSubscriptionManager\PersistentSubscriptionManager.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="PersistentSubscriptionManager" Source="PersistentSubscriptionManager\PersistentSubscriptionManager.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="ServiceModelEx" Source="..\ServiceModelEx\ServiceModelEx.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="ServiceModelEx" Source="..\ServiceModelEx\ServiceModelEx.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="PublishSubscribe.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="PublishSubscribe.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Publisher" Source="Publisher\Publisher.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="PublishSubscribeService" Source="PublishSubscribeService\PublishSubscribeService.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="TransientSubscriber" Source="TransientSubscriber\TransientSubscriber.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="PersistentSubscriptionManager" Source="PersistentSubscriptionManager\PersistentSubscriptionManager.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="ServiceModelEx" Source="..\ServiceModelEx\ServiceModelEx.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

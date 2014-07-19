@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WickedSick.Workflow.Designer", "WickedSick.Workflow.Designer.csproj", "{D4FE1D71-8F76-4F9E-882B-BE43016C1429}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2BB199B9-D482-435C-AF76-1C61256555BA} = {2BB199B9-D482-435C-AF76-1C61256555BA}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WickedSick.Controls", "..\..\Controls\WickedSick.Controls.csproj", "{2BB199B9-D482-435C-AF76-1C61256555BA}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 3
+		SccProjectName0 = SurroundSCMScci
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Surround\u0020SCM
+		SccProjectUniqueName1 = WickedSick.Workflow.Designer.csproj
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = ..\\..\\Controls\\WickedSick.Controls.csproj
+		SccLocalPath2 = ..\\..\\Controls
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4FE1D71-8F76-4F9E-882B-BE43016C1429}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4FE1D71-8F76-4F9E-882B-BE43016C1429}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4FE1D71-8F76-4F9E-882B-BE43016C1429}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4FE1D71-8F76-4F9E-882B-BE43016C1429}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BB199B9-D482-435C-AF76-1C61256555BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BB199B9-D482-435C-AF76-1C61256555BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BB199B9-D482-435C-AF76-1C61256555BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BB199B9-D482-435C-AF76-1C61256555BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

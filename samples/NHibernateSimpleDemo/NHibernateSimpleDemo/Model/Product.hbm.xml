@@ -1,0 +1,20 @@
+﻿<?xml version="1.0"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="NHibernateSimpleDemo"
+                   assembly="NHibernateSimpleDemo">
+
+    <!-- Mappings for class 'Product' -->
+    <class name="Product" table="Products" lazy="false">
+
+        <!-- Identity mapping -->
+        <id name="ID">
+            <column name="ProductID" />
+            <generator class="native" />
+        </id>
+
+        <!-- Simple mappings -->
+        <property name="Name" />
+
+    </class>
+
+</hibernate-mapping>

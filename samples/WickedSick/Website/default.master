@@ -1,0 +1,66 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="default.master.cs" Inherits="_default" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>WickedSick Fantasy Baseball</title>
+    <link rel="Stylesheet" type="text/css" href="/App_Themes/default/default.css" />
+</head>
+<body>
+    <form id="frmMain" runat="server">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color:Black;">
+        <tr>
+            <td colspan="3" style="background-image:url(/images/border.gif); height:4px;"></td>
+        </tr>
+        <tr>
+            <td style="background-image:url(/images/headerLeft.gif); width:175px; height:100px;"></td>
+            <td align="right" valign="top">
+                <asp:Table ID="UserTable" runat="server" style="margin: 10px 60px 10px 10px;" cellpadding="0" cellspacing="0">
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <div class="menuOption">Welcome Scott Sickles</div>
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <div class="menuOption"><a href="/login/logout.aspx">Logout</a></div>
+                        </asp:TableCell>
+                    </asp:TableRow>
+                </asp:Table>
+            </td>
+            <td style="background-image:url(/images/headerRight.gif); width:100px; height:100px;"></td>
+        </tr>
+        <tr>
+            <td colspan="3" style="background-image:url(/images/border.gif); height:4px;"></td>
+        </tr>
+    </table>
+    <table width="100%" border="0" cellspacing="1" style="background-image:url(/images/menuBack.gif);">
+        <tr>
+            <td style="width:100%;"></td>
+            <td>
+                <div class="menuOption"><a href="/fantasybaseball/home.aspx">Fantasy Baseball</a></div>
+            </td>
+        </tr>
+    </table>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td colspan="2" style="background-image:url(/images/border.gif); height:4px;"></td>
+        </tr>
+        <tr>
+            <td style="height:500px; width: 175px;" valign="top">
+                <asp:Menu ID="menMain" runat="server">
+                </asp:Menu>
+            </td>
+            <td align="left" valign="top">
+                <div style="padding:20px;">
+                    <asp:ContentPlaceHolder ID="cphBody" runat="server">
+                        Body                
+                    </asp:ContentPlaceHolder>
+                </div>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

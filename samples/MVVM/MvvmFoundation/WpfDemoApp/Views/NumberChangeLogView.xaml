@@ -1,0 +1,35 @@
+﻿<UserControl
+    x:Class="WpfDemoApp.Views.NumberChangeLogView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="clr-namespace:WpfDemoApp.ViewModels"
+    xmlns:vw="clr-namespace:WpfDemoApp.Views"
+    >
+    <UserControl.DataContext>
+        <vm:NumberChangeLogViewModel />
+    </UserControl.DataContext>
+
+    <DockPanel>
+        <vw:NumberView 
+            DockPanel.Dock="Top" 
+            DataContext="{Binding Path=Number, Mode=OneTime}" 
+            />
+
+        <TextBlock 
+            DockPanel.Dock="Top" 
+            Background="Black"
+            FontWeight="Bold" 
+            Foreground="White"
+            Padding="4"
+            Text=" Change Log" 
+            />
+
+        <ScrollViewer 
+            x:Name="_scrollViewer" 
+            x:FieldModifier="private" 
+            VerticalScrollBarVisibility="Auto"
+            >
+            <ItemsControl ItemsSource="{Binding Path=ChangeLog, Mode=OneTime}" />
+        </ScrollViewer>
+    </DockPanel>
+</UserControl>

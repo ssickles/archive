@@ -1,0 +1,11 @@
+﻿<Window 
+    x:Class="WpfDemoApp.DemoWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vw="clr-namespace:WpfDemoApp.Views"
+    Title="MVVM Foundation Wpf Demo" 
+    Width="350" Height="500" 
+    WindowStartupLocation="CenterScreen"
+    >
+   <vw:NumberChangeLogView />
+</Window>

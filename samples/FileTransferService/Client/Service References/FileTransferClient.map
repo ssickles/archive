@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceReference>
+	<ProxyGenerationParameters
+		ServiceReferenceUri="http://localhost:8080/FileTranfer"
+		Name="FileTransferClient"
+		NotifyPropertyChange="True"
+		UseObservableCollection="False">
+	</ProxyGenerationParameters>
+	<EndPoints>
+		<EndPoint
+			Address="http://localhost:8080/FileTranfer/mex"
+			BindingConfiguration="ws2"
+			Contract="Client.FileTransferClient.IFileTransferService"
+			>
+		</EndPoint>
+	</EndPoints>
+</ServiceReference>

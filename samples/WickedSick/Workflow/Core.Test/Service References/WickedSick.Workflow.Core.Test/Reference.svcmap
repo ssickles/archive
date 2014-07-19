@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="24824975-29f7-412e-880f-8fe2e74d5561" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8000/WorkflowEngine" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WorkflowEngine.xsd" MetadataType="Schema" ID="b73d219b-09da-4076-9ce4-d9d225e5af0f" SourceId="1" SourceUrl="http://localhost:8000/WorkflowEngine?xsd=xsd2" />
+    <MetadataFile FileName="WorkflowEngine.wsdl" MetadataType="Wsdl" ID="fe2743c6-ed93-4ba2-8171-1d9737dd2597" SourceId="1" SourceUrl="http://localhost:8000/WorkflowEngine?wsdl=wsdl0" />
+    <MetadataFile FileName="WorkflowEngine.disco" MetadataType="Disco" ID="fa47666b-9f02-43ac-8979-283df25dcc38" SourceId="1" SourceUrl="http://localhost:8000/WorkflowEngine?disco" />
+    <MetadataFile FileName="WorkflowHost.wsdl" MetadataType="Wsdl" ID="005f8ce4-726c-48fa-bd93-11684d838076" SourceId="1" SourceUrl="http://localhost:8000/WorkflowEngine?wsdl" />
+    <MetadataFile FileName="WorkflowEngine1.xsd" MetadataType="Schema" ID="90f30088-56ef-4cf6-97f4-52ef4e282d45" SourceId="1" SourceUrl="http://localhost:8000/WorkflowEngine?xsd=xsd0" />
+    <MetadataFile FileName="WorkflowEngine2.xsd" MetadataType="Schema" ID="45ab6a81-11a0-4521-8f44-31224c24fc26" SourceId="1" SourceUrl="http://localhost:8000/WorkflowEngine?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfUnitTests", "WpfUnitTests\WpfUnitTests.csproj", "{0D513DAC-719A-4C17-86A2-46148112279C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFoundation.Wpf", "MvvmFoundation.Wpf\MvvmFoundation.Wpf.csproj", "{2E922430-EAAC-4589-A8F4-F35FBB9799B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDemoApp", "WpfDemoApp\WpfDemoApp.csproj", "{A7754926-AB95-47B6-8A08-11DCC3CC5B2B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D513DAC-719A-4C17-86A2-46148112279C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D513DAC-719A-4C17-86A2-46148112279C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D513DAC-719A-4C17-86A2-46148112279C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D513DAC-719A-4C17-86A2-46148112279C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E922430-EAAC-4589-A8F4-F35FBB9799B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E922430-EAAC-4589-A8F4-F35FBB9799B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E922430-EAAC-4589-A8F4-F35FBB9799B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E922430-EAAC-4589-A8F4-F35FBB9799B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7754926-AB95-47B6-8A08-11DCC3CC5B2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7754926-AB95-47B6-8A08-11DCC3CC5B2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7754926-AB95-47B6-8A08-11DCC3CC5B2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7754926-AB95-47B6-8A08-11DCC3CC5B2B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs05.codeplex.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = MvvmFoundation.Wpf\\MvvmFoundation.Wpf.csproj
+		SccProjectName1 = MvvmFoundation.Wpf
+		SccLocalPath1 = MvvmFoundation.Wpf
+		SccProjectUniqueName2 = WpfUnitTests\\WpfUnitTests.csproj
+		SccProjectName2 = WpfUnitTests
+		SccLocalPath2 = WpfUnitTests
+		SccProjectUniqueName3 = WpfDemoApp\\WpfDemoApp.csproj
+		SccProjectName3 = WpfDemoApp
+		SccLocalPath3 = WpfDemoApp
+	EndGlobalSection
+EndGlobal

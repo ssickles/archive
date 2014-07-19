@@ -1,0 +1,33 @@
+﻿<?xml version="1.0"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="NHibernateSimpleDemo"
+                   assembly="NHibernateSimpleDemo">
+
+    <!-- Mappings for class 'Order' -->
+    <class name="Order" table="Orders" lazy="false">
+
+        <!-- Identity mapping -->
+        <id name="ID">
+            <column name="OrderID" />
+            <generator class="native" />
+        </id>
+        
+        <!-- Many-to-one mapping: Customer -->
+        <many-to-one name="Customer" 
+                     class="Customer" 
+                     column="CustomerID"
+                     cascade="all" />
+
+        <!-- Many-to-many mapping: OrderItems -->
+        <bag name="OrderItems" table="OrderItems" cascade="none" lazy="false">
+            <key column ="OrderID" />
+            <many-to-many class="Product" column="ProductID" />
+        </bag>
+
+        <!-- Simple mappings -->
+        <property name="Date" />
+
+    </class>
+
+</hibernate-mapping>
+

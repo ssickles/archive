@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RD.CustomThemes.Sample", "RD.CustomThemes.Sample\RD.CustomThemes.Sample.csproj", "{75290B77-1057-4979-8022-7E42C66290A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RD.CustomThemes", "RD.CustomThemes\RD.CustomThemes.csproj", "{D51EC402-7BAB-4D7D-B4C4-9BC237878C30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RD.CustomThemes.Controls", "RD.CustomThemes.Controls\RD.CustomThemes.Controls.csproj", "{6FD9D764-FA51-4210-BA12-84CE1FAE4EF6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75290B77-1057-4979-8022-7E42C66290A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75290B77-1057-4979-8022-7E42C66290A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75290B77-1057-4979-8022-7E42C66290A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75290B77-1057-4979-8022-7E42C66290A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D51EC402-7BAB-4D7D-B4C4-9BC237878C30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D51EC402-7BAB-4D7D-B4C4-9BC237878C30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D51EC402-7BAB-4D7D-B4C4-9BC237878C30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D51EC402-7BAB-4D7D-B4C4-9BC237878C30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FD9D764-FA51-4210-BA12-84CE1FAE4EF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FD9D764-FA51-4210-BA12-84CE1FAE4EF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FD9D764-FA51-4210-BA12-84CE1FAE4EF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FD9D764-FA51-4210-BA12-84CE1FAE4EF6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

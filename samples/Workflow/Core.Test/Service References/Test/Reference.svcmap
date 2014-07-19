@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="690c0254-a2a2-479e-924f-772e5e562fd7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8181/BPM" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BPM.xsd" MetadataType="Schema" ID="a5a3957f-7b09-4e6b-8227-223e18a3ba90" SourceId="1" SourceUrl="http://localhost:8181/BPM?xsd=xsd0" />
+    <MetadataFile FileName="BPM1.xsd" MetadataType="Schema" ID="cbf6c99a-d354-4389-bc5b-b40ffe836511" SourceId="1" SourceUrl="http://localhost:8181/BPM?xsd=xsd1" />
+    <MetadataFile FileName="WorkflowRemote.wsdl" MetadataType="Wsdl" ID="98692705-73a8-4fdd-87b5-9fe14ed41217" SourceId="1" SourceUrl="http://localhost:8181/BPM?wsdl" />
+    <MetadataFile FileName="BPM2.xsd" MetadataType="Schema" ID="8a350e60-58a9-4e5c-b2b3-88ebbb187d4a" SourceId="1" SourceUrl="http://localhost:8181/BPM?xsd=xsd2" />
+    <MetadataFile FileName="BPM.disco" MetadataType="Disco" ID="0617fe36-fda9-4567-baf9-ffbe051bde77" SourceId="1" SourceUrl="http://localhost:8181/BPM?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

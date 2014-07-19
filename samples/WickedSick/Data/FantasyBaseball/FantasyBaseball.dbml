@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="FANTASY_BASEBALL" Class="FantasyBaseballDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=VOID;Initial Catalog=FANTASY_BASEBALL;Integrated Security=True" SettingsObjectName="WickedSick.Data.FantasyBaseball.Properties.Settings" SettingsPropertyName="FANTASY_BASEBALLConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DRAFT_TYPES" Member="DRAFT_TYPEs">
+    <Type Name="DRAFT_TYPE">
+      <Column Name="DRAFT_TYPE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="DRAFT_TYPE_LEAGUE" Member="LEAGUEs" ThisKey="DRAFT_TYPE_ID" OtherKey="DraftType" Type="LEAGUE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LEAGUES" Member="LEAGUEs">
+    <Type Name="LEAGUE">
+      <Column Name="LEAGUE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="Commissioner" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DraftDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DraftType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LiveDraftPickDuration" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Capacity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaxRosterSize" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="LEAGUE_LEAGUE_POSITION" Member="LEAGUE_POSITIONs" ThisKey="LEAGUE_ID" OtherKey="League" Type="LEAGUE_POSITION" />
+      <Association Name="LEAGUE_TEAM" Member="TEAMs" ThisKey="LEAGUE_ID" OtherKey="League" Type="TEAM" />
+      <Association Name="DRAFT_TYPE_LEAGUE" Member="DRAFT_TYPE" ThisKey="DraftType" OtherKey="DRAFT_TYPE_ID" Type="DRAFT_TYPE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.POSITIONS" Member="POSITIONs">
+    <Type Name="POSITION">
+      <Column Name="POSITION_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Abbreviation" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="POSITION_PLAYER_ELIGIBILITY" Member="PLAYER_ELIGIBILITies" ThisKey="POSITION_ID" OtherKey="Position" Type="PLAYER_ELIGIBILITY" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PLAYER_ELIGIBILITY" Member="PLAYER_ELIGIBILITies">
+    <Type Name="PLAYER_ELIGIBILITY">
+      <Column Name="Player" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Position" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="POSITION_PLAYER_ELIGIBILITY" Member="POSITION1" ThisKey="Position" OtherKey="POSITION_ID" Type="POSITION" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TEAM_ROSTERS" Member="TEAM_ROSTERs">
+    <Type Name="TEAM_ROSTER">
+      <Column Name="Team" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Player" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PositionOrdinal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TEAM_TEAM_ROSTER" Member="TEAM1" ThisKey="Team" OtherKey="TEAM_ID" Type="TEAM" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LEAGUE_POSITIONS" Member="LEAGUE_POSITIONs">
+    <Type Name="LEAGUE_POSITION">
+      <Column Name="League" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Position" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ordinal" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="LEAGUE_LEAGUE_POSITION" Member="LEAGUE1" ThisKey="League" OtherKey="LEAGUE_ID" Type="LEAGUE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TEAMS" Member="TEAMs">
+    <Type Name="TEAM">
+      <Column Name="TEAM_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="League" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Logo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="TEAM_TEAM_ROSTER" Member="TEAM_ROSTERs" ThisKey="TEAM_ID" OtherKey="Team" Type="TEAM_ROSTER" />
+      <Association Name="LEAGUE_TEAM" Member="LEAGUE1" ThisKey="League" OtherKey="LEAGUE_ID" Type="LEAGUE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.GetWaiversBattersYearly" Method="GetWaiversBattersYearly">
+    <Parameter Name="league" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetWaiversBattersYearlyResult">
+      <Column Name="Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Player" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Team" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="League" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Position" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="R" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RBI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="H" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[2B]" Member="_2B" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[3B]" Member="_3B" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HBP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SF" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetWaiversPitchersYearly" Method="GetWaiversPitchersYearly">
+    <Parameter Name="league" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetWaiversPitchersYearlyResult">
+      <Column Name="Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Player" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Team" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="League" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Position" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="W" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OUTS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="H" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HLD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetFantasyTeamBattersYearly" Method="GetFantasyTeamBattersYearly">
+    <Parameter Name="league" Type="System.Int32" DbType="Int" />
+    <Parameter Name="teamId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetFantasyTeamBattersYearlyResult">
+      <Column Name="Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TEAM_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Player" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ordinal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Position" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="R" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RBI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="H" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[2B]" Member="_2B" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[3B]" Member="_3B" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HBP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SF" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetFantasyTeamPitchersYearly" Method="GetFantasyTeamPitchersYearly">
+    <Parameter Name="league" Type="System.Int32" DbType="Int" />
+    <Parameter Name="teamId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetFantasyTeamPitchersYearlyResult">
+      <Column Name="Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TEAM_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Player" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ordinal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Position" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="W" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OUTS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="H" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HLD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

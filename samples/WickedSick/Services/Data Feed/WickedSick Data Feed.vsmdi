@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestLists xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestList name="WickedSick.Parsing.Nfl" id="4f8fa284-17e5-4262-9884-1c53f431dea6" parentListId="8c43106b-9dc1-4907-a29f-aa66a61bf5b6">
+    <TestLinks>
+      <TestLink id="a08b2fe6-7c2c-54cb-0fe5-ede3a2b6365d" name="LoadGamesSeasonTest" storage="..\..\parsing\nfl\test\bin\debug\wickedsick.parsing.nfl.test.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+      <TestLink id="0f03dfdf-7da4-4470-a3a2-a5c7e1b29e97" name="LoadGameTest" storage="..\..\parsing\nfl\test\bin\debug\wickedsick.parsing.nfl.test.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+      <TestLink id="b995bf45-f264-2e1a-07a8-104b79172b5d" name="LoadGamesTest" storage="..\..\parsing\nfl\test\bin\debug\wickedsick.parsing.nfl.test.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+    </TestLinks>
+  </TestList>
+  <TestList name="Lists of Tests" id="8c43106b-9dc1-4907-a29f-aa66a61bf5b6">
+    <RunConfiguration id="a17f62bb-23a1-415e-84d3-79550871c0b5" name="Local Test Run" storage="localtestrun.testrunconfig" type="Microsoft.VisualStudio.TestTools.Common.TestRunConfiguration, Microsoft.VisualStudio.QualityTools.Common,   PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestList>
+</TestLists>

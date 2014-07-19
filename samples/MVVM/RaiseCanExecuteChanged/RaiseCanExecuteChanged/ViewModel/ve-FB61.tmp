@@ -1,0 +1,73 @@
+﻿using System.Collections.ObjectModel;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.Windows;
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Messaging;
+using GalaSoft.Samples.RaiseCanExecuteChanged.Model;
+using GalaSoft.Samples.RaiseCanExecuteChanged.Properties;
+
+namespace GalaSoft.Samples.RaiseCanExecuteChanged.ViewModel
+{
+    /// <summary>
+    /// See http://www.galasoft.ch/mvvm/getstarted
+    /// </summary>
+    public class MainViewModel : ViewModelBase
+    {
+        /// <summary>
+        /// The <see cref="Counter" /> property's name.
+        /// </summary>
+        public const string CounterPropertyName = "Counter";
+
+        private int _counter;
+
+        /// <summary>
+        /// Gets the Counter property.
+        /// TODO Update documentation:
+        /// Changes to that property's value raise the PropertyChanged event. 
+        /// This property's value is broadcasted by the Messenger's default instance when it changes.
+        /// </summary>
+        public int Counter
+        {
+            get
+            {
+                return _counter;
+            }
+
+            private set
+            {
+                if (_counter == value)
+                {
+                    return;
+                }
+
+                var oldValue = _counter;
+                _counter = value;
+
+                // Remove one of the two calls below
+                throw new NotImplementedException();
+
+                // Update bindings, no broadcast
+                RaisePropertyChanged(CounterPropertyName);
+
+                // Update bindings and broadcast change using GalaSoft.Utility.Messenging
+                RaisePropertyChanged(CounterPropertyName, oldValue, value, true);
+            }
+        }
+
+        public RelayCommand IncreaseCounterCommand
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the MainViewModel class.
+        /// </summary>
+        public MainViewModel()
+        {
+            IncreaseCounterCommand = new RelayCommand(() => MessageBox.Show("Hello")
+        }
+    }
+}

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://tempuri.org/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" name="PersistentIdsDatabase" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_ISyncEvents_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:AcknowledgementInterval Milliseconds="200" />
+        </wsrm:RMAssertion>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:5800/PersistentIdsDatabase/mex?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:5800/PersistentIdsDatabase/mex?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:5800/PersistentIdsDatabase/mex?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/IdentityStream.Server.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISyncEvents_IdentitiesAddedUpdated_InputMessage">
+    <wsdl:part name="parameters" element="tns:IdentitiesAddedUpdated" />
+  </wsdl:message>
+  <wsdl:message name="ISyncEvents_EnrollmentsAdded_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnrollmentsAdded" />
+  </wsdl:message>
+  <wsdl:message name="ISyncEvents_TemplatesAdded_InputMessage">
+    <wsdl:part name="parameters" element="tns:TemplatesAdded" />
+  </wsdl:message>
+  <wsdl:portType name="ISyncEvents">
+    <wsdl:operation name="IdentitiesAddedUpdated">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncEvents/IdentitiesAddedUpdated" message="tns:ISyncEvents_IdentitiesAddedUpdated_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnrollmentsAdded">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncEvents/EnrollmentsAdded" message="tns:ISyncEvents_EnrollmentsAdded_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TemplatesAdded">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncEvents/TemplatesAdded" message="tns:ISyncEvents_TemplatesAdded_InputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_ISyncEvents" type="tns:ISyncEvents">
+    <wsp:PolicyReference URI="#NetTcpBinding_ISyncEvents_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="IdentitiesAddedUpdated">
+      <soap12:operation soapAction="http://tempuri.org/ISyncEvents/IdentitiesAddedUpdated" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="EnrollmentsAdded">
+      <soap12:operation soapAction="http://tempuri.org/ISyncEvents/EnrollmentsAdded" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="TemplatesAdded">
+      <soap12:operation soapAction="http://tempuri.org/ISyncEvents/TemplatesAdded" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PersistentIdsDatabase">
+    <wsdl:port name="NetTcpBinding_ISyncEvents" binding="tns:NetTcpBinding_ISyncEvents">
+      <soap12:address location="net.tcp://localhost:5700/PersistentIdsDatabase" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:5700/PersistentIdsDatabase</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>ssickles@hyperion.local</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

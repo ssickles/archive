@@ -1,0 +1,26 @@
+﻿<d:DesignerActivityBase x:Class="WickedSick.Workflow.DesignerActivities.Decision"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="clr-namespace:WickedSick.Workflow.DesignerActivities">
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Polygon Stretch="Fill">
+                <Polygon.BitmapEffect>
+                    <BitmapEffectGroup>
+                        <DropShadowBitmapEffect Color="Gray" Direction="315" ShadowDepth="10" Softness="0" Opacity="0.2"/>
+                        <BevelBitmapEffect BevelWidth="5" EdgeProfile="BulgedUp"/>
+                    </BitmapEffectGroup>
+                </Polygon.BitmapEffect>
+                <Polygon.Fill>
+                    <SolidColorBrush Color="Navy"/>
+                </Polygon.Fill>
+                <Polygon.Points>
+                    <PointCollection>
+                        <Point X=".5" Y="0"/>
+                        <Point X="1" Y=".5"/>
+                        <Point X=".5" Y="1"/>
+                        <Point X="0" Y=".5"/>
+                    </PointCollection>
+                </Polygon.Points>
+            </Polygon>
+        </Grid>
+</d:DesignerActivityBase>

@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="MediatorSample.DirectorySelector"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:behaviours="clr-namespace:MediatorSample.Behaviours"
+    xmlns:mvvmFactory="clr-namespace:MVVMHelper.Factory;assembly=MVVMHelper"
+    xmlns:factory="clr-namespace:MediatorSample.ViewModels.Factories"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    mvvmFactory:ViewModelLoader.FactoryType="{x:Type factory:DirectoryViewModelFactory}"  >
+    
+    <TreeView ItemsSource="{Binding DataSource}" 
+              behaviours:TreeViewBehaviours.HandleSelectionChanges="True" 
+              behaviours:TreeViewBehaviours.SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}" 
+              behaviours:TreeViewBehaviours.ExpandedCommand="{Binding GetChildren}">
+        <TreeView.ItemTemplate>
+            <HierarchicalDataTemplate ItemsSource="{Binding ChildItems}">
+                <Border>
+                    <TextBlock Text="{Binding Name}"/>
+                </Border>
+            </HierarchicalDataTemplate>
+        </TreeView.ItemTemplate>
+    </TreeView>
+    
+</UserControl>

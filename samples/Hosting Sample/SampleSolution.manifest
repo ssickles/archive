@@ -1,0 +1,9 @@
+<DeploymentManifest version="1.0">
+  <CompositeStudioProject name="SampleSolution" fileName="SampleSolution\SampleSolution.proj" id="Project-8C8E84199E8EFD5" version="3.2.0.0" deploymentVersion="1.2" deploymentSaveToDisk="Default" configuration="">
+    <ProjectFiles>
+      <File value="SampleSolution\Windows Form1.xml" />
+      <File value="SampleSolution\Automation1.xml" />
+      <File value="SampleSolution\ShowMessage.xml" />
+    </ProjectFiles>
+  </CompositeStudioProject>
+</DeploymentManifest>

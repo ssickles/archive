@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkflowEngine", "WorkflowEngine.csproj", "{72B1BA4C-C935-4022-AD56-511BA5250417}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D5EBEA23-1F82-414C-A5B3-9DFEBDED7828} = {D5EBEA23-1F82-414C-A5B3-9DFEBDED7828}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workflow.Core", "..\..\Workflow\Core\Workflow.Core.csproj", "{D5EBEA23-1F82-414C-A5B3-9DFEBDED7828}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workflow.Core.Test", "..\..\Workflow\Core.Test\Workflow.Core.Test.csproj", "{670FBAE3-EE45-4452-9FFF-261DA2094BAA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D5EBEA23-1F82-414C-A5B3-9DFEBDED7828} = {D5EBEA23-1F82-414C-A5B3-9DFEBDED7828}
+	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "WorkflowEngine.Installer", "..\WorkflowEngine.Installer\WorkflowEngine.Installer.vdproj", "{46F539E2-E831-4B98-98BB-43551D73BA66}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 5
+		SccProjectName0 = SurroundSCMScci
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Surround\u0020SCM
+		SccProjectUniqueName1 = ..\\..\\Workflow\\Core\\Workflow.Core.csproj
+		SccLocalPath1 = ..\\..\\Workflow\\Core
+		SccProjectUniqueName2 = ..\\..\\Workflow\\Core.Test\\Workflow.Core.Test.csproj
+		SccLocalPath2 = ..\\..\\Workflow\\Core.Test
+		SccProjectUniqueName3 = WorkflowEngine.csproj
+		SccLocalPath3 = .
+		SccProjectUniqueName4 = ..\\WorkflowEngine.Installer\\WorkflowEngine.Installer.vdproj
+		SccLocalPath4 = ..\\WorkflowEngine.Installer
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72B1BA4C-C935-4022-AD56-511BA5250417}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72B1BA4C-C935-4022-AD56-511BA5250417}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72B1BA4C-C935-4022-AD56-511BA5250417}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72B1BA4C-C935-4022-AD56-511BA5250417}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5EBEA23-1F82-414C-A5B3-9DFEBDED7828}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5EBEA23-1F82-414C-A5B3-9DFEBDED7828}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5EBEA23-1F82-414C-A5B3-9DFEBDED7828}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5EBEA23-1F82-414C-A5B3-9DFEBDED7828}.Release|Any CPU.Build.0 = Release|Any CPU
+		{670FBAE3-EE45-4452-9FFF-261DA2094BAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{670FBAE3-EE45-4452-9FFF-261DA2094BAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{670FBAE3-EE45-4452-9FFF-261DA2094BAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{670FBAE3-EE45-4452-9FFF-261DA2094BAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46F539E2-E831-4B98-98BB-43551D73BA66}.Debug|Any CPU.ActiveCfg = Debug
+		{46F539E2-E831-4B98-98BB-43551D73BA66}.Debug|Any CPU.Build.0 = Debug
+		{46F539E2-E831-4B98-98BB-43551D73BA66}.Release|Any CPU.ActiveCfg = Release
+		{46F539E2-E831-4B98-98BB-43551D73BA66}.Release|Any CPU.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

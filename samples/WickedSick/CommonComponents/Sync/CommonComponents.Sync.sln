@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonComponents.Sync", "CommonComponents.Sync.csproj", "{D47AE52B-1B2E-4F2B-9498-159E0A86C2D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonComponents.Sync.Test", "..\Sync.Test\CommonComponents.Sync.Test.csproj", "{8DB26E4B-B026-4E0B-898F-A3A96D742654}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 3
+		SccProjectUniqueName0 = CommonComponents.Sync.csproj
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\Sync.Test\\CommonComponents.Sync.Test.csproj
+		SccLocalPath1 = ..\\Sync.Test
+		SccProjectName2 = SurroundSCMScci
+		SccLocalPath2 = .
+		SccProvider2 = MSSCCI:Surround\u0020SCM
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D47AE52B-1B2E-4F2B-9498-159E0A86C2D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D47AE52B-1B2E-4F2B-9498-159E0A86C2D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D47AE52B-1B2E-4F2B-9498-159E0A86C2D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D47AE52B-1B2E-4F2B-9498-159E0A86C2D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DB26E4B-B026-4E0B-898F-A3A96D742654}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DB26E4B-B026-4E0B-898F-A3A96D742654}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DB26E4B-B026-4E0B-898F-A3A96D742654}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DB26E4B-B026-4E0B-898F-A3A96D742654}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

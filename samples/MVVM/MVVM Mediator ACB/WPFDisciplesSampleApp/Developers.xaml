@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="WPFDisciples.Developers"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:fluidKit="clr-namespace:FluidKit.Controls;assembly=FluidKit"
+    xmlns:acb="clr-namespace:AttachedCommandBehavior;assembly=AttachedCommandBehavior"
+    Background="Black">
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        
+        <!--ListBox to show the list of developers available-->
+        <ItemsControl x:Name="_itemsControl" 
+					  ItemsSource="{Binding Developers}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                        <!--image to show the Avator of the developer-->
+                        <Image Source="{Binding Avatar}"
+					        Stretch="Uniform" />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <!--Replace the default ItemsPanel so that we have a nice CoverFlow instead of the default Stack Panel-->
+                    <fluidKit:ElementFlow x:Name="ElementFlow"
+										  Focusable="True"
+										  ElementWidth="400"
+										  ElementHeight="600"
+										  HasReflection="False"
+										  Background="Black"
+                                          ItemGap="0.25"
+                                          SelectedIndex="{Binding SelectedDeveloperIndex, Mode=TwoWay}">
+                        <fluidKit:ElementFlow.CurrentView>
+                            <fluidKit:VForm />
+                        </fluidKit:ElementFlow.CurrentView>
+                    </fluidKit:ElementFlow>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+        
+        <Grid Grid.Row="1">
+            
+            <!--Show the Name of the current selected developer-->
+            <TextBlock Text="{Binding SelectedDeveloper.Name}" Foreground="White" HorizontalAlignment="Center" />
+            
+            <!--Button to select the current developer.-->
+            <Button HorizontalAlignment="Right" Content="Select" Foreground="White" Width="40" Height="30" Background="#FF1085C8"
+                    Command="{Binding SelectDeveloper}" />
+        </Grid>
+
+    </Grid>
+</UserControl>

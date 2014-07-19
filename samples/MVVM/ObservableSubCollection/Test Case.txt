@@ -1,0 +1,17 @@
+
+	public static void Test()
+	{
+            ObservableCollection<int> allNumbers = new ObservableCollection<int>(GetAllNumbers());
+            ObservableSubCollection<int> oddNumbers = new ObservableSubCollection<int>(allNumbers, n => n % 2 == 1);
+            oddNumbers.Remove(1);
+            allNumbers.Add(1);
+	    oddNumbers.Clear();
+	}
+
+        public static IEnumerable<int> GetAllNumbers()
+        {
+            for (int i = 0; i < 20; i++)
+            {
+                yield return i;
+            }
+        }

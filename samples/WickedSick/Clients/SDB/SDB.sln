@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDB", "SDB.csproj", "{A11C8B62-52A1-4417-8870-7B90F9475652}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Music", "..\..\ClientComponents\Music\Music.csproj", "{46DECB90-279B-4958-A3FC-D38F71B2C7C5}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 3
+		SccProjectName0 = SurroundSCMScci
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Surround\u0020SCM
+		SccProjectUniqueName1 = SDB.csproj
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = ..\\..\\ClientComponents\\Music\\Music.csproj
+		SccLocalPath2 = ..\\..\\ClientComponents\\Music
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A11C8B62-52A1-4417-8870-7B90F9475652}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A11C8B62-52A1-4417-8870-7B90F9475652}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A11C8B62-52A1-4417-8870-7B90F9475652}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A11C8B62-52A1-4417-8870-7B90F9475652}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46DECB90-279B-4958-A3FC-D38F71B2C7C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46DECB90-279B-4958-A3FC-D38F71B2C7C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46DECB90-279B-4958-A3FC-D38F71B2C7C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46DECB90-279B-4958-A3FC-D38F71B2C7C5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

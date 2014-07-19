@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://localhost:5800/PersistentIdsDatabase/mex?xsd=xsd2" filename="mex.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://localhost:5800/PersistentIdsDatabase/mex?xsd=xsd1" filename="mex0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://localhost:5800/PersistentIdsDatabase/mex?wsdl" filename="PersistentIdsDatabase.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://localhost:5800/PersistentIdsDatabase/mex?disco" filename="mex.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://localhost:5800/PersistentIdsDatabase/mex?xsd=xsd0" filename="mex1.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

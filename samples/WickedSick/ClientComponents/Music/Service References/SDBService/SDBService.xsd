@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://sdbservice.wsick.com/Common" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://sdbservice.wsick.com/Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://sdbservice.wsick.com/SDBService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://sdbservice.wsick.com/SDBService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://sdbservice.wsick.com/SDBService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/WickedSick.CommonComponents.Music" />
+  <xs:complexType name="ChunkDataOfSongDataTepVWBla">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ChunkDataOf{0}{#}" Namespace="http://sdbservice.wsick.com/Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="SongData" Namespace="http://sdbservice.wsick.com/Common" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Chunk" nillable="true" type="q1:ArrayOfKeyValueOfintSongDatabnyvNr29" />
+      <xs:element minOccurs="0" name="ChunkNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="TotalChunks" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChunkDataOfSongDataTepVWBla" nillable="true" type="tns:ChunkDataOfSongDataTepVWBla" />
+  <xs:complexType name="SongData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DataClass">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AlbumID" type="xs:int" />
+          <xs:element minOccurs="0" name="Duration" type="xs:long" />
+          <xs:element minOccurs="0" name="Filename" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Location" type="xs:short" />
+          <xs:element minOccurs="0" name="SongID" type="xs:int" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TrackNumber" type="xs:short" />
+          <xs:element minOccurs="0" name="UploadDate" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SongData" nillable="true" type="tns:SongData" />
+  <xs:complexType name="DataClass">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="DataClass" nillable="true" type="tns:DataClass" />
+  <xs:complexType name="ChunkDataOfDataClassTepVWBla">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ChunkDataOf{0}{#}" Namespace="http://sdbservice.wsick.com/Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="DataClass" Namespace="http://sdbservice.wsick.com/Common" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Chunk" nillable="true" type="q2:ArrayOfKeyValueOfintDataClassbnyvNr29" />
+      <xs:element minOccurs="0" name="ChunkNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="TotalChunks" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChunkDataOfDataClassTepVWBla" nillable="true" type="tns:ChunkDataOfDataClassTepVWBla" />
+  <xs:complexType name="ChunkDataOfAlbumDataTepVWBla">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ChunkDataOf{0}{#}" Namespace="http://sdbservice.wsick.com/Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="AlbumData" Namespace="http://sdbservice.wsick.com/Common" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Chunk" nillable="true" type="q3:ArrayOfKeyValueOfintAlbumDatabnyvNr29" />
+      <xs:element minOccurs="0" name="ChunkNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="TotalChunks" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChunkDataOfAlbumDataTepVWBla" nillable="true" type="tns:ChunkDataOfAlbumDataTepVWBla" />
+  <xs:complexType name="AlbumData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DataClass">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AlbumID" type="xs:int" />
+          <xs:element minOccurs="0" name="ArtFilename" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ArtistID" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReleaseDate" type="xs:long" />
+          <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SongIDs" nillable="true" type="q4:ArrayOfint" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AlbumData" nillable="true" type="tns:AlbumData" />
+  <xs:complexType name="ChunkDataOfArtistDataTepVWBla">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ChunkDataOf{0}{#}" Namespace="http://sdbservice.wsick.com/Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArtistData" Namespace="http://sdbservice.wsick.com/Common" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Chunk" nillable="true" type="q5:ArrayOfKeyValueOfintArtistDatabnyvNr29" />
+      <xs:element minOccurs="0" name="ChunkNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="TotalChunks" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChunkDataOfArtistDataTepVWBla" nillable="true" type="tns:ChunkDataOfArtistDataTepVWBla" />
+  <xs:complexType name="ArtistData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DataClass">
+        <xs:sequence>
+          <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AlbumIDs" nillable="true" type="q6:ArrayOfint" />
+          <xs:element minOccurs="0" name="ArtistID" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ArtistData" nillable="true" type="tns:ArtistData" />
+  <xs:complexType name="ChunkDataOfAuditDataTepVWBla">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ChunkDataOf{0}{#}" Namespace="http://sdbservice.wsick.com/Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="AuditData" Namespace="http://sdbservice.wsick.com/Common" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Chunk" nillable="true" type="q7:ArrayOfKeyValueOfintAuditDatabnyvNr29" />
+      <xs:element minOccurs="0" name="ChunkNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="TotalChunks" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChunkDataOfAuditDataTepVWBla" nillable="true" type="tns:ChunkDataOfAuditDataTepVWBla" />
+  <xs:complexType name="AuditData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DataClass">
+        <xs:sequence>
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WickedSick.CommonComponents.Music" minOccurs="0" name="AuditType" type="q8:AuditTypes" />
+          <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NewValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ObjectID" type="xs:int" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WickedSick.CommonComponents.Music" minOccurs="0" name="ObjectType" type="q9:ObjectTypes" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AuditData" nillable="true" type="tns:AuditData" />
+  <xs:complexType name="ChunkDataOfPlaylistDataTepVWBla">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ChunkDataOf{0}{#}" Namespace="http://sdbservice.wsick.com/Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PlaylistData" Namespace="http://sdbservice.wsick.com/Common" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Chunk" nillable="true" type="q10:ArrayOfKeyValueOfintPlaylistDatabnyvNr29" />
+      <xs:element minOccurs="0" name="ChunkNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="TotalChunks" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChunkDataOfPlaylistDataTepVWBla" nillable="true" type="tns:ChunkDataOfPlaylistDataTepVWBla" />
+  <xs:complexType name="PlaylistData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DataClass">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PlaylistID" type="xs:int" />
+          <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SongIDs" nillable="true" type="q11:ArrayOfint" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PlaylistData" nillable="true" type="tns:PlaylistData" />
+</xs:schema>
